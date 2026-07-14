@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-153244-865f5c"
 created_at: "2026-07-14T15:32:44+08:00"
-updated_at: "2026-07-14T15:32:44+08:00"
-status: pending
+updated_at: "2026-07-14T15:36:20+08:00"
+status: approved
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ Do you approve this Nursing Open-first manuscript revision plan as the working p
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+非常好，就按这个干吧
+
+### Decision and resolution
+
+- Decision: approved
+- Recorded at: 2026-07-14T15:36:20+08:00
+- Resolution: Author approved the Nursing Open-first manuscript revision plan. Proceed with the planned edit sequence: manuscript audit, Results verification, Methods reproducibility, nursing-facing Introduction, bounded Discussion, then title/structured abstract/declarations.
+
 
