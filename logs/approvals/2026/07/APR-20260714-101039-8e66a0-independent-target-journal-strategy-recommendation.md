@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-101039-8e66a0"
 created_at: "2026-07-14T10:10:39+08:00"
-updated_at: "2026-07-14T10:10:39+08:00"
-status: pending
+updated_at: "2026-07-14T10:12:33+08:00"
+status: approved
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ A. 直接首投JRN以追求较高录用率；B. 以单位认可规则为硬门�
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+脱离我的4本选项，按你的思路来找
+
+### Decision and resolution
+
+- Decision: approved
+- Recorded at: 2026-07-14T10:12:33+08:00
+- Resolution: 批准独立扩展选刊：不再限定原四本，按单位可认定SCI/分区、研究设计匹配、实际录用难度、费用和护理实践承载能力筛选主投及备投期刊。
+
 
