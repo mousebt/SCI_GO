@@ -22,6 +22,17 @@
 
 共享知识规则：只有 `approved=yes` 且状态为 `validated` 的经验可以通过 `scripts/sync-knowledge.ps1` 进入全局知识库。不得让模型直接改写底层规则后悄悄生效。
 
+## 需要用户批准的方案日志
+
+凡助手提出需要用户批准后才能继续的实质性计划，必须遵守 `logs/README.md`：
+
+1. 发出批准问题前，先运行 `scripts/new-approval-log.ps1` 创建 `pending` 日志。
+2. 保存相关用户原话、当时事实、假设、不确定性、选项、权衡、拟执行计划、影响范围和准备发出的原样问题。
+3. 向用户请求批准时明确给出日志 ID。
+4. 收到回复后运行 `scripts/resolve-approval-log.ps1`，追加用户原始回复与处理结果；不得覆盖原始方案。
+5. 方案发生实质变化时保留旧记录并新建日志，不得在旧记录上静默改写。
+6. 论文级方案使用 `scope=paper` 和正确的 `paper_id`；全局规则与架构方案使用 `scope=global`。
+
 ## START_HERE 材料接收协议
 
 发现 `START_HERE/` 中有用户材料时：
