@@ -9,4 +9,5 @@
 | APR-20260714-100909-39d94c | 2026-07-14 | Target journal route decision for NICM FAERS nursing manuscript | revised | logs/approvals/2026/07/APR-20260714-100909-39d94c-target-journal-route-decision-for-nicm-faers-nursing-manuscript.md |
 | APR-20260714-101039-8e66a0 | 2026-07-14 | Independent target journal strategy recommendation | approved | logs/approvals/2026/07/APR-20260714-101039-8e66a0-independent-target-journal-strategy-recommendation.md |
 | APR-20260714-102113-3d2fc1 | 2026-07-14 | Expanded journal shortlist and primary target lock | revised | logs/approvals/2026/07/APR-20260714-102113-3d2fc1-expanded-journal-shortlist-and-primary-target-lock.md |
-| APR-20260714-103756-60dc1a | 2026-07-14 | Nursing non-OA SCI submission sequence | pending | logs/approvals/2026/07/APR-20260714-103756-60dc1a-nursing-non-oa-sci-submission-sequence.md |
+| APR-20260714-103756-60dc1a | 2026-07-14 | Nursing non-OA SCI submission sequence | revised | logs/approvals/2026/07/APR-20260714-103756-60dc1a-nursing-non-oa-sci-submission-sequence.md |
+| APR-20260714-104115-0c930b | 2026-07-14 | Mixed-scope hybrid SCI submission sequence | pending | logs/approvals/2026/07/APR-20260714-104115-0c930b-mixed-scope-hybrid-sci-submission-sequence.md |

@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-103756-60dc1a"
 created_at: "2026-07-14T10:37:56+08:00"
-updated_at: "2026-07-14T10:37:56+08:00"
-status: pending
+updated_at: "2026-07-14T10:38:50+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ A. NHS主投、Applied Nursing Research备投、Clinical Nursing Research第二�
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+那放低点要求，不严格限定护理杂志，混合类型杂志也在范围内。
+
+### Decision and resolution
+
+- Decision: revised
+- Recorded at: 2026-07-14T10:38:50+08:00
+- Resolution: 作者放宽学科范围：不再严格限定护理期刊，护理与临床药学、药物警戒、放射学安全及综合临床等混合类型期刊均可；继续优先SCI/SCIE、可非OA传统发表和较低投稿难度。原NHS主投序列重新评估。
+
 
