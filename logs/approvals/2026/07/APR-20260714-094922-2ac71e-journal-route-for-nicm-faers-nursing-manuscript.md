@@ -1,12 +1,12 @@
 ﻿---
 id: "APR-20260714-094922-2ac71e"
 created_at: "2026-07-14T09:49:22+08:00"
-updated_at: "2026-07-14T09:57:48+08:00"
+updated_at: "2026-07-14T09:58:20+08:00"
 status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
-git_commit: "7e08c93"
+git_commit: "a33f271"
 supersedes: ""
 superseded_by: ""
 ---
@@ -53,5 +53,6 @@ A. 首投Journal of Radiology Nursing：范围和稿件最匹配、相对容易�
 - Decision: revised
 - Recorded at: 2026-07-14T09:53:47+08:00
 - Resolution: 原期刊路线选择拆分处理：本轮先执行不绑定期刊的论文结构性修改；具体期刊与分区要求留待下一步单独评估和批准。
+
 
 

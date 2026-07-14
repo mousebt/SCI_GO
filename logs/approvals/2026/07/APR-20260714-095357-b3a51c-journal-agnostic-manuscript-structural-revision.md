@@ -1,12 +1,12 @@
 ﻿---
 id: "APR-20260714-095357-b3a51c"
 created_at: "2026-07-14T09:53:57+08:00"
-updated_at: "2026-07-14T09:57:48+08:00"
+updated_at: "2026-07-14T09:58:21+08:00"
 status: approved
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "medium"
-git_commit: "7e08c93"
+git_commit: "a33f271"
 supersedes: ""
 superseded_by: ""
 ---
@@ -53,6 +53,7 @@ A. 立即按特定期刊格式改写；B. 先形成期刊中立的英文结构�
 - Decision: approved
 - Recorded at: 2026-07-14T09:54:03+08:00
 - Resolution: 批准期刊中立的结构性修改：先形成英文SCI结构稿并记录所有待核对项；期刊选择、分区核验和特定格式适配暂缓。
+
 
 
 
