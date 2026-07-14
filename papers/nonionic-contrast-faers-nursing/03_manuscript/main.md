@@ -1,6 +1,6 @@
-# Safety Signals of Non-Ionic Iodinated Contrast Media in FAERS and Implications for Radiology Nursing Practice
+# Adverse-Event Reporting Patterns of Non-Ionic Iodinated Contrast Media for Radiology Nursing Surveillance: Empirical Research Quantitative
 
-**Manuscript status:** Nursing Open-facing working draft v0.5; Introduction, Methods, Results, and Discussion rewritten for evidence-first review
+**Manuscript status:** Nursing Open-facing working draft v0.6; title, structured abstract, Introduction, Methods, Results, and Discussion rewritten for evidence-first review
 
 **Evidence status:** All numerical results retained from the Chinese source manuscript require verification against the original analysis output. Items marked `[VERIFY]` must be resolved before submission.
 
@@ -8,25 +8,45 @@
 
 ## Abstract
 
-### Background
+### Aim(s)
 
-Non-ionic iodinated contrast media are widely used in diagnostic and interventional imaging. Although most administrations are uneventful, contrast extravasation, hypersensitivity reactions, acute kidney injury, and cardiopulmonary events require timely recognition and escalation by radiology nursing teams. Large spontaneous-reporting databases may help prioritise uncommon or clinically important safety events that are difficult to characterise in single-centre studies.
+To characterise adverse-event reporting patterns and time-to-onset profiles for four non-ionic iodinated contrast media and interpret their implications for radiology nursing surveillance.
 
-### Aim
+### Design
 
-To characterise adverse-event reporting signals and time-to-onset patterns for four non-ionic iodinated contrast media in the US Food and Drug Administration Adverse Event Reporting System (FAERS), and to consider their implications for radiology nursing surveillance.
+Retrospective pharmacovigilance study using spontaneous-reporting data.
+
+### Data Sources
+
+Reports in the US Food and Drug Administration Adverse Event Reporting System from 2004 quarter 1 to 2025 quarter 4 were searched for ioversol, iohexol, iopamidol and iodixanol as primary suspect drugs. `[VERIFY: extraction date and quarter completeness.]`
 
 ### Methods
 
-FAERS reports from the first quarter of 2004 through the fourth quarter of 2025 were searched for ioversol, iohexol, iopamidol, and iodixanol designated as primary suspect drugs. Adverse events were coded using Medical Dictionary for Regulatory Activities preferred terms and system organ classes. Reporting odds ratio, proportional reporting ratio, Bayesian confidence propagation neural network, and multi-item gamma Poisson shrinker methods were prespecified for signal detection. Time to onset was summarised and modelled using a Weibull distribution. `[VERIFY: MedDRA version, legacy AERS/FAERS field harmonisation, drug-name dictionary, complete algorithm thresholds, and software/package versions.]`
+Adverse events were analysed using Medical Dictionary for Regulatory Activities preferred terms and system organ classes. Disproportionality and time-to-onset analyses were used to identify reporting patterns. `[VERIFY: dictionary, coding version, thresholds and software.]`
 
 ### Results
 
-The source analysis included 14,780 eligible reports containing 42,808 adverse-event records and 951 preferred terms. Twenty-four preferred terms met the stated signal criteria. Extravasation-related terms showed the strongest disproportionality, while shock, acute pulmonary oedema, renal tubular necrosis, pruritus, erythema, dyspnoea, and acute kidney injury were among the clinically relevant signals. Of 12,588 reports with an evaluable time to onset, 81.56% occurred within 24 hours. The Weibull shape parameter was below 1, consistent with an early-failure pattern. `[VERIFY ALL NUMERICAL RESULTS AGAINST THE ORIGINAL OUTPUT.]`
+The source analysis retained 14,780 eligible reports containing 42,808 adverse-event records and 951 preferred terms. Twenty-four preferred terms met the stated signal criteria. Extravasation-related preferred terms showed the strongest disproportionality. Shock, acute pulmonary oedema, renal tubular necrosis, dyspnoea and acute kidney injury were also clinically relevant signals. Among 12,588 reports with evaluable timing, 81.56% occurred within 24 hours. `[VERIFY all numerical results.]`
 
-### Conclusions
+### Conclusion
 
-FAERS data identified a set of reported events that may help radiology nurses prioritise vascular-access assessment, early symptom surveillance, and escalation preparedness around contrast administration. These findings are hypothesis-generating and should be interpreted alongside clinical guidelines, local protocols, and patient-specific assessment; they do not demonstrate that any nursing intervention reduces adverse-event rates.
+Reported patterns for non-ionic iodinated contrast media may help radiology nursing teams prioritise vascular-access surveillance, early symptom recognition and escalation preparedness. These findings are hypothesis-generating and do not estimate incidence, establish causality or test nursing interventions.
+
+### Implications for the profession and/or patient care
+
+The findings support a surveillance-priority framework for radiology nursing practice, pending verification against current contrast-media guidance and local protocols.
+
+### Impact
+
+This study addresses the need to translate pharmacovigilance findings into nursing-relevant observation priorities while preserving the limits of spontaneous-reporting evidence.
+
+### Reporting Method
+
+`[VERIFY: STROBE, RECORD/STROBE, READUS-PV or combined reporting statement.]`
+
+### Patient or Public Contribution
+
+No patient or public contribution. `[VERIFY: author confirmation required.]`
 
 **Keywords:** contrast media; FAERS; pharmacovigilance; radiology nursing; disproportionality analysis; time to onset
 
