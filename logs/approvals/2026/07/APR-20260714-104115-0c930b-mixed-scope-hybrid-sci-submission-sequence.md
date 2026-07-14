@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-104115-0c930b"
 created_at: "2026-07-14T10:41:15+08:00"
-updated_at: "2026-07-14T10:41:15+08:00"
-status: pending
+updated_at: "2026-07-14T11:09:24+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ A. Current Medical Science主投，NSAP和EJCP备投；B. 继续NHS护理路线�
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+提供10个杂志备选
+
+### Decision and resolution
+
+- Decision: revised
+- Recorded at: 2026-07-14T11:09:24+08:00
+- Resolution: 作者未批准四刊序列，要求先把候选池扩展至10本期刊。保留SCI/SCIE、可传统非OA发表、混合学科和难度优先的筛选条件，完成10刊排序后重新提请批准。
+
 
