@@ -6,3 +6,4 @@
 |---|---|---|---|---|
 | APR-20260714-094922-2ac71e | 2026-07-14 | Journal route for NICM FAERS nursing manuscript | revised | logs/approvals/2026/07/APR-20260714-094922-2ac71e-journal-route-for-nicm-faers-nursing-manuscript.md |
 | APR-20260714-095357-b3a51c | 2026-07-14 | Journal-agnostic manuscript structural revision | approved | logs/approvals/2026/07/APR-20260714-095357-b3a51c-journal-agnostic-manuscript-structural-revision.md |
+| APR-20260714-100909-39d94c | 2026-07-14 | Target journal route decision for NICM FAERS nursing manuscript | pending | logs/approvals/2026/07/APR-20260714-100909-39d94c-target-journal-route-decision-for-nicm-faers-nursing-manuscript.md |
