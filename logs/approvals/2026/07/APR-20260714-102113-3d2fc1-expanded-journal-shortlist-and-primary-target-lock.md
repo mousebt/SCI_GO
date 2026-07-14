@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-102113-3d2fc1"
 created_at: "2026-07-14T10:21:13+08:00"
-updated_at: "2026-07-14T10:21:13+08:00"
-status: pending
+updated_at: "2026-07-14T10:34:14+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ A. 严格Q4路线，首投Die Pharmazie；B. 任意合规SCIE成功率优先，�
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+选择依据，非oa，护理领域，是sci就行，难度越低越好
+
+### Decision and resolution
+
+- Decision: revised
+- Recorded at: 2026-07-14T10:34:14+08:00
+- Resolution: 作者修改了选刊硬条件：仅考虑护理领域、SCI/SCIE、可选择非OA传统发表的期刊；不再要求严格4区，并在合规候选中以投稿难度最低为优先。原药物警戒/综合医学投稿序列作废，重新检索和排序护理期刊。
+
 
