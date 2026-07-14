@@ -1,6 +1,6 @@
 # Safety Signals of Non-Ionic Iodinated Contrast Media in FAERS and Implications for Radiology Nursing Practice
 
-**Manuscript status:** Nursing Open-facing working draft v0.2; Results section rewritten for evidence-first review
+**Manuscript status:** Nursing Open-facing working draft v0.3; Results and Methods rewritten for evidence-first review
 
 **Evidence status:** All numerical results retained from the Chinese source manuscript require verification against the original analysis output. Items marked `[VERIFY]` must be resolved before submission.
 
@@ -42,39 +42,45 @@ Previous work on iodinated contrast safety has often focused on particular clini
 
 ## 2. Methods
 
-### 2.1 Study design and data source
+### 2.1 Design
 
-We conducted a retrospective pharmacovigilance study using publicly available FAERS data from 2004 quarter 1 through 2025 quarter 4. The source files comprised demographic and administrative information (DEMO), drug information (DRUG), adverse reactions (REAC), and patient outcomes (OUTC). `[VERIFY: date on which the 2025 Q4 files were downloaded and confirm that this quarter was publicly available and complete at extraction.]`
+This was a retrospective pharmacovigilance study using spontaneous reports from the US Food and Drug Administration Adverse Event Reporting System (FAERS). The analysis was designed to identify signals of disproportionate reporting and time-to-onset (TTO) patterns for selected non-ionic iodinated contrast media (ICM). It was not designed to estimate incidence, establish causality, rank the absolute safety of individual agents, or test nursing interventions.
 
-Because the study period spans the legacy AERS and current FAERS formats, variable names and coding conventions were harmonised before merging quarterly files. `[VERIFY: provide the exact harmonisation rules and a quarter-level file inventory.]`
+### 2.2 Data source
 
-### 2.2 Report identification and deduplication
+FAERS quarterly files from 2004 quarter 1 through 2025 quarter 4 were used. The source files comprised demographic and administrative information (DEMO), drug information (DRUG), adverse reactions (REAC), and patient outcomes (OUTC). `[VERIFY: date on which the 2025 Q4 files were downloaded and confirm that this quarter was publicly available and complete at extraction.]`
 
-Reports were deduplicated using CASEID, FDA_DT, and PRIMARYID in accordance with the procedure described by the FDA. For records sharing a CASEID, the report with the latest FDA_DT was retained; when CASEID and FDA_DT were identical, the record with the highest PRIMARYID was retained. Reports listed in deletion files were excluded. `[VERIFY: whether this procedure was applied consistently to every quarter and whether follow-up versions were linked before analysis.]`
+Because the study period spans the legacy AERS and current FAERS formats, variable names and coding conventions were harmonised before quarterly files were merged. `[VERIFY: provide the exact harmonisation rules, quarter-level file inventory, and deletion-file handling.]`
 
-The exposure definition included ioversol, iohexol, iopamidol, and iodixanol recorded as the primary suspect drug. The source manuscript states that the generic English names were used as search terms. `[VERIFY: supply the complete, version-controlled dictionary of generic names, brand names, spelling variants, salts, and normalisation rules. Clarify whether combination products or ambiguous names were excluded.]`
+### 2.3 Report identification and deduplication
 
-### 2.3 Adverse-event coding
+Eligible reports were those listing ioversol, iohexol, iopamidol, or iodixanol as the primary suspect drug. The source manuscript states that generic English names were used as search terms. `[VERIFY: supply the complete version-controlled dictionary of generic names, brand names, spelling variants, salts, and normalisation rules. Clarify whether combination products or ambiguous names were excluded.]`
 
-Reported events were mapped to Medical Dictionary for Regulatory Activities (MedDRA) preferred terms (PTs) and system organ classes (SOCs). `[VERIFY: MedDRA version, mapping procedure, handling of legacy terms, and whether primary SOC or multiaxial allocation was used.]` A single report could contain more than one PT; therefore, the number of event records exceeded the number of reports.
+Reports were deduplicated using CASEID, FDA_DT, and PRIMARYID in accordance with the procedure described by the FDA. For records sharing a CASEID, the report with the latest FDA_DT was retained; when CASEID and FDA_DT were identical, the record with the highest PRIMARYID was retained. Reports listed in deletion files were excluded. `[VERIFY: confirm that this procedure was applied consistently to every quarter and whether follow-up versions were linked before analysis.]`
 
-### 2.4 Disproportionality analysis
+### 2.4 Adverse-event coding
 
-Four complementary methods were prespecified: the reporting odds ratio (ROR), proportional reporting ratio (PRR), Bayesian confidence propagation neural network information component (IC), and multi-item gamma Poisson shrinker empirical Bayes geometric mean (EBGM). A drug-event pair was defined as a signal only when it met the prespecified minimum case count and the positive thresholds for all required algorithms. The source manuscript lists a minimum of three reports, a lower 95% confidence limit for ROR greater than 1, PRR greater than 2 with chi-square at least 4, IC025 greater than 0, and EBGM05 greater than 2. `[VERIFY: reproduce the exact 2 x 2 table, equations, continuity corrections, comparator dataset, threshold logic, and whether all four algorithms - not three - were actually applied.]`
+Reported adverse events (AEs) were analysed at the Medical Dictionary for Regulatory Activities (MedDRA) preferred term (PT) and system organ class (SOC) levels. A single report could contain more than one PT; therefore, the number of AE records could exceed the number of reports. `[VERIFY: MedDRA version, mapping procedure, handling of legacy terms, and whether primary SOC or multiaxial SOC allocation was used.]`
 
-Signal magnitude was interpreted as the strength of disproportionate reporting, not as event probability, clinical severity, or causal effect. Analyses were pooled across the four contrast media in the current draft. `[VERIFY: provide agent-specific and sensitivity analyses if available; otherwise justify pooling and avoid comparative claims.]`
+### 2.5 Disproportionality analysis
 
-### 2.5 Time-to-onset analysis
+Four complementary disproportionality methods were prespecified: the reporting odds ratio (ROR), proportional reporting ratio (PRR), Bayesian confidence propagation neural network information component (IC), and multi-item gamma Poisson shrinker empirical Bayes geometric mean (EBGM). A drug-event pair was defined as a signal only when it met the prespecified minimum case count and the positive thresholds for the required algorithms.
 
-Time to onset (TTO) was calculated as the interval between the recorded treatment start date and adverse-event onset date. Reports with missing, implausible, or negative intervals were excluded. TTO was summarised using the median and interquartile range and modelled with a Weibull distribution. A shape parameter below 1 was interpreted as an early-failure pattern, indicating decreasing reporting hazard over time. `[VERIFY: date fields used, imputation rules for partial dates, treatment of same-day events, time unit, maximum follow-up, median and IQR, Weibull confidence intervals, and fitting procedure.]`
+The source manuscript lists the following screening rules: a minimum of three reports, lower 95% confidence limit for ROR greater than 1, PRR greater than 2 with chi-square at least 4, IC025 greater than 0, and EBGM05 greater than 2. `[VERIFY: reproduce the exact 2 x 2 table, equations, continuity corrections, comparator dataset, threshold logic, and whether all four algorithms - rather than a subset - were actually applied to the final tables.]`
 
-### 2.6 Statistical software
+Signal magnitude was interpreted as the strength of disproportionate reporting, not as event probability, clinical severity, or causal effect. The current working draft treats the four contrast agents as a pooled ICM exposure group. `[VERIFY: provide agent-specific and sensitivity analyses if available; otherwise justify pooling and avoid comparative claims between agents.]`
 
-Data processing was performed with Python 3.11 and MySQL. `[VERIFY: operating environment, MySQL version, Python packages and versions, analysis code, random seeds where applicable, and quality-control checks.]`
+### 2.6 Time-to-onset analysis
 
-### 2.7 Ethics and reporting
+TTO was calculated as the interval between the recorded treatment start date and AE onset date. Reports with missing, implausible, or negative intervals were excluded. TTO was summarised using descriptive statistics and modelled with a Weibull distribution. A shape parameter below 1 was interpreted as an early-failure pattern, indicating that reports with evaluable timing were concentrated early after administration. `[VERIFY: date fields used, imputation rules for partial dates, treatment of same-day events, time unit, maximum follow-up, median and interquartile range, Weibull confidence intervals, and fitting procedure.]`
 
-FAERS contains publicly available, de-identified reports. `[VERIFY: institutional ethics/IRB determination or exemption statement required by the authors' institution and target journal.]` The final manuscript will be checked against the READUS-PV reporting recommendations. `[REF TO VERIFY]`
+### 2.7 Ethical considerations
+
+FAERS contains publicly available, de-identified spontaneous reports. Formal informed consent was therefore not applicable to this secondary analysis. `[VERIFY: insert the authors' institutional ethics/IRB determination or exemption statement required by Nursing Open and the authors' institution.]`
+
+### 2.8 Reporting and software
+
+The final manuscript will be checked against a relevant EQUATOR reporting checklist and pharmacovigilance reporting guidance. `[VERIFY: decide whether the submission will use STROBE, RECORD/STROBE, READUS-PV support, or a combined checklist note.]` Data processing was performed with Python 3.11 and MySQL. `[VERIFY: operating environment, MySQL version, Python packages and versions, analysis code, random seeds where applicable, and quality-control checks.]`
 
 ## 3. Results
 
