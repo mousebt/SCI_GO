@@ -8,6 +8,10 @@
 
 [一篇论文 / 可能包含多篇论文 / 待用户确认]
 
+## 启动模式
+
+[auto / existing_zh_manuscript / materials_from_scratch；记录判断依据]
+
 ## 分类与缺失项
 
 [待填写]

@@ -31,6 +31,14 @@ foreach ($paper in $paperDirs) {
             $errors += "$($paper.Name): missing $relative"
         }
     }
+
+    $paperConfig = Join-Path $paper.FullName 'paper.yaml'
+    if (Test-Path -LiteralPath $paperConfig) {
+        $configText = Get-Content -Raw -Encoding UTF8 -LiteralPath $paperConfig
+        if ($configText -notmatch '(?m)^start_mode:\s*"?(auto|existing_zh_manuscript|materials_from_scratch)"?\s*$') {
+            $errors += "$($paper.Name): invalid or missing start_mode in paper.yaml"
+        }
+    }
 }
 
 $rootTemp = @(Get-ChildItem -LiteralPath $root -File -Force |

@@ -3,6 +3,7 @@
 不知道的内容可以留空；也可以完全不填写，由我从材料中识别后向你确认。
 
 - 暂定论文标题：
+- 启动模式（auto / existing_zh_manuscript / materials_from_scratch）：auto
 - 研究主题：
 - 论文类型（研究/方法/机制假设/算法/综述）：
 - 目标期刊：

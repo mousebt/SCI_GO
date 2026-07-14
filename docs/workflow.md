@@ -1,5 +1,13 @@
 # 标准写作流程
 
+## 选择启动模式
+
+- `existing_zh_manuscript`：先审计中文稿结构并锁定事实锚点，再按 SCI 章节职能重构英文稿；不是逐句翻译。
+- `materials_from_scratch`：先建立主张—证据表和论证链，再从 Results 开始撰写。
+- `auto`：根据材料完整度判断；不确定时由用户确认。
+
+详细规则见 `config/start-modes.md`。
+
 ## 启动
 
 运行 `scripts/new-paper.ps1` 后，完成研究简报。必须先明确核心主张、关键证据、边界、目标读者和目标期刊；信息缺失时只建立带占位符的提纲。

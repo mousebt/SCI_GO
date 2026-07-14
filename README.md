@@ -5,11 +5,12 @@
 ## 快速开始
 
 1. 把已有材料放进 `START_HERE/`，然后告诉我“材料已放好，请启动论文”。
-2. 我会先生成文件清单、识别是否包含多篇论文，再建立独立论文工作区并校验迁移材料。
-3. 你确认一句话论证、关键证据和边界后，我开始按证据优先顺序撰写。
-4. 正文只在对应论文的 `03_manuscript/` 中维护；重要节点用 Git 提交和标签固定。
-5. 预览临时文件清理：`powershell -ExecutionPolicy Bypass -File scripts/cleanup.ps1`；确认后加 `-Apply`。
-6. 项目结束时填写 `90_learning/lessons.csv`，再运行 `powershell -ExecutionPolicy Bypass -File scripts/sync-knowledge.ps1 -Apply`。
+2. 在 `START_HERE/PROJECT_INFO.md` 选择“已有中文稿改造”“从材料零起草”或保留 `auto`。
+3. 我会先生成文件清单、识别是否包含多篇论文，再建立独立论文工作区并校验迁移材料。
+4. 你确认一句话论证、关键证据和边界后，我开始按所选模式处理。
+5. 正文只在对应论文的 `03_manuscript/` 中维护；重要节点用 Git 提交和标签固定。
+6. 预览临时文件清理：`powershell -ExecutionPolicy Bypass -File scripts/cleanup.ps1`；确认后加 `-Apply`。
+7. 项目结束时填写 `90_learning/lessons.csv`，再运行 `powershell -ExecutionPolicy Bypass -File scripts/sync-knowledge.ps1 -Apply`。
 
 如果没有现成材料，也可以直接运行 `scripts/new-paper.ps1` 创建空白论文工作区。
 

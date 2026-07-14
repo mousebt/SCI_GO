@@ -3,9 +3,10 @@
 任何人或 AI 在处理论文任务前，按以下顺序读取：
 
 1. `config/writing-logic.md`
-2. `config/project-policy.md`
-3. `knowledge/validated/techniques.csv`
-4. 当前论文的 `paper.yaml`、`01_planning/research-brief.md`、术语表和主张—证据表
+2. `config/start-modes.md`
+3. `config/project-policy.md`
+4. `knowledge/validated/techniques.csv`
+5. 当前论文的 `paper.yaml`、`01_planning/research-brief.md`、术语表和主张—证据表
 
 默认使用已安装的 nature skills，并按任务选择最小必要 skill。不得虚构数据、引用、方法、统计量、机制或创新性。
 
@@ -27,7 +28,8 @@
 
 1. 先只读盘点文件名、类型、大小和 SHA-256，识别可能属于几篇论文；盘点完成前不得改名或删除原件。
 2. 若明显混有多篇论文，先按研究主题提出分组并让用户确认论文边界。
-3. 创建论文工作区，把材料复制到对应目录，并填写 `00_admin/intake-manifest.csv`。
-4. 校验复制件哈希与原件一致后，把迁移状态标记为 `verified`，随后删除 `START_HERE/` 中对应原件。
-5. 提取核心主张、证据、边界和术语，先向用户提交启动确认块；确认后才写完整正文。
-6. 用户已明确选择不保留原件。完成分类、哈希校验和清单记录后，应自动清理 `START_HERE/`；校验失败的文件不得删除。
+3. 读取 `START_HERE/PROJECT_INFO.md` 的启动模式。若为 `auto`，按 `config/start-modes.md` 判断并把最终模式写入 `paper.yaml`；判断不可靠时再询问用户。
+4. 创建论文工作区，把材料复制到对应目录，并填写 `00_admin/intake-manifest.csv`。
+5. 校验复制件哈希与原件一致后，把迁移状态标记为 `verified`，随后删除 `START_HERE/` 中对应原件。
+6. 按最终启动模式执行结构审计或从零论证构建，先向用户提交启动确认块；确认后才写完整正文。
+7. 用户已明确选择不保留原件。完成分类、哈希校验和清单记录后，应自动清理 `START_HERE/`；校验失败的文件不得删除。

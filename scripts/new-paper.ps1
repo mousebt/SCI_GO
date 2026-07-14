@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory = $true)][string]$Slug,
     [Parameter(Mandatory = $true)][string]$Title,
+    [ValidateSet('auto','existing_zh_manuscript','materials_from_scratch')][string]$StartMode = 'auto',
     [switch]$SkipKnowledgeSync
 )
 
@@ -48,9 +49,10 @@ $tokenFiles = @(
 
 foreach ($file in $tokenFiles) {
     $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file
-    $content = $content.Replace('__SLUG__', $Slug).Replace('__TITLE__', $Title).Replace('__DATE__', $date)
+    $content = $content.Replace('__SLUG__', $Slug).Replace('__TITLE__', $Title).Replace('__DATE__', $date).Replace('__START_MODE__', $StartMode)
     Set-Content -LiteralPath $file -Value $content -Encoding UTF8
 }
 
 Write-Output "Created paper workspace: $destination"
+Write-Output "Startup mode: $StartMode"
 Write-Output 'Next: complete 01_planning/research-brief.md, claim-evidence.csv, and terminology.csv.'

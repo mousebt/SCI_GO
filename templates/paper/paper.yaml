@@ -3,6 +3,7 @@ title: "__TITLE__"
 status: idea
 created: "__DATE__"
 writing_logic_version: "1.0.0"
+start_mode: "__START_MODE__"
 paper_type: research
 source_language: zh
 manuscript_language: en
