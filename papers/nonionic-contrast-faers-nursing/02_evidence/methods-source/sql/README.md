@@ -10,6 +10,10 @@ Current files:
 - `fit_weibull_tto.py` — default companion Python script for fitting Weibull shape/scale and 95% confidence intervals from the exported `res_v10_tto_weibull_input` table.
 - `fit_weibull_tto.R` — older R companion script retained for reproducibility history; use the Python script by default.
 
+Runtime note:
+
+- If MySQL reports `1071 - Specified key was too long; max key length is 3072 bytes`, use the current `submission_outputs_v10.sql`. Text indexes on PT/SOC/drug/group fields have been changed to prefix indexes such as `pt(191)`, `soc_en(191)` and `analysis_group(50)` to avoid oversized utf8mb4 indexes.
+
 Minimum expected contents before submission:
 
 - FAERS import or table-construction SQL, if available.

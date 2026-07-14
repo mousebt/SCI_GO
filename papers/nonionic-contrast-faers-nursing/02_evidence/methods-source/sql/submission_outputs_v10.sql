@@ -131,7 +131,7 @@ WHERE dr.role_cod = 'PS'
   AND d.fda_dt BETWEEN @START_DT AND @END_DT;
 
 CREATE INDEX idx_res_v10_drug_base_pid ON res_v10_drug_base(primaryid);
-CREATE INDEX idx_res_v10_drug_base_drug ON res_v10_drug_base(drugname);
+CREATE INDEX idx_res_v10_drug_base_drug ON res_v10_drug_base(drugname(100));
 
 INSERT INTO tmp_v10_log (step_info, row_count)
 SELECT 'Step 2: target primary-suspect drug reports',
@@ -155,7 +155,7 @@ SELECT DISTINCT
        fda_dt
 FROM res_v10_drug_base;
 
-CREATE INDEX idx_res_v10_analysis_base_group_pid ON res_v10_analysis_base(analysis_group, primaryid);
+CREATE INDEX idx_res_v10_analysis_base_group_pid ON res_v10_analysis_base(analysis_group(50), primaryid);
 
 INSERT INTO tmp_v10_log (step_info, row_count)
 SELECT 'Step 2b: pooled plus agent-specific analysis base rows',
@@ -180,8 +180,8 @@ WHERE r.pt IS NOT NULL
   AND r.pt != ''
   AND (@ENABLE_FILTER = 0 OR (ex_pt.pt_name IS NULL AND ex_soc.soc_name IS NULL));
 
-CREATE INDEX idx_res_v10_drug_reac_group_pt ON res_v10_drug_reac(analysis_group, pt);
-CREATE INDEX idx_res_v10_drug_reac_group_pid ON res_v10_drug_reac(analysis_group, primaryid);
+CREATE INDEX idx_res_v10_drug_reac_group_pt ON res_v10_drug_reac(analysis_group(50), pt(191));
+CREATE INDEX idx_res_v10_drug_reac_group_pid ON res_v10_drug_reac(analysis_group(50), primaryid);
 
 INSERT INTO tmp_v10_log (step_info, row_count)
 SELECT 'Step 3: target PT records after filters',
@@ -216,7 +216,7 @@ FROM res_v10_drug_reac
 GROUP BY analysis_group, pt
 HAVING COUNT(DISTINCT primaryid) >= @MIN_CASES;
 
-CREATE INDEX idx_tmp_v10_pt_a_group_pt ON tmp_v10_pt_a(analysis_group, pt);
+CREATE INDEX idx_tmp_v10_pt_a_group_pt ON tmp_v10_pt_a(analysis_group(50), pt(191));
 
 DROP TABLE IF EXISTS tmp_v10_pt_ac;
 CREATE TABLE tmp_v10_pt_ac AS
@@ -227,7 +227,7 @@ WHERE c.ym BETWEEN LEFT(@START_DT, 6) AND LEFT(@END_DT, 6)
   AND c.pt IN (SELECT DISTINCT pt FROM tmp_v10_pt_a)
 GROUP BY c.pt;
 
-CREATE INDEX idx_tmp_v10_pt_ac_pt ON tmp_v10_pt_ac(pt);
+CREATE INDEX idx_tmp_v10_pt_ac_pt ON tmp_v10_pt_ac(pt(191));
 
 INSERT INTO tmp_v10_log (step_info, row_count)
 SELECT 'Step 4: PT rows with a >= minimum count',
@@ -246,7 +246,7 @@ SELECT pt_name_en,
 FROM meddra_soc
 GROUP BY pt_name_en;
 
-CREATE INDEX idx_tmp_v10_meddra_map_pt ON tmp_v10_meddra_map(pt_name_en);
+CREATE INDEX idx_tmp_v10_meddra_map_pt ON tmp_v10_meddra_map(pt_name_en(191));
 
 -- ---------------------------------------------------------------------
 -- 6. PT signal table
@@ -330,7 +330,7 @@ FROM (
 ) m
 ORDER BY analysis_group, cases DESC;
 
-CREATE INDEX idx_res_v10_pt_signals_group_pt ON res_v10_pt_signals_all(analysis_group, pt);
+CREATE INDEX idx_res_v10_pt_signals_group_pt ON res_v10_pt_signals_all(analysis_group(50), pt(191));
 CREATE INDEX idx_res_v10_pt_signals_group_strict ON res_v10_pt_signals_all(analysis_group, is_strict_four_algorithm_signal);
 
 DROP TABLE IF EXISTS res_v10_pt_signals_core_ror_prr;
@@ -401,7 +401,7 @@ WHERE mh.soc_name_en IS NOT NULL
 GROUP BY rr.analysis_group, mh.soc_name_en
 HAVING COUNT(DISTINCT rr.primaryid) >= @MIN_CASES;
 
-CREATE INDEX idx_tmp_v10_soc_a_group_soc ON tmp_v10_soc_a(analysis_group, soc_en);
+CREATE INDEX idx_tmp_v10_soc_a_group_soc ON tmp_v10_soc_a(analysis_group(50), soc_en(191));
 
 DROP TABLE IF EXISTS tmp_v10_soc_ac;
 CREATE TABLE tmp_v10_soc_ac AS
@@ -412,7 +412,7 @@ WHERE ym BETWEEN LEFT(@START_DT, 6) AND LEFT(@END_DT, 6)
   AND soc_en IN (SELECT DISTINCT soc_en FROM tmp_v10_soc_a)
 GROUP BY soc_en;
 
-CREATE INDEX idx_tmp_v10_soc_ac_soc ON tmp_v10_soc_ac(soc_en);
+CREATE INDEX idx_tmp_v10_soc_ac_soc ON tmp_v10_soc_ac(soc_en(191));
 
 DROP TABLE IF EXISTS res_v10_soc_signals_all;
 CREATE TABLE res_v10_soc_signals_all AS
@@ -489,7 +489,7 @@ FROM (
 ) m
 ORDER BY analysis_group, cases DESC;
 
-CREATE INDEX idx_res_v10_soc_signals_group_soc ON res_v10_soc_signals_all(analysis_group, soc_en);
+CREATE INDEX idx_res_v10_soc_signals_group_soc ON res_v10_soc_signals_all(analysis_group(50), soc_en(191));
 
 DROP TABLE IF EXISTS res_v10_soc_signals_strict_positive;
 CREATE TABLE res_v10_soc_signals_strict_positive AS
@@ -566,7 +566,7 @@ WHERE d.event_dt REGEXP '^[0-9]{8}$'
   AND d.event_dt IS NOT NULL
 HAVING tto_days >= 0 AND tto_days <= 730;
 
-CREATE INDEX idx_res_v10_tto_base_group_days ON res_v10_tto_base(analysis_group, tto_days);
+CREATE INDEX idx_res_v10_tto_base_group_days ON res_v10_tto_base(analysis_group(50), tto_days);
 
 DROP TABLE IF EXISTS res_v10_tto_distribution;
 CREATE TABLE res_v10_tto_distribution AS
