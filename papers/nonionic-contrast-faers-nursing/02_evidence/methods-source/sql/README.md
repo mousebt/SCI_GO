@@ -2,6 +2,11 @@
 
 Place author-provided SQL statements and reproducible analysis notes here.
 
+Current files:
+
+- `单药挖掘最终优化版.sql` — author-provided FAERS disproportionality/TTO SQL, SHA-256 `4BCA601F8AEC454EC7C2747191B1C5C15BC5E33C811736F688B62C0E5BEA1342`.
+- `sql-audit-2026-07-14.md` — audit of what this SQL supports and what still needs export or correction.
+
 Minimum expected contents before submission:
 
 - FAERS import or table-construction SQL, if available.
@@ -11,4 +16,3 @@ Minimum expected contents before submission:
 - Query or export SQL for TTO cohort construction, if SQL was used.
 
 If a cleaning step was completed outside SQL, document it in `supplementary_cleaning_rules.md` rather than hiding it inside the manuscript prose.
-

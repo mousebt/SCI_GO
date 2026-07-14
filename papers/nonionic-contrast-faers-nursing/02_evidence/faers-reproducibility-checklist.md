@@ -14,17 +14,17 @@ FDA's official AEMS/FAERS quarterly data page lists 2025 Q4, with ASCII and XML 
 
 | Item | Author clarification | Manuscript handling | Status |
 |---|---|---|---|
-| Raw analysis scripts / SQL / reproducible workflow | SQL statements can be provided. | Archive SQL in `02_evidence/methods-source/sql/`; describe SQL pipeline in Methods and cite supplementary SQL file. | Pending author file |
+| Raw analysis scripts / SQL / reproducible workflow | SQL file provided: `单药挖掘最终优化版.sql`. | SQL archived in `02_evidence/methods-source/sql/`; audit saved in `sql-audit-2026-07-14.md`. | Partly resolved; execution outputs pending |
 | FAERS quarter download list and download dates | Need to know how to provide; check whether Nursing Open requires it. | Not found as a Nursing Open-specific requirement; still prepare a supplementary quarter inventory with quarter, FDA URL, file type, file name, download date, file size/hash if available, import status. | Needed for robustness |
 | 2025 Q4 release and inclusion | FDA official quarterly page lists 2025 Q4 ASCII/XML files. | State that 2025 Q4 was included only if the downloaded local file and import log confirm it. | Official availability verified; local inclusion pending |
 | Deduplication flow counts | Counts are in Figure 1 of the Chinese manuscript. | Extract pre-deduplication count, deduplicated count, deleted-case exclusion count and final included count into Results/Figure 1. | Source available; extraction pending |
-| Four-drug search dictionary | Dictionary is in SQL script; cleaning rules were completed earlier outside SQL. | Put dictionary in SQL archive and document non-SQL cleaning rules in a separate data-dictionary note. | Pending author file |
+| Four-drug search dictionary | SQL target list contains `Ioversol`, `Iohexol`, `Iopamidol`, `Iodixanol`; cleaning rules were completed earlier outside SQL. | SQL documents generic target names, but brand names/spelling variants/salts are likely upstream in `drug_clean`; document those non-SQL cleaning rules separately. | Partly resolved |
 | MedDRA version and mappings | MedDRA 28.0; PT mapping, old terms and SOC allocation used MedDRA default settings. | Methods can state MedDRA 28.0 and default PT/SOC mapping, but the exact software/source used for mapping should still be named if available. | Partly resolved |
-| ROR/PRR/BCPNN/MGPS formulae and thresholds | Formulae are already in the manuscript. | Keep formulae in Methods; complete the output tables, especially EBGM and EBGM05, before submission. | Formulae available; outputs pending |
+| ROR/PRR/BCPNN/MGPS formulae and thresholds | Formulae are already in the manuscript; SQL calculates ROR, PRR, chi-square, IC, IC025, EBGM and `EB05`. | Keep formulae in Methods; export `EB05 AS EBGM05`; resolve whether final signal criteria include IC025 and EB05, because current final export filters only ROR and PRR. | Partly resolved; criteria mismatch pending |
 | Separate results for four contrast agents | Not performed; can be performed if needed. | Recommended: keep pooled analysis as primary, add agent-specific results as sensitivity/supplement if SQL can produce stable counts. If not done, justify pooling and avoid between-agent comparative claims. | Decision/action pending |
 | 27 SOCs and 9 positive SOC values | To be provided after SQL runs. | Insert full SOC table, with 9 positive SOCs highlighted. | Pending SQL |
 | 24 positive PT table and MedDRA English names | To be provided after SQL runs. | Insert complete PT table and verify all English PT names against MedDRA 28.0. | Pending SQL |
-| TTO cleaning, fields, same-day events, median/IQR, Weibull parameters | No extra TTO cleaning; date fields were cleaned previously. | Methods should say TTO used pre-cleaned date fields; still requires exact date fields, partial-date rule, same-day definition, median/IQR and Weibull estimate/CI. | Partly resolved |
+| TTO cleaning, fields, same-day events, median/IQR, Weibull parameters | SQL uses `demo_clean.event_dt` and `ther.start_dt`, requires 8-digit dates, and retains `tto_days` 0-730. No extra TTO cleaning beyond this SQL filter is shown. | Methods can name the date fields and range filter; still requires same-day/24-hour export, median/IQR and Weibull estimate/CI. | Partly resolved |
 
 ## Recommended supplement files
 
@@ -35,4 +35,3 @@ FDA's official AEMS/FAERS quarterly data page lists 2025 Q4, with ASCII and XML 
 5. `supplementary_soc_full_results.csv`.
 6. `supplementary_pt_full_results.csv`.
 7. `supplementary_tto_analysis_output.csv`.
-
