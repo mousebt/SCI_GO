@@ -68,9 +68,9 @@ This was a retrospective pharmacovigilance study using spontaneous reports from 
 
 ### 2.2 Data source
 
-FAERS quarterly files from 2004 quarter 1 through 2025 quarter 4 were used. The source files comprised demographic and administrative information (DEMO), drug information (DRUG), adverse reactions (REAC), and patient outcomes (OUTC). `[VERIFY: date on which the 2025 Q4 files were downloaded and confirm that this quarter was publicly available and complete at extraction.]`
+FAERS quarterly files from 2004 quarter 1 through 2025 quarter 4 were used. The source files comprised demographic and administrative information (DEMO), drug information (DRUG), adverse reactions (REAC), and patient outcomes (OUTC). The FDA official quarterly data page listed 2025 quarter 4 ASCII and XML files at the time of verification. `[VERIFY: local download date, file integrity, and import log confirming that 2025 Q4 was fully included.]`
 
-Because the study period spans the legacy AERS and current FAERS formats, variable names and coding conventions were harmonised before quarterly files were merged. `[VERIFY: provide the exact harmonisation rules, quarter-level file inventory, and deletion-file handling.]`
+Because the study period spans the legacy AERS and current FAERS formats, variable names and coding conventions were harmonised before quarterly files were merged. Reproducible SQL statements and a quarter-level file inventory will be archived as supplementary methods material. `[AUTHOR INPUT REQUIRED: provide SQL files, download dates, quarter-level import status, and deletion-file handling output.]`
 
 ### 2.3 Local clinical nursing record source
 
@@ -80,25 +80,25 @@ The local review will be descriptive. If a complete denominator of total ICM adm
 
 ### 2.4 FAERS report identification and deduplication
 
-Eligible reports were those listing ioversol, iohexol, iopamidol, or iodixanol as the primary suspect drug. The source manuscript states that generic English names were used as search terms. `[VERIFY: supply the complete version-controlled dictionary of generic names, brand names, spelling variants, salts, and normalisation rules. Clarify whether combination products or ambiguous names were excluded.]`
+Eligible reports were those listing ioversol, iohexol, iopamidol, or iodixanol as the primary suspect drug. The drug-retrieval dictionary, including generic names, brand names, spelling variants, salts and exclusion terms, is maintained in the SQL source. Cleaning and normalisation rules completed outside SQL will be documented separately. `[AUTHOR INPUT REQUIRED: archive the SQL dictionary and non-SQL cleaning-rule note.]`
 
 Reports were deduplicated using CASEID, FDA_DT, and PRIMARYID in accordance with the procedure described by the FDA. For records sharing a CASEID, the report with the latest FDA_DT was retained; when CASEID and FDA_DT were identical, the record with the highest PRIMARYID was retained. Reports listed in deletion files were excluded. `[VERIFY: confirm that this procedure was applied consistently to every quarter and whether follow-up versions were linked before analysis.]`
 
 ### 2.5 Adverse-event coding
 
-Reported adverse events (AEs) were analysed at the Medical Dictionary for Regulatory Activities (MedDRA) preferred term (PT) and system organ class (SOC) levels. A single report could contain more than one PT; therefore, the number of AE records could exceed the number of reports. `[VERIFY: MedDRA version, mapping procedure, handling of legacy terms, and whether primary SOC or multiaxial SOC allocation was used.]`
+Reported adverse events (AEs) were analysed using Medical Dictionary for Regulatory Activities (MedDRA) version 28.0 at the preferred term (PT) and system organ class (SOC) levels. PT mapping, legacy-term handling and SOC allocation followed MedDRA default settings. A single report could contain more than one PT; therefore, the number of AE records could exceed the number of reports. `[VERIFY: name the MedDRA browser/software/export source used for final PT and SOC verification.]`
 
 ### 2.6 Disproportionality analysis
 
 Four complementary disproportionality methods were prespecified: the reporting odds ratio (ROR), proportional reporting ratio (PRR), Bayesian confidence propagation neural network information component (IC), and multi-item gamma Poisson shrinker empirical Bayes geometric mean (EBGM). A drug-event pair was defined as a signal only when it met the prespecified minimum case count and the positive thresholds for the required algorithms.
 
-The source manuscript lists the following screening rules: a minimum of three reports, lower 95% confidence limit for ROR greater than 1, PRR greater than 2 with chi-square at least 4, IC025 greater than 0, and EBGM05 greater than 2. `[VERIFY: reproduce the exact 2 x 2 table, equations, continuity corrections, comparator dataset, threshold logic, and whether all four algorithms - rather than a subset - were actually applied to the final tables.]`
+The source manuscript lists the following screening rules: a minimum of three reports, lower 95% confidence limit for ROR greater than 1, PRR greater than 2 with chi-square at least 4, IC025 greater than 0, and EBGM05 greater than 2. Formulae are retained in the manuscript methods, and complete algorithm outputs will be supplied in tables. `[AUTHOR INPUT REQUIRED: add EBGM and EBGM05 outputs to the SOC/PT tables and confirm the exact comparator background, 2 x 2 table and continuity correction.]`
 
-Signal magnitude was interpreted as the strength of disproportionate reporting, not as event probability, clinical severity, or causal effect. The current working draft treats the four contrast agents as a pooled ICM exposure group. `[VERIFY: provide agent-specific and sensitivity analyses if available; otherwise justify pooling and avoid comparative claims between agents.]`
+Signal magnitude was interpreted as the strength of disproportionate reporting, not as event probability, clinical severity, or causal effect. The current working draft treats the four contrast agents as a pooled ICM exposure group because agent-specific analyses have not yet been performed. If feasible, agent-specific outputs will be reported as sensitivity or supplementary analyses; otherwise, the manuscript will justify pooling and avoid comparative claims between agents.
 
 ### 2.7 Time-to-onset analysis
 
-TTO was calculated as the interval between the recorded treatment start date and AE onset date. Reports with missing, implausible, or negative intervals were excluded. TTO was summarised using descriptive statistics and modelled with a Weibull distribution. A shape parameter below 1 was interpreted as an early-failure pattern, indicating that reports with evaluable timing were concentrated early after administration. `[VERIFY: date fields used, imputation rules for partial dates, treatment of same-day events, time unit, maximum follow-up, median and interquartile range, Weibull confidence intervals, and fitting procedure.]`
+TTO was calculated using pre-cleaned date fields as the interval between the recorded treatment start date and AE onset date. No additional TTO-specific cleaning was performed after this pre-processing step. Reports with missing, implausible, or negative intervals were excluded. TTO was summarised using descriptive statistics and modelled with a Weibull distribution. A shape parameter below 1 was interpreted as an early-failure pattern, indicating that reports with evaluable timing were concentrated early after administration. `[AUTHOR INPUT REQUIRED: identify the exact date fields, pre-cleaning rules, partial-date rule, same-day-event definition, time unit, maximum follow-up, median and interquartile range, Weibull confidence intervals, and fitting procedure.]`
 
 ### 2.8 Local nursing record variables
 
@@ -118,7 +118,7 @@ The final manuscript will be checked against a relevant EQUATOR reporting checkl
 
 ### 3.1 Report selection and characteristics
 
-The source analysis retained 14,780 eligible FAERS reports for the four non-ionic iodinated contrast media (ICM). `[VERIFY: confirm the final flow diagram, quarter-level file inventory, deletion-file exclusions, and deduplication output.]` These reports contained 42,808 adverse-event (AE) records mapped to 951 Medical Dictionary for Regulatory Activities preferred terms (PTs) across 27 system organ classes (SOCs). `[VERIFY: confirm MedDRA version, PT/SOC mapping procedure, and whether primary SOC or multiaxial SOC allocation was used.]`
+The source analysis retained 14,780 eligible FAERS reports for the four non-ionic iodinated contrast media (ICM). The pre-deduplication count, post-deduplication count, deleted-case exclusions and final included count will be extracted from Figure 1 of the Chinese source manuscript and cross-checked against the SQL output. `[VERIFY: extract exact flow counts and quarter-level file inventory.]` These reports contained 42,808 adverse-event (AE) records mapped to 951 Medical Dictionary for Regulatory Activities preferred terms (PTs) across 27 system organ classes (SOCs) using MedDRA version 28.0 default PT/SOC mapping. `[VERIFY: final MedDRA English names and SOC allocation output.]`
 
 The demographic profile was incompletely reported, as expected in spontaneous-reporting data. Women accounted for 6,932 reports (46.90%), men for 5,137 (34.76%), and sex was unknown in 2,711 (18.34%). Age was reported as below 18 years in 269 reports (1.82%), 18-59 years in 5,355 (36.23%), and 60 years or older in 4,980 (33.69%); age was missing in 4,176 reports (28.25%). The United States was the most frequently reported country (5,895; 39.88%), followed by China (1,386; 9.38%) and Japan (1,016; 6.87%). `[VERIFY: confirm denominators, age-category coding, country coding, and reporter-category output.]`
 

@@ -2,6 +2,7 @@
 
 | 日期 | 文件/章节 | 变更及理由 | 证据或评审意见 | 影响范围 | 批准人/记录 |
 |---|---|---|---|---|---|
+| 2026-07-14 | FAERS reproducibility evidence | Added an itemized reproducibility checklist and SQL archive location; updated Methods to reflect author clarifications on SQL source, Figure 1 flow counts, MedDRA 28.0 default mapping, pooled four-agent analysis, and pre-cleaned TTO date fields | User supplied clarifications on 2026-07-14; FDA official AEMS/FAERS page verified 2025 Q4 file availability; Nursing Open-specific FAERS precedent not found in direct searches | Methods, Results placeholders, supplementary-material plan; no new numerical results invented | User instruction on 2026-07-14 |
 | 2026-07-14 | 全文结构 | 将已有中文稿重构为期刊中立的英文 SCI 研究论文 v0.1 | 用户批准先修改论文、期刊后议 | 全文 | APR-20260714-095357-b3a51c |
 | 2026-07-14 | 标题、摘要、结论 | 删除护理干预可降低事件的因果性表述，限定为 FAERS 报告信号和护理监测启示 | FAERS 无暴露分母且本研究未测试干预 | 核心主张 | APR-20260714-095357-b3a51c |
 | 2026-07-14 | 方法 | 增设 AERS/FAERS 字段统一、药名词典、MedDRA版本、四算法、TTO清洗、伦理和软件复现缺口 | READUS-PV导向的可复现性审计 | 方法与补充材料 | APR-20260714-095357-b3a51c |
