@@ -10,7 +10,7 @@
 | SCI/SCIE status | SCIE/SSCI indexing to recheck before submission |
 | Latest verified IF/JIF | 2.3 in prior 2026-07-14 evaluation; recheck before submission |
 | Publication model | Fully open access |
-| APC | USD 3,560 in prior 2026-07-14 evaluation; mandatory for standard OA publication, recheck before submission |
+| APC | USD 3,560 in prior 2026-07-14 evaluation; mandatory for standard OA publication; author confirmed this amount is acceptable on 2026-07-14; recheck before submission |
 | Subscription route without APC | No |
 | Last checked | 2026-07-14 |
 | Next review | 2026-10-14 |
@@ -42,12 +42,12 @@ See `journals/requirements/nursing-open.md`.
 | Acceptance-rate evidence | Prior evaluation recorded official acceptance rate as 11%; recheck before submission |
 | Scope-match evidence | Better nursing identity than CMS, but weaker method-design fit |
 | Article-type constraints | Manual Wiley author-guideline verification required |
-| Cost barrier | Mandatory APC route; current route chosen despite APC because JAN route is less acceptable |
+| Cost barrier | Mandatory APC route; author confirmed USD 3,560 is acceptable, while JAN was reported as approximately USD 5,500 and too high |
 | Recent comparable papers | Not yet searched; recommended before final conversion |
 
 ## Decision notes
 
-- Best use case: author wants a nursing-journal first attempt and accepts mandatory OA/APC.
+- Best use case: author wants a nursing-journal first attempt and accepts Nursing Open's mandatory OA/APC.
 - Avoid when: budget becomes the main constraint, or the author wants the lowest modification burden.
 - Recheck before submission: APC, current IF/JIF/indexing, article type, word limits, abstract format, ethics/data statements, and whether the manuscript needs a reporting checklist.
 

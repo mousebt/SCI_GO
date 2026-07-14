@@ -10,7 +10,7 @@
 | SCI/SCIE status | To verify via official indexing before submission |
 | Latest verified IF/JIF | To verify; automated access to Wiley/JCR data was not available in this session |
 | Publication model | Hybrid, pending final Wiley page verification |
-| APC | Unknown; optional OA price must be verified in Wiley submission/OA page |
+| APC | Unknown from captured official page; author reported approximately USD 5,500 on 2026-07-14, which is too high for the current first route |
 | Subscription route without APC | Expected yes for traditional publication, but verify before submission |
 | Last checked | 2026-07-14 |
 | Next review | 2026-10-14 |
@@ -48,10 +48,10 @@ See `journals/requirements/journal-of-advanced-nursing.md`.
 
 ## Decision notes
 
-- Best use case: the author deliberately wants to foreground nursing identity and is willing to accept a high desk-reject risk before falling back to a better method-fit journal.
+- Best use case: the author deliberately wants to foreground nursing identity and is willing to accept a high desk-reject risk and substantially higher APC exposure before falling back to a better method-fit journal.
 - Avoid when: the priority is lowest modification burden or highest near-term acceptance probability.
 - Recheck before submission: official author guidelines, manuscript type, word/abstract/table limits, reporting checklist, APC/OA route, indexing, IF/JIF, and any nursing-specific contribution requirements.
 
 ## Current project route
 
-For `papers/nonionic-contrast-faers-nursing`, the approved route as of 2026-07-14 is: submit one JAN-facing version first; if rejected or desk-rejected, retarget to Current Medical Science by restoring a broader medical pharmacovigilance framing.
+For `papers/nonionic-contrast-faers-nursing`, the JAN-first route was superseded on 2026-07-14 because the author reported JAN APC around USD 5,500 and too high. The current approved route is Nursing Open first, then Current Medical Science fallback.

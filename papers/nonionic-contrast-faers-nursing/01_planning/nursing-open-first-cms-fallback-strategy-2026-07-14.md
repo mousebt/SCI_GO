@@ -13,9 +13,11 @@ The current author-approved route is:
 
 This supersedes the previous Journal of Advanced Nursing-first route because the author judged the JAN APC/route to be too costly.
 
+Cost rationale recorded from the author on 2026-07-14: Nursing Open APC of USD 3,560 is acceptable; Journal of Advanced Nursing was reported by the author as approximately USD 5,500 and is not acceptable for the first route.
+
 ## Why Nursing Open is now first
 
-Nursing Open preserves the nursing-journal identity while being more explicit as an open-access nursing outlet already in the current journal library. It still carries a mandatory APC, but it is the selected first target after the author rejected the JAN route on cost grounds.
+Nursing Open preserves the nursing-journal identity while being more explicit as an open-access nursing outlet already in the current journal library. It carries a mandatory APC, but the recorded USD 3,560 cost is within the author's acceptable range. It is the selected first target after the author rejected the JAN route on cost grounds.
 
 This is a nursing-identity route, not the lowest-risk route. CMS remains the lower-modification and better method-fit fallback.
 
@@ -67,10 +69,9 @@ The Wiley journal at `https://onlinelibrary.wiley.com/journal/13652702` has been
 Before submission, manually verify from the live Wiley site:
 
 - latest IF/JIF and indexing;
+- current APC and any institutional waiver/discount route, although USD 3,560 has been recorded as acceptable by the author;
 - article type and word limits;
 - abstract format;
 - table/figure limits;
 - reference style;
 - ethics/data/COI/funding/author contribution requirements;
-- APC and any institutional waiver/discount route.
-
