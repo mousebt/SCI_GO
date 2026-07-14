@@ -26,7 +26,7 @@ Adverse events were analysed using Medical Dictionary for Regulatory Activities 
 
 ### Results
 
-The source analysis retained 14,780 eligible reports, 42,808 adverse-event records and 951 preferred terms. Twenty-four preferred terms met the stated signal criteria. Extravasation-related terms showed the strongest disproportionality. Shock, acute pulmonary oedema, renal tubular necrosis, dyspnoea and acute kidney injury were also clinically relevant. Among 12,588 reports with evaluable timing, 81.56% occurred within 24 hours. Local data are pending. `[VERIFY all FAERS and local data.]`
+The source analysis retained 14,780 eligible reports, 42,808 adverse-event records and 951 preferred terms. The Chinese source manuscript reported positive preferred-term signals, with the extracted displayed table currently showing 20 positive rows pending SQL verification. Extravasation-related terms showed the strongest disproportionality. Shock, acute pulmonary oedema, renal tubular necrosis, dyspnoea and acute kidney injury were also clinically relevant. Among 12,588 reports with evaluable timing, 81.56% occurred within 24 hours. Local data are pending. `[VERIFY all FAERS and local data; reconcile the source statement of 24 positive PTs with the 20 displayed rows extracted from the Word table.]`
 
 ### Conclusion
 
@@ -122,7 +122,7 @@ The source analysis retained 14,780 eligible FAERS reports for the four non-ioni
 
 The demographic profile was incompletely reported, as expected in spontaneous-reporting data. Women accounted for 6,932 reports (46.90%), men for 5,137 (34.76%), and sex was unknown in 2,711 (18.34%). Age was reported as below 18 years in 269 reports (1.82%), 18-59 years in 5,355 (36.23%), and 60 years or older in 4,980 (33.69%); age was missing in 4,176 reports (28.25%). The United States was the most frequently reported country (5,895; 39.88%), followed by China (1,386; 9.38%) and Japan (1,016; 6.87%). `[VERIFY: confirm denominators, age-category coding, country coding, and reporter-category output.]`
 
-The five most frequently reported PTs in the source frequency table were pruritus (1,744; 11.80%), dyspnoea (1,612; 10.91%), erythema (1,012; 6.85%), nausea (888; 6.01%), and vomiting (818; 5.53%). The Chinese source table labelled these PTs as "indications"; this label should be corrected to "preferred terms" throughout the manuscript. `[VERIFY: nausea appears in the frequency table but not among the 24 positive-signal PTs; clarify that frequency and signal positivity are different analyses.]`
+The five most frequently reported PTs in the source frequency table were pruritus (1,744; 11.80%), dyspnoea (1,612; 10.91%), erythema (1,012; 6.85%), nausea (888; 6.01%), and vomiting (818; 5.53%). The Chinese source table labelled these PTs as "indications"; this label should be corrected to "preferred terms" throughout the manuscript. `[VERIFY: nausea appears in the frequency table but not in the extracted positive-signal table; clarify that frequency and signal positivity are different analyses.]`
 
 ### 3.2 SOC-level disproportionality signals
 
@@ -130,9 +130,9 @@ Nine SOCs reportedly met the prespecified screening criteria. `[VERIFY: insert t
 
 ### 3.3 PT-level disproportionality signals
 
-Twenty-four PTs were reported as positive disproportionality signals. The strongest displayed ROR estimates were observed for extravasation-related PTs: extravasation (n = 254; ROR 93.69, 95% CI 82.42-106.49), infusion-site extravasation (n = 73; ROR 16.81, 95% CI 13.33-21.18), administration-site extravasation (n = 9; ROR 13.60, 95% CI 7.05-26.23), and injection-site extravasation (n = 97; ROR 10.89, 95% CI 8.91-13.31). Shock was also among the strongest displayed PT-level signals (n = 169; ROR 10.77, 95% CI 9.25-12.54). `[VERIFY: confirm PT names against MedDRA, all counts, all confidence intervals, and whether the displayed ROR values correspond to pooled or agent-specific analyses.]`
+The extracted Chinese source table currently displays 20 positive PT-level disproportionality rows, although the working source narrative has referred to 24 positive PTs. The strongest displayed ROR estimates were observed for extravasation-related PTs: extravasation (n = 254; ROR 93.69, 95% CI 82.42-106.49), infusion-site extravasation (n = 73; ROR 16.81, 95% CI 13.33-21.18), administration-site extravasation (n = 9; ROR 13.60, 95% CI 7.05-26.23), and injection-site extravasation (n = 97; ROR 10.89, 95% CI 8.91-13.31). Shock was also among the strongest displayed PT-level signals (n = 169; ROR 10.77, 95% CI 9.25-12.54). `[VERIFY: reconcile the 20 displayed rows versus 24 stated signals; confirm PT names against MedDRA, all counts, all confidence intervals, and whether the displayed ROR values correspond to pooled or agent-specific analyses.]`
 
-Other clinically important PT-level signals included acute pulmonary oedema, renal tubular necrosis, cardiac arrest, dyspnoea, hypotension, and acute kidney injury. `[VERIFY: provide the complete 24-PT table, including PRR, IC, and EBGM outputs. The current source material mentions four algorithms but does not display complete EBGM evidence.]` These results identify signals of disproportionate reporting in FAERS; they do not estimate event incidence, clinical severity, comparative drug safety, or individual-level causality.
+Other clinically important PT-level signals included acute pulmonary oedema, renal tubular necrosis, cardiac arrest, dyspnoea, hypotension, and acute kidney injury. `[VERIFY: provide the final complete PT table, including PRR, IC, EBGM and EBGM05 outputs. The current Chinese source table displays ROR, PRR and IC but does not display complete EBGM evidence.]` These results identify signals of disproportionate reporting in FAERS; they do not estimate event incidence, clinical severity, comparative drug safety, or individual-level causality.
 
 ### 3.4 Nursing-relevant signal clusters
 
