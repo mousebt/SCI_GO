@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-134853-233bfc"
 created_at: "2026-07-14T13:48:53+08:00"
-updated_at: "2026-07-14T13:48:53+08:00"
-status: pending
+updated_at: "2026-07-14T14:37:26+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ A. Current Medical Science 首投，Journal of Patient Safety 备投；B. 优先
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+把**JOURNAL OF ADVANCED NURSING纳入进来考虑，先投一稿这个，不行就改投CMS**
+
+### Decision and resolution
+
+- Decision: revised
+- Recorded at: 2026-07-14T14:37:26+08:00
+- Resolution: User changed target route from CMS first / JPS backup to considering Journal of Advanced Nursing as the first submission target with Current Medical Science as fallback. A new paper-level decision log will be created for the revised route after JAN facts are verified.
+
 

@@ -206,3 +206,7 @@
 - [Japan Journal of Nursing Science：作者指南](https://onlinelibrary.wiley.com/page/journal/17427924/homepage/forauthors.html)
 - [Japan Journal of Nursing Science：Wiley索引信息](https://onlinelibrary.wiley.com/page/journal/17427924/homepage/productinformation.html)
 - [Nursing & Health Sciences：范围及官方指标](https://onlinelibrary.wiley.com/journal/14422018)
+
+## 2026-07-14 current route update
+
+Author-approved route: first submit a Journal of Advanced Nursing-facing version; if rejected or desk-rejected, retarget to Current Medical Science. Decision record: APR-20260714-143914-2d163b. JAN preserves nursing identity better but is a high-risk first shot because the current study is FAERS pharmacovigilance without direct nursing workflow, nurse sample, intervention, or nursing outcome data. CMS remains the lower-modification and better method-fit fallback. Detailed route file: papers/nonionic-contrast-faers-nursing/01_planning/jan-first-cms-fallback-strategy-2026-07-14.md.

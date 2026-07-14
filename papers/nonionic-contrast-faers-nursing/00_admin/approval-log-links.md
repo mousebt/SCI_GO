@@ -12,4 +12,5 @@
 | APR-20260714-103756-60dc1a | 2026-07-14 | Nursing non-OA SCI submission sequence | revised | logs/approvals/2026/07/APR-20260714-103756-60dc1a-nursing-non-oa-sci-submission-sequence.md |
 | APR-20260714-104115-0c930b | 2026-07-14 | Mixed-scope hybrid SCI submission sequence | revised | logs/approvals/2026/07/APR-20260714-104115-0c930b-mixed-scope-hybrid-sci-submission-sequence.md |
 | APR-20260714-111137-80bc6d | 2026-07-14 | Ten-journal SCI submission ladder | revised | logs/approvals/2026/07/APR-20260714-111137-80bc6d-ten-journal-sci-submission-ladder.md |
-| APR-20260714-134853-233bfc | 2026-07-14 | Four-journal final target recommendation | pending | logs/approvals/2026/07/APR-20260714-134853-233bfc-four-journal-final-target-recommendation.md |
+| APR-20260714-134853-233bfc | 2026-07-14 | Four-journal final target recommendation | revised | logs/approvals/2026/07/APR-20260714-134853-233bfc-four-journal-final-target-recommendation.md |
+| APR-20260714-143914-2d163b | 2026-07-14 | JAN-first then CMS fallback target route | approved | logs/approvals/2026/07/APR-20260714-143914-2d163b-jan-first-then-cms-fallback-target-route.md |
