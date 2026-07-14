@@ -8,7 +8,7 @@ Use status: provisional manuscript source tables. Values should be verified agai
 
 ## Extraction note
 
-The Word source contains three tables. Table 3, as extracted from the Word file, contains 20 displayed positive PT rows. This differs from the working manuscript statement that 24 PTs were positive. Treat the final number of positive PTs as unresolved until SQL output is available.
+The Word source contains three tables. Table 3, as extracted from the Word file, contains 20 displayed positive PT rows. The author clarified that the full SQL result contains 24 positive PTs and that the Chinese manuscript table displays 20 rows by table-presentation convention. Treat the final complete PT list as SQL-derived and pending rerun/export.
 
 ## Table 1. Report characteristics and frequent preferred terms
 
@@ -78,4 +78,3 @@ Note: the Chinese table label `适应症` should be interpreted cautiously. In t
 | 呕吐 | 818 | 2.58 (2.40, 2.76) | 2.49(744.09) | 1.31(1.24) |
 | 血肌酐升高 | 114 | 2.47 (2.05, 2.97) | 2.45(98.43) | 1.29(1.11) |
 | 弥散性血管内凝血 | 25 | 2.47 (1.67, 3.66) | 2.47(21.87) | 1.3(0.9) |
-

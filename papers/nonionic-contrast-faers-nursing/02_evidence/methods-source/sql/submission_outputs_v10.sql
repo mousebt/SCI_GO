@@ -6,6 +6,8 @@
 --   3) Export EBGM and EB05 as EBGM05.
 --   4) Provide both strict four-algorithm and core ROR/PRR signal flags.
 --   5) Export complete PT, positive PT, SOC, TTO and reproducibility log tables.
+--   6) Export true SOC-level disproportionality tables for all SOCs, not only
+--      PT-derived SOC summaries.
 --
 -- This script is derived from the author-provided:
 --   单药挖掘最终优化版.sql
@@ -253,6 +255,7 @@ CREATE INDEX idx_tmp_v10_meddra_map_pt ON tmp_v10_meddra_map(pt_name_en);
 DROP TABLE IF EXISTS res_v10_pt_signals_all;
 CREATE TABLE res_v10_pt_signals_all AS
 SELECT
+    m.pt AS pt_standard_en,
     m.*,
     IF(a >= @MIN_CASES AND ROR_025 > 1, 1, 0) AS is_ror_signal,
     IF(a >= @MIN_CASES AND PRR >= 2 AND chi_squared >= 4, 1, 0) AS is_prr_signal,
@@ -355,6 +358,155 @@ SELECT 'Step 6b: strict four-algorithm PT signal rows',
 -- ---------------------------------------------------------------------
 -- 7. SOC summary outputs
 -- ---------------------------------------------------------------------
+-- Two SOC outputs are generated:
+--   A) res_v10_soc_signals_all: true SOC-level disproportionality analysis.
+--      This is the "complete SOC table" for manuscript/supplement use.
+--   B) res_v10_soc_summary_all: PT-derived SOC summary, useful for checking
+--      how many positive PTs fall under each SOC.
+
+-- 7A. True SOC-level disproportionality analysis
+
+CREATE TABLE IF NOT EXISTS cache_soc_stats_v2 (
+    ym CHAR(6) NOT NULL,
+    soc_en VARCHAR(255) NOT NULL,
+    case_count INT NOT NULL,
+    PRIMARY KEY (ym, soc_en),
+    INDEX idx_soc_en (soc_en)
+) DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO cache_soc_stats_v2 (ym, soc_en, case_count)
+SELECT LEFT(d.fda_dt, 6) AS ym,
+       mh.soc_name_en AS soc_en,
+       COUNT(DISTINCT r.primaryid) AS case_count
+FROM demo_clean d
+JOIN reac r ON d.primaryid = r.primaryid
+JOIN meddra_soc mh ON r.pt = mh.pt_name_en
+WHERE d.fda_dt BETWEEN @START_DT AND @END_DT
+  AND r.pt IS NOT NULL
+  AND r.pt != ''
+  AND mh.soc_name_en IS NOT NULL
+  AND NOT EXISTS (SELECT 1 FROM cache_soc_stats_v2 LIMIT 1)
+GROUP BY LEFT(d.fda_dt, 6), mh.soc_name_en;
+
+DROP TABLE IF EXISTS tmp_v10_soc_a;
+CREATE TABLE tmp_v10_soc_a AS
+SELECT
+    rr.analysis_group,
+    mh.soc_name_en AS soc_en,
+    MIN(mh.soc_name_cn) AS soc_cn,
+    COUNT(DISTINCT rr.primaryid) AS a
+FROM res_v10_drug_reac rr
+JOIN meddra_soc mh ON rr.pt = mh.pt_name_en
+WHERE mh.soc_name_en IS NOT NULL
+GROUP BY rr.analysis_group, mh.soc_name_en
+HAVING COUNT(DISTINCT rr.primaryid) >= @MIN_CASES;
+
+CREATE INDEX idx_tmp_v10_soc_a_group_soc ON tmp_v10_soc_a(analysis_group, soc_en);
+
+DROP TABLE IF EXISTS tmp_v10_soc_ac;
+CREATE TABLE tmp_v10_soc_ac AS
+SELECT soc_en,
+       SUM(case_count) AS a_plus_c
+FROM cache_soc_stats_v2
+WHERE ym BETWEEN LEFT(@START_DT, 6) AND LEFT(@END_DT, 6)
+  AND soc_en IN (SELECT DISTINCT soc_en FROM tmp_v10_soc_a)
+GROUP BY soc_en;
+
+CREATE INDEX idx_tmp_v10_soc_ac_soc ON tmp_v10_soc_ac(soc_en);
+
+DROP TABLE IF EXISTS res_v10_soc_signals_all;
+CREATE TABLE res_v10_soc_signals_all AS
+SELECT
+    m.*,
+    IF(a >= @MIN_CASES AND ROR_025 > 1, 1, 0) AS is_ror_signal,
+    IF(a >= @MIN_CASES AND PRR >= 2 AND chi_squared >= 4, 1, 0) AS is_prr_signal,
+    IF(a >= @MIN_CASES AND IC025 > 0, 1, 0) AS is_bcpnn_signal,
+    IF(a >= @MIN_CASES AND EBGM05 >= 2, 1, 0) AS is_mgps_signal,
+    IF(a >= @MIN_CASES AND ROR_025 > 1 AND PRR >= 2 AND chi_squared >= 4, 1, 0) AS is_core_ror_prr_signal,
+    IF(a >= @MIN_CASES AND ROR_025 > 1 AND PRR >= 2 AND chi_squared >= 4 AND IC025 > 0 AND EBGM05 >= 2, 1, 0) AS is_strict_four_algorithm_signal,
+    IF(ROR IS NOT NULL, CONCAT(FORMAT(ROR, 2), ' (', FORMAT(ROR_025, 2), ', ', FORMAT(ROR_975, 2), ')'), NULL) AS ror_95ci_range
+FROM (
+    SELECT
+        base.analysis_group,
+        base.soc_en,
+        base.soc_cn,
+        base.a AS cases,
+        base.a,
+        base.b,
+        base.c,
+        base.d,
+        base.n_drug AS a_plus_b,
+        base.a_plus_c,
+        base.n_total AS a_plus_b_plus_c_plus_d,
+        ROUND(IF(base.a_plus_c > base.a AND base.n_drug > base.a,
+            (CAST(base.a AS DOUBLE) * base.d) / (CAST(base.b AS DOUBLE) * base.c),
+            NULL), 2) AS ROR,
+        ROUND(IF(base.a > 0 AND base.b > 0 AND base.c > 0 AND base.d > 0,
+            EXP(LOG((CAST(base.a AS DOUBLE) * base.d) / (CAST(base.b AS DOUBLE) * base.c))
+                - 1.96 * SQRT(1.0/base.a + 1.0/base.b + 1.0/base.c + 1.0/base.d)),
+            NULL), 2) AS ROR_025,
+        ROUND(IF(base.a > 0 AND base.b > 0 AND base.c > 0 AND base.d > 0,
+            EXP(LOG((CAST(base.a AS DOUBLE) * base.d) / (CAST(base.b AS DOUBLE) * base.c))
+                + 1.96 * SQRT(1.0/base.a + 1.0/base.b + 1.0/base.c + 1.0/base.d)),
+            NULL), 2) AS ROR_975,
+        ROUND(IF(base.a_plus_c > base.a,
+            (CAST(base.a AS DOUBLE) / base.n_drug) / (CAST(base.c AS DOUBLE) / (base.n_total - base.n_drug)),
+            NULL), 2) AS PRR,
+        ROUND(IF(
+            (CAST((base.a + base.b) AS DOUBLE) * CAST((base.c + base.d) AS DOUBLE) *
+             CAST((base.a + base.c) AS DOUBLE) * CAST((base.b + base.d) AS DOUBLE)) > 0,
+            (CAST(base.n_total AS DOUBLE) * POW(ABS(CAST(base.a AS DOUBLE) * base.d - CAST(base.b AS DOUBLE) * base.c), 2))
+            / (CAST((base.a + base.b) AS DOUBLE) * CAST((base.c + base.d) AS DOUBLE) *
+               CAST((base.a + base.c) AS DOUBLE) * CAST((base.b + base.d) AS DOUBLE)),
+            0), 2) AS chi_squared,
+        ROUND(LOG2((CAST(base.a AS DOUBLE) * base.n_total) / (CAST(base.n_drug AS DOUBLE) * base.a_plus_c)), 2) AS IC,
+        ROUND(LOG2((CAST(base.a AS DOUBLE) * base.n_total) / (CAST(base.n_drug AS DOUBLE) * base.a_plus_c))
+            - 2.0 * SQRT(1.0/base.a + 1.0/(base.n_drug - base.a) + 1.0/(base.a_plus_c - base.a) + 1.0/(base.n_total - base.a_plus_c - (base.n_drug - base.a))), 2) AS IC025,
+        ROUND((CAST(base.n_drug AS DOUBLE) * base.a_plus_c) / base.n_total, 4) AS expected_E,
+        ROUND((base.a + 0.5) / ((CAST(base.n_drug AS DOUBLE) * base.a_plus_c) / base.n_total + 0.5), 2) AS EBGM,
+        ROUND(EXP(LOG((base.a + 0.5) / ((CAST(base.n_drug AS DOUBLE) * base.a_plus_c) / base.n_total + 0.5))
+            - 1.645 * SQRT(1.0/base.a + 0.1)), 2) AS EBGM05
+    FROM (
+        SELECT
+            sa.analysis_group,
+            sa.soc_en,
+            sa.soc_cn,
+            sa.a,
+            nd.n_drug,
+            sac.a_plus_c,
+            nt.n_total,
+            CAST((nd.n_drug - sa.a) AS SIGNED) AS b,
+            CAST((sac.a_plus_c - sa.a) AS SIGNED) AS c,
+            CAST((nt.n_total - sac.a_plus_c - (nd.n_drug - sa.a)) AS SIGNED) AS d
+        FROM tmp_v10_soc_a sa
+        JOIN tmp_v10_n_drug nd ON sa.analysis_group = nd.analysis_group
+        JOIN tmp_v10_soc_ac sac ON sa.soc_en = sac.soc_en
+        CROSS JOIN tmp_v10_n_total nt
+        WHERE (nd.n_drug - sa.a) > 0
+          AND (sac.a_plus_c - sa.a) > 0
+          AND (nt.n_total - sac.a_plus_c - (nd.n_drug - sa.a)) > 0
+    ) base
+) m
+ORDER BY analysis_group, cases DESC;
+
+CREATE INDEX idx_res_v10_soc_signals_group_soc ON res_v10_soc_signals_all(analysis_group, soc_en);
+
+DROP TABLE IF EXISTS res_v10_soc_signals_strict_positive;
+CREATE TABLE res_v10_soc_signals_strict_positive AS
+SELECT *
+FROM res_v10_soc_signals_all
+WHERE is_strict_four_algorithm_signal = 1
+ORDER BY analysis_group, ROR DESC;
+
+INSERT INTO tmp_v10_log (step_info, row_count)
+SELECT 'Step 7A: complete SOC-level signal rows',
+       COUNT(*) FROM res_v10_soc_signals_all;
+
+INSERT INTO tmp_v10_log (step_info, row_count)
+SELECT 'Step 7A2: strict four-algorithm SOC signal rows',
+       COUNT(*) FROM res_v10_soc_signals_strict_positive;
+
+-- 7B. PT-derived SOC summary
 
 DROP TABLE IF EXISTS res_v10_soc_summary_all;
 CREATE TABLE res_v10_soc_summary_all AS
@@ -472,6 +624,23 @@ FROM tmp_v10_tto_ordered o
 GROUP BY o.analysis_group
 ORDER BY o.analysis_group;
 
+DROP TABLE IF EXISTS res_v10_tto_weibull_input;
+CREATE TABLE res_v10_tto_weibull_input AS
+SELECT
+    analysis_group,
+    primaryid,
+    tto_days,
+    CASE
+        WHEN tto_days = 0 THEN 0.5
+        ELSE CAST(tto_days AS DOUBLE)
+    END AS tto_days_for_weibull,
+    event_dt,
+    start_dt,
+    'Day-level FAERS dates: same-day events coded as 0.5 day for Weibull fitting; verify this convention before final submission.' AS weibull_time_convention
+FROM res_v10_tto_base
+WHERE tto_days IS NOT NULL
+  AND tto_days >= 0;
+
 INSERT INTO tmp_v10_log (step_info, row_count)
 SELECT 'Step 8: evaluable TTO report rows',
        COUNT(*) FROM res_v10_tto_base;
@@ -484,7 +653,7 @@ SELECT 'Step 8: evaluable TTO report rows',
 SELECT * FROM tmp_v10_log ORDER BY step_id;
 
 SELECT
-    analysis_group, pt, pt_cn, soc_en, soc_cn,
+    analysis_group, pt_standard_en, pt, pt_cn, soc_en, soc_cn,
     cases, a, b, c, d,
     a_plus_b, a_plus_c, a_plus_b_plus_c_plus_d,
     ROR, ROR_025, ROR_975, ror_95ci_range,
@@ -497,7 +666,7 @@ FROM res_v10_pt_signals_all
 ORDER BY analysis_group, cases DESC, ROR DESC;
 
 SELECT
-    analysis_group, pt, pt_cn, soc_en, soc_cn,
+    analysis_group, pt_standard_en, pt, pt_cn, soc_en, soc_cn,
     cases, a, b, c, d,
     ROR, ROR_025, ROR_975, ror_95ci_range,
     PRR, chi_squared,
@@ -512,6 +681,31 @@ SELECT * FROM res_v10_soc_summary_all;
 
 SELECT * FROM res_v10_soc_summary_strict_positive;
 
+SELECT
+    analysis_group, soc_en, soc_cn,
+    cases, a, b, c, d,
+    a_plus_b, a_plus_c, a_plus_b_plus_c_plus_d,
+    ROR, ROR_025, ROR_975, ror_95ci_range,
+    PRR, chi_squared,
+    IC, IC025,
+    expected_E, EBGM, EBGM05,
+    is_ror_signal, is_prr_signal, is_bcpnn_signal, is_mgps_signal,
+    is_core_ror_prr_signal, is_strict_four_algorithm_signal
+FROM res_v10_soc_signals_all
+ORDER BY analysis_group, cases DESC, ROR DESC;
+
+SELECT
+    analysis_group, soc_en, soc_cn,
+    cases, a, b, c, d,
+    ROR, ROR_025, ROR_975, ror_95ci_range,
+    PRR, chi_squared,
+    IC, IC025,
+    expected_E, EBGM, EBGM05,
+    is_ror_signal, is_prr_signal, is_bcpnn_signal, is_mgps_signal,
+    is_core_ror_prr_signal, is_strict_four_algorithm_signal
+FROM res_v10_soc_signals_strict_positive
+ORDER BY analysis_group, ROR DESC;
+
 SELECT * FROM res_v10_tto_summary;
 
 SELECT * FROM res_v10_tto_distribution;
@@ -520,3 +714,6 @@ SELECT analysis_group, primaryid, tto_days, event_dt, start_dt
 FROM res_v10_tto_base
 ORDER BY analysis_group, tto_days, primaryid;
 
+SELECT analysis_group, primaryid, tto_days, tto_days_for_weibull, event_dt, start_dt, weibull_time_convention
+FROM res_v10_tto_weibull_input
+ORDER BY analysis_group, tto_days_for_weibull, primaryid;
