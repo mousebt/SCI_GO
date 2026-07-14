@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-111137-80bc6d"
 created_at: "2026-07-14T11:11:37+08:00"
-updated_at: "2026-07-14T11:11:37+08:00"
-status: pending
+updated_at: "2026-07-14T13:45:40+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,14 @@ A. 按十刊综合排序逐级投稿；B. 只保留药物警戒期刊；C. 只�
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+目前Journal of Patient Safety、Current Medical Science、Nursing Open、APPLIED NURSING RESEARCH这几个杂志进入决赛圈。请客观分析录取难度，APC，匹配度，IF情况
+
+### Decision and resolution
+
+- Decision: revised
+- Recorded at: 2026-07-14T13:45:40+08:00
+- Resolution: 作者将候选池收缩为Journal of Patient Safety、Current Medical Science、Nursing Open和Applied Nursing Research四本，要求在最终决定前客观比较录取难度、APC、匹配度和影响因子。原十刊投稿梯队暂不批准，进入四刊决赛评估。
+
 
