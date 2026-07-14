@@ -1,12 +1,12 @@
 ﻿---
 id: "APR-20260714-145059-11383c"
 created_at: "2026-07-14T14:50:59+08:00"
-updated_at: "2026-07-14T14:53:45+08:00"
+updated_at: "2026-07-14T14:54:16+08:00"
 status: approved
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
-git_commit: "2e66613"
+git_commit: "997151e"
 supersedes: ""
 superseded_by: ""
 ---
@@ -53,6 +53,7 @@ Record the user-directed route as approved: first submit Nursing Open; if reject
 - Decision: approved
 - Recorded at: 2026-07-14T14:51:06+08:00
 - Resolution: User explicitly approved the Nursing Open first / Current Medical Science fallback route. Route files and paper metadata will be updated accordingly.
+
 
 
 
