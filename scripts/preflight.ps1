@@ -13,6 +13,7 @@ $paperDirs = @(if ($Slug) {
 
 $requiredPaths = @(
     'paper.yaml',
+    '00_admin\intake-manifest.csv',
     '01_planning\research-brief.md',
     '02_evidence\claim-evidence.csv',
     '02_evidence\terminology.csv',

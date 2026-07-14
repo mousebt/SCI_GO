@@ -23,3 +23,8 @@ Thumbs.db
 
 # Submission build outputs; final approved files are explicitly force-added if needed
 **/07_submission/build/
+
+# User drop zone: raw intake materials are not committed automatically
+START_HERE/*
+!START_HERE/README.md
+!START_HERE/PROJECT_INFO.md
