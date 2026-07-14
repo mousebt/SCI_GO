@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-100909-39d94c"
 created_at: "2026-07-14T10:09:09+08:00"
-updated_at: "2026-07-14T10:09:09+08:00"
-status: pending
+updated_at: "2026-07-14T10:10:38+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -44,5 +44,13 @@ A. 发表成功优先：先向单位确认JRN是否认可，认可后首投JRN�
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+不要依赖我的建议，你推荐呢
+
+### Decision and resolution
+
+- Decision: revised
+- Recorded at: 2026-07-14T10:10:38+08:00
+- Resolution: 作者要求由系统作出独立推荐，不再保留A/B条件式并列建议；原方案改为明确推荐严格认可路线并扩展候选池。
 
