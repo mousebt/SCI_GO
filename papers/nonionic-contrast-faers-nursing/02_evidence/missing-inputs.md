@@ -37,3 +37,19 @@
 2. 再补作者与伦理信息。
 3. 确认“4区”的机构口径后锁定期刊。
 4. 最后完成文献核验、期刊格式适配和投稿文件。
+# Local clinical nursing record inputs
+
+The current Nursing Open-facing manuscript now includes a planned local clinical nursing record contextualization layer. Fill `02_evidence/local-clinical-record-template.csv` before finalizing Results, Discussion, Abstract, Ethics, and Data Availability.
+
+Minimum local data needed:
+
+1. Local study period.
+2. Total number of non-ionic ICM administrations.
+3. Local registered contrast-related adverse events.
+4. Event categories: extravasation/access-site, cutaneous/respiratory, cardiopulmonary, kidney-related, other.
+5. Event timing or observation window if recorded.
+6. Nursing interventions and escalation actions.
+7. Outcomes and documentation completeness.
+8. Local ethics/IRB/exemption or quality-improvement determination.
+
+If the total administration denominator is unavailable, do not calculate local proportions; use local records only as descriptive contextualization.

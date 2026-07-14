@@ -2,7 +2,7 @@
 
 Target journal: Nursing Open  
 Article type: Empirical Research Quantitative  
-Manuscript title: Adverse-Event Reporting Patterns of Non-Ionic Iodinated Contrast Media for Radiology Nursing Surveillance: Empirical Research Quantitative
+Manuscript title: Adverse-Event Reporting Patterns of Non-Ionic Iodinated Contrast Media and Local Nursing Surveillance Context: Empirical Research Quantitative
 
 > This file is separate from the anonymized main manuscript for double-blind review.
 
@@ -62,6 +62,8 @@ FAERS quarterly data are publicly available from the US Food and Drug Administra
 ## Ethics statement
 
 This study used publicly available de-identified spontaneous-reporting data. `[VERIFY: insert institutional review board determination/exemption wording required by the authors' institution.]`
+
+The local clinical nursing record review requires institutional confirmation regarding ethics approval, exemption, or quality-improvement review. `[AUTHOR INPUT REQUIRED: IRB/exemption/quality-improvement determination and approval number if applicable.]`
 
 ## Patient or public contribution
 

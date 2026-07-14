@@ -13,4 +13,5 @@ owners: []
 overrides:
   - "Publication feasibility takes priority, but journal indexing requirements must be verified before target lock."
   - "Approved route on 2026-07-14: submit one Nursing Open-facing version first; if rejected, retarget to Current Medical Science."
+  - "Author-directed enhancement on 2026-07-14: add local clinical nursing record contextualization using total local ICM administrations, local adverse-event registry, and nursing intervention/documentation records; leave unavailable data blank and do not infer intervention effectiveness."
 

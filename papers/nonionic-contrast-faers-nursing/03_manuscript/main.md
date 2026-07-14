@@ -1,8 +1,8 @@
-# Adverse-Event Reporting Patterns of Non-Ionic Iodinated Contrast Media for Radiology Nursing Surveillance: Empirical Research Quantitative
+# Adverse-Event Reporting Patterns of Non-Ionic Iodinated Contrast Media and Local Nursing Surveillance Context: Empirical Research Quantitative
 
-**Manuscript status:** Nursing Open-facing working draft v0.6; title, structured abstract, Introduction, Methods, Results, and Discussion rewritten for evidence-first review
+**Manuscript status:** Nursing Open-facing working draft v0.7; local clinical nursing record contextualization framework added
 
-**Evidence status:** All numerical results retained from the Chinese source manuscript require verification against the original analysis output. Items marked `[VERIFY]` must be resolved before submission.
+**Evidence status:** All numerical results retained from the Chinese source manuscript require verification against the original analysis output. Local clinical/nursing record fields are placeholders until supplied by the authors. Items marked `[VERIFY]` or `[AUTHOR INPUT REQUIRED]` must be resolved before submission.
 
 **Inference boundary:** This pharmacovigilance study identifies reporting signals. It does not estimate incidence, establish causality, compare absolute drug safety, or test the effectiveness of nursing interventions.
 
@@ -10,35 +10,35 @@
 
 ### Aim(s)
 
-To characterise adverse-event reporting patterns and time-to-onset profiles for four non-ionic iodinated contrast media and interpret their implications for radiology nursing surveillance.
+To characterise adverse-event reporting and time-to-onset patterns for four non-ionic iodinated contrast media and contextualise their nursing relevance using local clinical records.
 
 ### Design
 
-Retrospective pharmacovigilance study using spontaneous-reporting data.
+Retrospective pharmacovigilance study with local clinical nursing record contextualization.
 
 ### Data Sources
 
-Reports in the US Food and Drug Administration Adverse Event Reporting System from 2004 quarter 1 to 2025 quarter 4 were searched for ioversol, iohexol, iopamidol and iodixanol as primary suspect drugs. `[VERIFY: extraction date and quarter completeness.]`
+Reports in the US Food and Drug Administration Adverse Event Reporting System from 2004 quarter 1 to 2025 quarter 4 were searched for ioversol, iohexol, iopamidol and iodixanol. Local data will include contrast-administration totals, adverse-event records and nursing intervention records. `[VERIFY: FAERS extraction and local source.]`
 
 ### Methods
 
-Adverse events were analysed using Medical Dictionary for Regulatory Activities preferred terms and system organ classes. Disproportionality and time-to-onset analyses were used to identify reporting patterns. `[VERIFY: dictionary, coding version, thresholds and software.]`
+Adverse events were analysed using Medical Dictionary for Regulatory Activities preferred terms and system organ classes. Disproportionality and time-to-onset analyses identified reporting patterns. Local records will be summarized descriptively against FAERS-derived nursing surveillance clusters. `[VERIFY: coding, thresholds, software and local variables.]`
 
 ### Results
 
-The source analysis retained 14,780 eligible reports containing 42,808 adverse-event records and 951 preferred terms. Twenty-four preferred terms met the stated signal criteria. Extravasation-related preferred terms showed the strongest disproportionality. Shock, acute pulmonary oedema, renal tubular necrosis, dyspnoea and acute kidney injury were also clinically relevant signals. Among 12,588 reports with evaluable timing, 81.56% occurred within 24 hours. `[VERIFY all numerical results.]`
+The source analysis retained 14,780 eligible reports, 42,808 adverse-event records and 951 preferred terms. Twenty-four preferred terms met the stated signal criteria. Extravasation-related terms showed the strongest disproportionality. Shock, acute pulmonary oedema, renal tubular necrosis, dyspnoea and acute kidney injury were also clinically relevant. Among 12,588 reports with evaluable timing, 81.56% occurred within 24 hours. Local data are pending. `[VERIFY all FAERS and local data.]`
 
 ### Conclusion
 
-Reported patterns for non-ionic iodinated contrast media may help radiology nursing teams prioritise vascular-access surveillance, early symptom recognition and escalation preparedness. These findings are hypothesis-generating and do not estimate incidence, establish causality or test nursing interventions.
+Reported patterns may help radiology nurses prioritise vascular-access surveillance, early symptom recognition and escalation preparedness. Local records may strengthen clinical contextualization. Findings remain descriptive unless outcome evaluation is added.
 
 ### Implications for the profession and/or patient care
 
-The findings support a surveillance-priority framework for radiology nursing practice, pending verification against current contrast-media guidance and local protocols.
+The findings support a surveillance-priority framework, pending verification against guidance, local protocols and nursing documentation.
 
 ### Impact
 
-This study addresses the need to translate pharmacovigilance findings into nursing-relevant observation priorities while preserving the limits of spontaneous-reporting evidence.
+The study translates pharmacovigilance findings into nursing-relevant observation priorities while preserving the limits of spontaneous-reporting and retrospective documentation.
 
 ### Reporting Method
 
@@ -58,13 +58,13 @@ Radiology nurses contribute to patient safety across the contrast-administration
 
 Clinical trials and single-centre observational studies are usually not designed to detect rare events or broad reporting patterns across heterogeneous populations. The US Food and Drug Administration Adverse Event Reporting System (FAERS) therefore offers a complementary source for pharmacovigilance. Disproportionality analysis can identify drug-event combinations reported more frequently than expected relative to a comparator background. However, spontaneous reports are affected by under-reporting, stimulated reporting, missing data, duplicate records, confounding, and the absence of a denominator representing all exposed patients. A disproportionality signal is therefore a statistical reporting association, not an incidence estimate or proof of causality. `[REF TO VERIFY: FDA FAERS limitations and READUS-PV.]`
 
-Previous work on ICM safety has often focused on particular clinical outcomes, specific patient-risk groups, or local preventive interventions. Less attention has been paid to how broad spontaneous-reporting patterns and event timing might be translated into nursing-sensitive surveillance priorities without overstating the evidence. This study therefore aimed to characterise AE reporting signals and time-to-onset patterns for four non-ionic ICM in FAERS and to interpret the findings within the bounded context of radiology nursing surveillance.
+Previous work on ICM safety has often focused on particular clinical outcomes, specific patient-risk groups, or local preventive interventions. Less attention has been paid to how broad spontaneous-reporting patterns and event timing might be translated into nursing-sensitive surveillance priorities without overstating the evidence. This study therefore aimed to characterise AE reporting signals and time-to-onset patterns for four non-ionic ICM in FAERS and to contextualise the findings using local contrast-administration, adverse-event and nursing intervention records. The local record component is intended to support clinical interpretation and documentation priorities; it will not be used to claim intervention effectiveness unless an appropriate outcome design and verified data are available.
 
 ## 2. Methods
 
 ### 2.1 Design
 
-This was a retrospective pharmacovigilance study using spontaneous reports from the US Food and Drug Administration Adverse Event Reporting System (FAERS). The analysis was designed to identify signals of disproportionate reporting and time-to-onset (TTO) patterns for selected non-ionic iodinated contrast media (ICM). It was not designed to estimate incidence, establish causality, rank the absolute safety of individual agents, or test nursing interventions.
+This was a retrospective pharmacovigilance study using spontaneous reports from the US Food and Drug Administration Adverse Event Reporting System (FAERS), supplemented by a planned descriptive review of local contrast-administration, adverse-event and nursing intervention records. The FAERS analysis was designed to identify signals of disproportionate reporting and time-to-onset (TTO) patterns for selected non-ionic iodinated contrast media (ICM). The local record review is intended to contextualise whether these signal clusters correspond to nursing surveillance, documentation and escalation needs in routine practice. The study is not designed to establish causality, rank the absolute safety of individual agents, or prove that nursing interventions reduce adverse events.
 
 ### 2.2 Data source
 
@@ -72,17 +72,23 @@ FAERS quarterly files from 2004 quarter 1 through 2025 quarter 4 were used. The 
 
 Because the study period spans the legacy AERS and current FAERS formats, variable names and coding conventions were harmonised before quarterly files were merged. `[VERIFY: provide the exact harmonisation rules, quarter-level file inventory, and deletion-file handling.]`
 
-### 2.3 Report identification and deduplication
+### 2.3 Local clinical nursing record source
+
+Local records will be extracted for `[AUTHOR INPUT REQUIRED: institution/department]` over `[AUTHOR INPUT REQUIRED: study period]`. The planned local dataset includes: (1) the total number of non-ionic ICM administrations; (2) registered contrast-related AEs; and (3) nursing intervention and documentation records for these events. `[AUTHOR INPUT REQUIRED: data source, such as radiology information system, nursing adverse-event registry, incident reporting system, electronic medical record or manual nursing log.]`
+
+The local review will be descriptive. If a complete denominator of total ICM administrations is available, local AE proportions may be reported as single-centre descriptive proportions. These proportions will not be interpreted as generalizable incidence estimates. If the denominator is unavailable or incomplete, local data will be used only as event-record contextualization. `[AUTHOR INPUT REQUIRED: denominator availability and missing-data profile.]`
+
+### 2.4 FAERS report identification and deduplication
 
 Eligible reports were those listing ioversol, iohexol, iopamidol, or iodixanol as the primary suspect drug. The source manuscript states that generic English names were used as search terms. `[VERIFY: supply the complete version-controlled dictionary of generic names, brand names, spelling variants, salts, and normalisation rules. Clarify whether combination products or ambiguous names were excluded.]`
 
 Reports were deduplicated using CASEID, FDA_DT, and PRIMARYID in accordance with the procedure described by the FDA. For records sharing a CASEID, the report with the latest FDA_DT was retained; when CASEID and FDA_DT were identical, the record with the highest PRIMARYID was retained. Reports listed in deletion files were excluded. `[VERIFY: confirm that this procedure was applied consistently to every quarter and whether follow-up versions were linked before analysis.]`
 
-### 2.4 Adverse-event coding
+### 2.5 Adverse-event coding
 
 Reported adverse events (AEs) were analysed at the Medical Dictionary for Regulatory Activities (MedDRA) preferred term (PT) and system organ class (SOC) levels. A single report could contain more than one PT; therefore, the number of AE records could exceed the number of reports. `[VERIFY: MedDRA version, mapping procedure, handling of legacy terms, and whether primary SOC or multiaxial SOC allocation was used.]`
 
-### 2.5 Disproportionality analysis
+### 2.6 Disproportionality analysis
 
 Four complementary disproportionality methods were prespecified: the reporting odds ratio (ROR), proportional reporting ratio (PRR), Bayesian confidence propagation neural network information component (IC), and multi-item gamma Poisson shrinker empirical Bayes geometric mean (EBGM). A drug-event pair was defined as a signal only when it met the prespecified minimum case count and the positive thresholds for the required algorithms.
 
@@ -90,15 +96,21 @@ The source manuscript lists the following screening rules: a minimum of three re
 
 Signal magnitude was interpreted as the strength of disproportionate reporting, not as event probability, clinical severity, or causal effect. The current working draft treats the four contrast agents as a pooled ICM exposure group. `[VERIFY: provide agent-specific and sensitivity analyses if available; otherwise justify pooling and avoid comparative claims between agents.]`
 
-### 2.6 Time-to-onset analysis
+### 2.7 Time-to-onset analysis
 
 TTO was calculated as the interval between the recorded treatment start date and AE onset date. Reports with missing, implausible, or negative intervals were excluded. TTO was summarised using descriptive statistics and modelled with a Weibull distribution. A shape parameter below 1 was interpreted as an early-failure pattern, indicating that reports with evaluable timing were concentrated early after administration. `[VERIFY: date fields used, imputation rules for partial dates, treatment of same-day events, time unit, maximum follow-up, median and interquartile range, Weibull confidence intervals, and fitting procedure.]`
 
-### 2.7 Ethical considerations
+### 2.8 Local nursing record variables
 
-FAERS contains publicly available, de-identified spontaneous reports. Formal informed consent was therefore not applicable to this secondary analysis. `[VERIFY: insert the authors' institutional ethics/IRB determination or exemption statement required by Nursing Open and the authors' institution.]`
+The local record review will extract the following variables where available: ICM agent, administration date, imaging setting, AE type, onset time or observation window, symptoms, vascular-access site, nursing action, escalation action, outcome and documentation completeness. Nursing actions may include stopping injection, access-site assessment, physician notification, emergency response, local extravasation management, observation, patient education and follow-up instructions. `[AUTHOR INPUT REQUIRED: confirm available variables and local definitions.]`
 
-### 2.8 Reporting and software
+Local AE categories will be mapped descriptively to the FAERS-derived surveillance clusters: extravasation/access-site events, cutaneous or respiratory symptoms, cardiopulmonary events and kidney-related events. This mapping is for clinical contextualization only and will not imply that local events were caused by the contrast agent unless causality was independently adjudicated. `[AUTHOR INPUT REQUIRED: local AE definitions and adjudication process, if any.]`
+
+### 2.9 Ethical considerations
+
+FAERS contains publicly available, de-identified spontaneous reports. Formal informed consent was therefore not applicable to the FAERS component. The local record review requires institutional determination regarding ethics approval, exemption or quality-improvement review before submission. `[AUTHOR INPUT REQUIRED: institutional ethics/IRB determination for local record review.]`
+
+### 2.10 Reporting and software
 
 The final manuscript will be checked against a relevant EQUATOR reporting checklist and pharmacovigilance reporting guidance. `[VERIFY: decide whether the submission will use STROBE, RECORD/STROBE, READUS-PV support, or a combined checklist note.]` Data processing was performed with Python 3.11 and MySQL. `[VERIFY: operating environment, MySQL version, Python packages and versions, analysis code, random seeds where applicable, and quality-control checks.]`
 
@@ -132,11 +144,17 @@ After exclusion of reports with missing, inaccurate, or negative time intervals,
 
 The Weibull scale parameter was reported as 17.3, and the shape parameter was below 1. The source analysis classified this pattern as early failure, meaning that reported events were concentrated early after administration among records with evaluable timing. `[VERIFY: provide the precise shape estimate, confidence interval, time unit for the scale parameter, fitting procedure, and treatment of same-day or partial dates.]` This temporal finding supports the relevance of early post-administration surveillance, but it remains subject to missing-date bias and cannot define a universal observation period.
 
+### 3.6 Local clinical nursing record contextualization
+
+Local clinical and nursing record data are pending. The planned local dataset will report the total number of non-ionic ICM administrations, the number of registered contrast-related AEs, AE categories, timing of events where available, nursing interventions and documentation completeness. `[AUTHOR INPUT REQUIRED: complete local data extraction template in 02_evidence/local-clinical-record-template.csv.]`
+
+If a complete local denominator is available, the manuscript will report descriptive single-centre proportions for registered contrast-related AEs and major AE categories. If the denominator is incomplete, the manuscript will report counts and documentation patterns without calculating proportions. In either case, local records will be interpreted as clinical context for nursing surveillance priorities, not as proof that any nursing intervention reduced AE occurrence.
+
 ## 4. Discussion
 
 ### 4.1 Principal findings
 
-This FAERS analysis generated three findings relevant to radiology nursing surveillance. First, extravasation-related PTs had the largest displayed disproportionality estimates, making vascular-access and injection-site surveillance a central nursing-relevant signal cluster. Second, hypersensitivity-type and cardiopulmonary PTs - including pruritus, erythema, dyspnoea, hypotension, shock, acute pulmonary oedema, and cardiac arrest - highlighted the need for readiness to recognise symptoms and activate escalation pathways. Third, most reports with evaluable timing occurred within 24 hours, and the Weibull model suggested early clustering, although missing and incomplete dates limit the certainty of this temporal pattern.
+This FAERS analysis generated three findings relevant to radiology nursing surveillance. First, extravasation-related PTs had the largest displayed disproportionality estimates, making vascular-access and injection-site surveillance a central nursing-relevant signal cluster. Second, hypersensitivity-type and cardiopulmonary PTs - including pruritus, erythema, dyspnoea, hypotension, shock, acute pulmonary oedema, and cardiac arrest - highlighted the need for readiness to recognise symptoms and activate escalation pathways. Third, most reports with evaluable timing occurred within 24 hours, and the Weibull model suggested early clustering, although missing and incomplete dates limit the certainty of this temporal pattern. The planned local record review will be used to determine whether these signal clusters correspond to local nursing documentation and intervention patterns. `[AUTHOR INPUT REQUIRED: local data pending.]`
 
 These findings should be interpreted as surveillance-priority evidence rather than intervention-effect evidence. A high ROR can arise when a PT is relatively specific to the exposure and uncommon in the comparator database, even when the absolute number of reports is modest. Conversely, frequent events may not generate the strongest disproportionality. This distinction between reporting frequency and signal strength is essential when translating pharmacovigilance findings into nursing priorities.
 
@@ -165,15 +183,17 @@ The analysis supports a surveillance framework rather than a tested intervention
 
 This framework is a practical interpretation of the signal pattern. Its effect on clinical outcomes must be evaluated in a prospective or quality-improvement study before effectiveness claims can be made.
 
+Local nursing records can strengthen this framework by showing which events were documented, what nursing actions were recorded and where documentation or escalation gaps occurred. However, unless the local dataset includes a defined intervention, comparator and outcome evaluation, these records should be interpreted as contextual evidence rather than proof of effectiveness.
+
 ### 4.6 Strengths and limitations
 
-The study used a large, publicly available pharmacovigilance database over an extended period and combined disproportionality with temporal analysis. Considering multiple algorithms may improve signal robustness if all prespecified thresholds were implemented and reported completely.
+The study used a large, publicly available pharmacovigilance database over an extended period and combined disproportionality with temporal analysis. Considering multiple algorithms may improve signal robustness if all prespecified thresholds were implemented and reported completely. The planned local record review may add clinical context by linking FAERS-derived surveillance clusters to routine nursing documentation and response patterns.
 
-The limitations are substantial. FAERS is a spontaneous-reporting system subject to under-reporting, duplicate or incomplete records, reporting stimulation, notoriety bias, geographic and temporal changes in practice, and differential product use. The number of exposed patients is unknown, so incidence and relative risk cannot be calculated. Primary-suspect designation does not establish causality. Confounding by indication, comorbidities, concomitant drugs, procedure type, injection conditions, and reporter judgement cannot be eliminated. Aggregating four agents may obscure product-specific patterns, while separate analyses may be unstable for rare events. PT-level duplication and MedDRA multiaxiality may affect counts. TTO findings are vulnerable to missing and partially recorded dates and represent only the subset with evaluable timing. Finally, the study did not include nurse-level variables, nursing process measures, or patient outcomes after a nursing intervention; practice implications are therefore interpretations that require independent guideline support and outcome evaluation.
+The limitations are substantial. FAERS is a spontaneous-reporting system subject to under-reporting, duplicate or incomplete records, reporting stimulation, notoriety bias, geographic and temporal changes in practice, and differential product use. The number of exposed patients is unknown in FAERS, so incidence and relative risk cannot be calculated from the pharmacovigilance component. Primary-suspect designation does not establish causality. Confounding by indication, comorbidities, concomitant drugs, procedure type, injection conditions, and reporter judgement cannot be eliminated. Aggregating four agents may obscure product-specific patterns, while separate analyses may be unstable for rare events. PT-level duplication and MedDRA multiaxiality may affect counts. TTO findings are vulnerable to missing and partially recorded dates and represent only the subset with evaluable timing. The local record review, if completed, will be single-centre and dependent on documentation quality, event definitions and denominator completeness. It can contextualise nursing surveillance priorities but cannot establish general incidence or intervention effectiveness without a stronger outcome design.
 
 ## 5. Conclusion
 
-Disproportionality and time-to-onset analyses of FAERS reports identified priority reporting signals and an early clustering pattern for four non-ionic iodinated contrast media. Extravasation-related, hypersensitivity-type, cardiopulmonary, and kidney-related events may inform radiology nursing surveillance and escalation priorities. The findings are hypothesis-generating: they neither estimate event incidence nor establish causality or nursing intervention effectiveness. Submission will require verification of the complete analysis, transparent reporting of methods and missingness, and alignment of all practice statements with current clinical guidance.
+Disproportionality and time-to-onset analyses of FAERS reports identified priority reporting signals and an early clustering pattern for four non-ionic iodinated contrast media. Extravasation-related, hypersensitivity-type, cardiopulmonary, and kidney-related events may inform radiology nursing surveillance and escalation priorities. A planned local clinical nursing record review may strengthen the clinical contextualization of these priorities by describing local contrast-administration volume, registered AEs and nursing responses. The findings remain hypothesis-generating unless verified local outcome data support stronger claims. Submission will require verification of the complete FAERS analysis, transparent reporting of local data completeness and alignment of all practice statements with current clinical guidance.
 
 ## Declarations
 
@@ -183,11 +203,11 @@ Disproportionality and time-to-onset analyses of FAERS reports identified priori
 
 ### Consent to participate
 
-Not applicable to publicly available de-identified spontaneous reports, subject to institutional confirmation.
+Not applicable to the FAERS component. The local record review requires institutional confirmation regarding consent waiver or exemption. `[AUTHOR INPUT REQUIRED]`
 
 ### Data availability
 
-FAERS quarterly data are publicly available from the US Food and Drug Administration. `[VERIFY: add retrieval dates, exact dataset URL, archived query dictionary, and availability of processed data/code.]`
+FAERS quarterly data are publicly available from the US Food and Drug Administration. Local clinical and nursing records are not publicly available and will be summarized in de-identified aggregate form subject to institutional permission. `[VERIFY: add FAERS retrieval dates, exact dataset URL, archived query dictionary, processed data/code availability and local data-access statement.]`
 
 ### Code availability
 
