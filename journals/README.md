@@ -44,6 +44,7 @@ powershell -ExecutionPolicy Bypass -File scripts/archive-journal-pages.ps1 -Slug
 | Status | Meaning |
 |---|---|
 | `ok` | Official page was captured with a successful HTTP status and can be used for requirement extraction. |
+| `manual_ok` | Official page was saved through an interactive browser and imported; it can be used for requirement extraction. |
 | `blocked_http` | A raw server response was saved, but the publisher returned a non-success status such as 403; do not use it as requirement evidence. |
 | `failed` | No raw page was saved. Retry later or use a browser/manual export route. |
 

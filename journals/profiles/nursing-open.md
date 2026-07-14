@@ -19,9 +19,9 @@
 
 | Topic | Official URL | Raw archive path | Captured date |
 |---|---|---|---|
-| Journal page | https://onlinelibrary.wiley.com/journal/20541058 | `journals/raw_pages/nursing-open/` | 2026-07-14; automated capture returned blocked_http 403 for Wiley pages |
-| Author instructions | https://onlinelibrary.wiley.com/page/journal/20541058/homepage/author-guidelines | `journals/raw_pages/nursing-open/` | 2026-07-14; blocked_http 403 |
-| APC / OA policy | https://onlinelibrary.wiley.com/page/journal/20541058/homepage/open-access | `journals/raw_pages/nursing-open/` | 2026-07-14; blocked_http 403 |
+| Journal page | https://onlinelibrary.wiley.com/journal/20541058 | `journals/raw_pages/nursing-open/` | 2026-07-14; automated capture returned blocked_http 403 for Wiley pages; manual capture required |
+| Author instructions | https://onlinelibrary.wiley.com/page/journal/20541058/homepage/author-guidelines | `journals/raw_pages/nursing-open/` | 2026-07-14; blocked_http 403; manual capture required |
+| APC / OA policy | https://onlinelibrary.wiley.com/page/journal/20541058/homepage/open-access | `journals/raw_pages/nursing-open/` | 2026-07-14; blocked_http 403; manual capture required |
 
 ## Scope and article fit
 
@@ -50,6 +50,7 @@ See `journals/requirements/nursing-open.md`.
 - Best use case: author wants a nursing-journal first attempt and accepts Nursing Open's mandatory OA/APC.
 - Avoid when: budget becomes the main constraint, or the author wants the lowest modification burden.
 - Recheck before submission: APC, current IF/JIF/indexing, article type, word limits, abstract format, ethics/data statements, and whether the manuscript needs a reporting checklist.
+- Blocking workaround: use `journals/manual_inbox/nursing-open/README.md` and import browser-saved official pages so the source log records `manual_ok`.
 
 ## Current project route
 
