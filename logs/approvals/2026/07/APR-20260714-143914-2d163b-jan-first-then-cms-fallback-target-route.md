@@ -1,8 +1,8 @@
 ﻿---
 id: "APR-20260714-143914-2d163b"
 created_at: "2026-07-14T14:39:14+08:00"
-updated_at: "2026-07-14T14:45:22+08:00"
-status: approved
+updated_at: "2026-07-14T14:50:48+08:00"
+status: revised
 scope: "paper"
 paper_id: "nonionic-contrast-faers-nursing"
 risk: "high"
@@ -53,6 +53,7 @@ Record the user-directed route as approved: first submit Journal of Advanced Nur
 - Decision: approved
 - Recorded at: 2026-07-14T14:39:25+08:00
 - Resolution: User explicitly approved the revised target route. The project will document Journal of Advanced Nursing as the high-risk nursing-identity first submission target and Current Medical Science as fallback after rejection or desk rejection.
+
 
 
 

@@ -7,10 +7,10 @@ start_mode: "existing_zh_manuscript"
 paper_type: research
 source_language: zh
 manuscript_language: en
-target_journal: "Journal of Advanced Nursing; fallback Current Medical Science"
+target_journal: "Nursing Open; fallback Current Medical Science"
 primary_reader: "Nursing researchers, radiology nurses, and clinical teams responsible for iodinated contrast safety"
 owners: []
 overrides:
   - "Publication feasibility takes priority, but journal indexing requirements must be verified before target lock."
-  - "Approved route on 2026-07-14: submit one Journal of Advanced Nursing-facing version first; if rejected, retarget to Current Medical Science."
+  - "Approved route on 2026-07-14: submit one Nursing Open-facing version first; if rejected, retarget to Current Medical Science."
 

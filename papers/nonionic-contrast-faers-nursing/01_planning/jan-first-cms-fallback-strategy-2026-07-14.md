@@ -1,5 +1,7 @@
 # JAN-first / CMS-fallback submission strategy
 
+Status update, 2026-07-14: superseded by `papers/nonionic-contrast-faers-nursing/01_planning/nursing-open-first-cms-fallback-strategy-2026-07-14.md` after the author changed strategy because JAN APC/route was considered too costly.
+
 Date: 2026-07-14
 Paper: `nonionic-contrast-faers-nursing`
 Approval log: `APR-20260714-143914-2d163b`
@@ -78,4 +80,3 @@ Wiley official JAN pages returned HTTP 403 during automated capture on 2026-07-1
 - reference style;
 - ethics/data/COI/funding/author contribution requirements;
 - APC and whether a traditional no-APC route is available.
-
