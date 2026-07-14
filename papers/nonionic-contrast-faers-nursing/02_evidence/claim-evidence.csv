@@ -1,0 +1,8 @@
+claim_id,section,claim,evidence_type,evidence_location,status,boundary,owner,notes
+C001,Results,"14,780 eligible reports were included",FAERS extraction,Table 1 and analysis output,needs-verification,"report count, not exposed-patient count",authors,"Verify deduplication across legacy AERS and FAERS"
+C002,Results,"24 positive PT signals were identified",disproportionality analysis,Tables 2-3,needs-verification,"signals are reporting associations",authors,"Four stated algorithms are not all shown"
+C003,Results,"Extravasation-related PTs showed high disproportionality",ROR/PRR/IC,Table 3,supported,"does not estimate incidence or causality",authors,"Check PT coding and pooled comparator"
+C004,Results,"81.56% of evaluable reports occurred within 24 hours",TTO analysis,Figure 2 and analysis output,needs-verification,"restricted to reports with usable dates",authors,"Report missingness and cleaning flow"
+C005,Discussion,"Signals can prioritize radiology nursing surveillance",interpretation,Signal pattern plus external guidelines,inferred,"practice implication, not tested outcome",authors,"Use bounded wording"
+C006,Discussion,"A standardized nursing pathway reduces adverse events",intervention effect,None in this study,unsupported,"requires intervention study",authors,"Delete or recast as future evaluation"
+C007,Discussion,"Contrast warming, hydration, and venipuncture reduce events",external evidence,Current references and guidelines,needs-evidence,"recommendations depend on patient and procedure context",authors,"Map each action to ACR/ESUR/other verified guidance"

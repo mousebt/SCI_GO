@@ -1,0 +1,8 @@
+canonical_term,first_use_definition,variants_seen,decision,source,approved_by
+"iodinated contrast media (ICM)","iodinated contrast media (ICM)","iodine contrast agent; iodinated contrast agent","Use ICM; specify non-ionic ICM when relevant","ACR/ESUR terminology","pending"
+"adverse event (AE)","adverse event (AE)","ADE; ADR; adverse reaction","Use AE for FAERS reports; reserve ADR for a causal interpretation","FDA FAERS","pending"
+"FAERS","US Food and Drug Administration Adverse Event Reporting System (FAERS)","FDA Adverse Event Reporting System","Define once","FDA","pending"
+"preferred term (PT)","Medical Dictionary for Regulatory Activities preferred term (PT)","adverse reaction; indication","Do not label PTs as indications","MedDRA","pending"
+"disproportionality signal","signal of disproportionate reporting","risk signal; strong association","Avoid risk/incidence/causal wording","READUS-PV/FDA","pending"
+"time to onset (TTO)","time to onset (TTO)","occurrence time","Use TTO and define date calculation","pharmacovigilance convention","pending"
+"contrast-associated acute kidney injury (CA-AKI)","contrast-associated acute kidney injury (CA-AKI)","CI-AKI; contrast-induced nephropathy","Use CA-AKI unless causality is established; preserve MedDRA PT 'acute kidney injury' in results","ACR/ESUR","pending"

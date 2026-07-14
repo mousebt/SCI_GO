@@ -1,1 +1,2 @@
-id,created_at,updated_at,scope,paper_id,title,risk,status,path,git_commit
+﻿"id","created_at","updated_at","scope","paper_id","title","risk","status","path","git_commit"
+"APR-20260714-094922-2ac71e","2026-07-14T09:49:22+08:00","2026-07-14T09:49:22+08:00","paper","nonionic-contrast-faers-nursing","Journal route for NICM FAERS nursing manuscript","high","pending","logs/approvals/2026/07/APR-20260714-094922-2ac71e-journal-route-for-nicm-faers-nursing-manuscript.md",""
