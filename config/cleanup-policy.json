@@ -1,0 +1,7 @@
+{
+  "retention_days": 14,
+  "temporary_directory_names": ["tmp", ".cache", "_render", "_extract"],
+  "preserve_names": [".gitkeep", "README.md"],
+  "schedule": "weekly",
+  "dry_run_by_default": true
+}

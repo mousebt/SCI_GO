@@ -1,0 +1,25 @@
+# Temporary and generated files
+**/tmp/*
+!**/tmp/.gitkeep
+**/.cache/
+**/_render/
+**/_extract/
+**/~$*
+*.tmp
+*.bak
+
+# Python and editors
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Large local research data should be referenced, not committed
+**/data-local/
+
+# Submission build outputs; final approved files are explicitly force-added if needed
+**/07_submission/build/

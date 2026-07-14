@@ -1,0 +1,12 @@
+id: "__SLUG__"
+title: "__TITLE__"
+status: idea
+created: "__DATE__"
+writing_logic_version: "1.0.0"
+paper_type: research
+source_language: zh
+manuscript_language: en
+target_journal: "TBD"
+primary_reader: "TBD"
+owners: []
+overrides: []
