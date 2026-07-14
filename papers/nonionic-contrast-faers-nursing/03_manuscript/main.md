@@ -209,6 +209,10 @@ FAERS quarterly data are publicly available from the US Food and Drug Administra
 
 `[AUTHOR INPUT REQUIRED]`
 
+### Patient or public contribution
+
+No patient or public contribution. `[VERIFY: author confirmation required.]`
+
 ## References
 
 The source manuscript's bilingual reference list is not carried forward because it contains duplicate numbering, untranslated journal metadata, and at least one mismatched English citation. A single verified English reference list will be rebuilt after the analytical outputs are confirmed and before journal-specific formatting.
