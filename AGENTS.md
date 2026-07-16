@@ -44,3 +44,17 @@
 5. 校验复制件哈希与原件一致后，把迁移状态标记为 `verified`，随后删除 `START_HERE/` 中对应原件。
 6. 按最终启动模式执行结构审计或从零论证构建，先向用户提交启动确认块；确认后才写完整正文。
 7. 用户已明确选择不保留原件。完成分类、哈希校验和清单记录后，应自动清理 `START_HERE/`；校验失败的文件不得删除。
+
+## 研究方向探讨协议
+
+当用户说“方向探讨”“启动研究方向探讨”“这个方向能不能做”“帮我找一个可发表方向”等请求时，进入全局研究方向探讨流程，而不是直接创建论文或撰写正文。
+
+处理顺序：
+
+1. 读取 `config/research-direction-policy.md`。
+2. 若是新方向，使用 `scripts/new-research-direction.ps1` 在 `research_directions/active/<direction_id>/` 创建方向工作区。
+3. 先形成一句话方向、候选研究问题、数据需求、方法可行性、伦理风险、期刊匹配和最快下一步。
+4. 方向探讨阶段不得虚构数据、样本量、统计结果、引用、创新性或投稿概率。
+5. 不得在方向探讨阶段直接写完整论文正文；只有用户确认“转入论文项目”后，才按 `START_HERE` 或 `scripts/new-paper.ps1` 创建 `papers/<slug>/`。
+6. 方向成熟后，在 `04_decisions/direction-decision.md` 记录 proceed / revise / park / reject 决策。
+7. 可复用经验仍需满足 `approved=yes` 且 `status=validated`，才能进入全局知识库。

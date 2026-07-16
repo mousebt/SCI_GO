@@ -21,6 +21,7 @@
 | `config/` | 所有论文共享的底层写作逻辑与治理规则 | 是 |
 | `templates/` | 新论文的统一模板 | 是 |
 | `papers/` | 各论文独立工作区，一篇论文一个目录 | 是 |
+| `research_directions/` | 论文前的研究方向探讨与可行性孵化区 | 是 |
 | `knowledge/` | 经验证的跨项目经验与人工技巧 | 是 |
 | `scripts/` | 稳定的管理工具，不放一次性分析代码 | 是 |
 | `docs/` | 架构、工作流和版本管理说明 | 是 |
@@ -34,3 +35,15 @@
 - 不把未经验证的经验写入共享规则；必须有来源、适用范围、证据和批准人。
 
 详细说明见 [架构](docs/architecture.md)、[写作流程](docs/workflow.md) 与 [版本控制](docs/version-control.md)。
+
+## 研究方向探讨
+
+当一个想法还没有成熟到可以直接创建论文时，使用研究方向探讨流程：
+
+```text
+方向探讨：你的研究想法
+```
+
+系统会在 `research_directions/active/` 中建立方向工作区，先评估问题边界、数据可得性、方法可行性、伦理风险、文献拥挤度、期刊匹配和最快下一步。只有用户确认“转入论文项目”后，才创建 `papers/<slug>/`。
+
+详细流程见 [research direction workflow](docs/research-direction-workflow.md)。
