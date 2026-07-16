@@ -1,0 +1,8 @@
+interface:
+  display_name: "Research Direction"
+  short_description: "Evaluate ideas before paper projects"
+  default_prompt: "Use $research-direction to explore whether this idea can become a publishable manuscript: "
+
+policy:
+  allow_implicit_invocation: true
+

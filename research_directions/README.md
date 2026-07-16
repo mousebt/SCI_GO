@@ -2,6 +2,12 @@
 
 This area is for exploring research directions before they become manuscript projects.
 
+The workflow is driven by the repository skill:
+
+```text
+skills/research-direction/SKILL.md
+```
+
 Use it for questions like:
 
 - Is this idea publishable?
@@ -39,4 +45,3 @@ Or ask:
 ## Promotion
 
 Only promote a direction into `papers/<slug>/` after the user confirms the exact research question, data source, article type, target reader and immediate next deliverable.
-

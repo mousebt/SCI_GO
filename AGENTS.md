@@ -51,10 +51,11 @@
 
 处理顺序：
 
-1. 读取 `config/research-direction-policy.md`。
-2. 若是新方向，使用 `scripts/new-research-direction.ps1` 在 `research_directions/active/<direction_id>/` 创建方向工作区。
-3. 先形成一句话方向、候选研究问题、数据需求、方法可行性、伦理风险、期刊匹配和最快下一步。
-4. 方向探讨阶段不得虚构数据、样本量、统计结果、引用、创新性或投稿概率。
-5. 不得在方向探讨阶段直接写完整论文正文；只有用户确认“转入论文项目”后，才按 `START_HERE` 或 `scripts/new-paper.ps1` 创建 `papers/<slug>/`。
-6. 方向成熟后，在 `04_decisions/direction-decision.md` 记录 proceed / revise / park / reject 决策。
-7. 可复用经验仍需满足 `approved=yes` 且 `status=validated`，才能进入全局知识库。
+1. 使用并读取 `skills/research-direction/SKILL.md`。
+2. 读取 `config/research-direction-policy.md`。
+3. 若是新方向，使用 `scripts/new-research-direction.ps1` 在 `research_directions/active/<direction_id>/` 创建方向工作区。
+4. 先形成一句话方向、候选研究问题、数据需求、方法可行性、伦理风险、期刊匹配和最快下一步。
+5. 方向探讨阶段不得虚构数据、样本量、统计结果、引用、创新性或投稿概率。
+6. 不得在方向探讨阶段直接写完整论文正文；只有用户确认“转入论文项目”后，才按 `START_HERE` 或 `scripts/new-paper.ps1` 创建 `papers/<slug>/`。
+7. 方向成熟后，在 `04_decisions/direction-decision.md` 记录 proceed / revise / park / reject 决策。
+8. 可复用经验仍需满足 `approved=yes` 且 `status=validated`，才能进入全局知识库。

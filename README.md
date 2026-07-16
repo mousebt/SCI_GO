@@ -46,4 +46,4 @@
 
 系统会在 `research_directions/active/` 中建立方向工作区，先评估问题边界、数据可得性、方法可行性、伦理风险、文献拥挤度、期刊匹配和最快下一步。只有用户确认“转入论文项目”后，才创建 `papers/<slug>/`。
 
-详细流程见 [research direction workflow](docs/research-direction-workflow.md)。
+该流程由 `skills/research-direction/` skill 驱动；详细流程见 [research direction workflow](docs/research-direction-workflow.md)。

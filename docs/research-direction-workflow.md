@@ -2,6 +2,14 @@
 
 This workflow turns a vague research idea into a documented decision: proceed, revise, park or reject.
 
+It is driven by the repository skill:
+
+```text
+skills/research-direction/SKILL.md
+```
+
+When a direction exploration request appears, read that skill first, then follow this workflow and `config/research-direction-policy.md`.
+
 ## Startup command
 
 Use one of:
@@ -87,4 +95,3 @@ Every completed direction exploration should have:
 - `05_outputs/next-action-plan.md`
 - `02_feasibility/feasibility-scorecard.md`
 - `04_decisions/direction-decision.md`
-
