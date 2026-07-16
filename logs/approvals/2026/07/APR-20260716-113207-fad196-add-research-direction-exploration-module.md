@@ -1,12 +1,12 @@
 ﻿---
 id: "APR-20260716-113207-fad196"
 created_at: "2026-07-16T11:32:07+08:00"
-updated_at: "2026-07-16T11:32:07+08:00"
-status: pending
+updated_at: "2026-07-16T11:51:53+08:00"
+status: approved
 scope: "global"
 paper_id: ""
 risk: "medium"
-git_commit: ""
+git_commit: "d225723"
 supersedes: ""
 superseded_by: ""
 ---
@@ -44,5 +44,14 @@ Approve adding the research direction exploration module as a global pre-paper w
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+好的，增加这个功能；继续
+
+### Decision and resolution
+
+- Decision: approved
+- Recorded at: 2026-07-16T11:51:53+08:00
+- Resolution: Implemented the global research direction exploration workflow with policy, workspace structure, templates, startup script, documentation, and AGENTS protocol. Implementation commit: d225723.
+
 
