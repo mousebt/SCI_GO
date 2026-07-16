@@ -1,12 +1,12 @@
 ﻿---
 id: "APR-20260716-115654-791c4e"
 created_at: "2026-07-16T11:56:54+08:00"
-updated_at: "2026-07-16T11:56:54+08:00"
-status: pending
+updated_at: "2026-07-16T11:58:06+08:00"
+status: approved
 scope: "global"
 paper_id: ""
 risk: "low"
-git_commit: ""
+git_commit: "06320dc"
 supersedes: ""
 superseded_by: ""
 ---
@@ -44,5 +44,14 @@ Approve converting the research direction workflow into a repository skill?
 ## 用户回复与处理结果
 
 <!-- APPROVAL_RESPONSE -->
-Pending user response.
+### User response (verbatim)
+
+反正现在什么也没有，做成skill；继续
+
+### Decision and resolution
+
+- Decision: approved
+- Recorded at: 2026-07-16T11:58:06+08:00
+- Resolution: Converted the research direction workflow into repository skill skills/research-direction with SKILL.md, agents/openai.yaml, scorecard and promotion references, and AGENTS/doc updates. Implementation commit: 06320dc.
+
 
