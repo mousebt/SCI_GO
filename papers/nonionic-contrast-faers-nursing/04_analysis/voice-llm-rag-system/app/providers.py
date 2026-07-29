@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -99,12 +100,16 @@ def chat_json(system_prompt: str, user_prompt: str, timeout: int = 90) -> tuple[
     payload = {
         "model": cfg["model"],
         "temperature": 0,
+        "max_tokens": 2500,
         "messages": [
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
-        "response_format": {"type": "json_object"},
+        "response_format": {"type": "text"} if provider == "local" else {"type": "json_object"},
     }
+    if provider == "local":
+        payload["chat_template_kwargs"] = {"enable_thinking": False}
+        payload["reasoning_effort"] = "none"
     headers = {"Content-Type": "application/json"}
     if cfg["key"]:
         headers["Authorization"] = f"Bearer {cfg['key']}"
@@ -127,7 +132,13 @@ def chat_json(system_prompt: str, user_prompt: str, timeout: int = 90) -> tuple[
         raise ProviderError(f"{provider} connection failed: {exc.reason}") from exc
     try:
         content = body["choices"][0]["message"]["content"]
-        parsed = json.loads(content)
+        try:
+            parsed = json.loads(content)
+        except json.JSONDecodeError:
+            fenced = re.search(r"```(?:json)?\s*(\{.*\})\s*```", content, re.DOTALL | re.IGNORECASE)
+            if not fenced:
+                raise
+            parsed = json.loads(fenced.group(1))
     except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
         raise ProviderError("LLM response was not a valid JSON object") from exc
     meta = {"provider": provider, "model": cfg["model"]}

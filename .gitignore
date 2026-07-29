@@ -18,6 +18,11 @@ venv/
 .DS_Store
 Thumbs.db
 
+# Local secrets and machine-specific environment
+.env
+.env.*
+!.env.example
+
 # Large local research data should be referenced, not committed
 **/data-local/
 

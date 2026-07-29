@@ -1,0 +1,18 @@
+id: "contrast-adverse-reaction-nursing-no-faers"
+title: "造影剂临床不良反应与护理研究（不使用FAERS）"
+status: exploring
+created: "2026-07-29"
+updated: "2026-07-29"
+owner: ""
+primary_domain: "radiology nursing; contrast-media safety; nursing documentation quality"
+likely_article_type: "retrospective documentation audit followed by a prospective quality-improvement or implementation study"
+target_reader: "radiology nurses, nursing informatics researchers, imaging safety teams, and hospital quality-improvement teams"
+promotion_status: not_promoted
+linked_paper_id: ""
+one_sentence_direction: "在增强CT护理场景中，审计造影剂相关不良反应记录的可复核性和字段完整性，并评价标准化护理记录方案能否改善来源支持的核心字段完整度，但不据此推断发生率、因果关系或临床结局改善。"
+data_status: "Current 44 local records are available but structurally sparse; examination-level denominator and additional nursing records remain unverified."
+ethics_status: "Retrospective and prospective local-data use requires institutional governance/ethics determination."
+notes:
+  - "Created from research direction template."
+  - "FAERS is excluded from the primary evidence chain."
+  - "PubMed landscape window: 2023-07-29 to 2026-07-29."
