@@ -1,0 +1,6 @@
+runs/
+__pycache__/
+*.pyc
+*.webm
+*.wav
+*.mp3

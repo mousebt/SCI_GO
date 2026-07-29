@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>造影剂事件语音辅助记录</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <p class="eyebrow">RESEARCH PROTOTYPE · HUMAN REVIEW REQUIRED</p>
+        <h1>造影剂事件语音辅助记录</h1>
+        <p>把护士口述整理为来源可追溯的结构化初稿。系统不判断因果、严重程度、治疗或上报决定。</p>
+      </div>
+      <span class="status">待护士审核</span>
+    </header>
+
+    <section class="card">
+      <h2>1. 口述与转写</h2>
+      <p class="hint">请按事件顺序说明患者基本情况、造影剂、检查和给药、症状、时间、处置及结局。不确定的信息可以直接说“不知道”。</p>
+      <div class="controls">
+        <button id="record">开始录音与转写</button>
+        <button id="stop" class="secondary" disabled>停止</button>
+        <button id="download" class="ghost" disabled>下载录音</button>
+        <span id="timer">00:00</span>
+      </div>
+      <textarea id="transcript" rows="9" placeholder="浏览器转写会出现在这里，也可以粘贴经批准ASR生成的文字。"></textarea>
+      <label class="switch">
+        <input type="checkbox" id="useLlm" checked>
+        <span>使用真实LLM生成；关闭时运行确定性安全基线</span>
+      </label>
+      <button id="generate">检索知识并生成初稿</button>
+      <p id="message" role="status"></p>
+    </section>
+
+    <section class="card hidden" id="resultCard">
+      <div class="section-title">
+        <h2>2. 结构化初稿</h2>
+        <span id="modelBadge" class="badge"></span>
+      </div>
+      <div id="missing"></div>
+      <div id="fields" class="grid"></div>
+      <h3>按时间顺序的叙述</h3>
+      <textarea id="narrative" rows="6"></textarea>
+      <h3>中性补充问题</h3>
+      <ul id="questions"></ul>
+      <details>
+        <summary>检索证据与安全标记</summary>
+        <div id="evidence"></div>
+      </details>
+    </section>
+
+    <section class="card hidden" id="reviewCard">
+      <h2>3. 护士审核</h2>
+      <p class="hint">请对照口述逐项修改。确认仅表示已完成人工复核，不代表因果关系成立，也不会自动提交。</p>
+      <label>审核者姓名或研究编号
+        <input id="nurseName" placeholder="例如 NURSE-01">
+      </label>
+      <div class="controls">
+        <button id="confirm">确认已审核</button>
+        <button id="export" class="secondary">导出JSON</button>
+      </div>
+      <p id="reviewMessage" role="status"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
+

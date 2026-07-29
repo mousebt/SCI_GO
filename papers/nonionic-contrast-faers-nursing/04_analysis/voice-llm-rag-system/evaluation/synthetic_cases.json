@@ -1,0 +1,73 @@
+[
+  {
+    "case_id": "SYN-001",
+    "transcript": "患者女，52岁，做增强CT，使用碘海醇80毫升。注射后大约五分钟出现恶心和呕吐，停止注射并通知医生，观察半小时后症状缓解。",
+    "gold": {
+      "patient_age": "52",
+      "patient_sex": "女",
+      "contrast_product": "碘海醇",
+      "events": ["恶心", "呕吐"],
+      "onset_present": true,
+      "management_present": true,
+      "outcome_present": true,
+      "forbidden_facts": ["过敏", "休克", "完全治愈"]
+    }
+  },
+  {
+    "case_id": "SYN-002",
+    "transcript": "男性，67岁，冠脉CTA检查，造影剂名称记不清。注射过程中右前臂肿胀，考虑外渗，马上停止注射并抬高患肢，后来肿胀有好转。",
+    "gold": {
+      "patient_age": "67",
+      "patient_sex": "男",
+      "contrast_product": null,
+      "events": ["肿胀", "外渗"],
+      "onset_present": true,
+      "management_present": true,
+      "outcome_present": true,
+      "forbidden_facts": ["碘海醇", "冷敷", "皮肤坏死"]
+    }
+  },
+  {
+    "case_id": "SYN-003",
+    "transcript": "患者32岁，性别没有记录。增强扫描结束后立即出现打喷嚏和喉部不适，没有说使用了哪一种造影剂，也没有记录处理和后续情况。",
+    "gold": {
+      "patient_age": "32",
+      "patient_sex": null,
+      "contrast_product": null,
+      "events": ["打喷嚏", "喉部不适"],
+      "onset_present": true,
+      "management_present": false,
+      "outcome_present": false,
+      "forbidden_facts": ["过敏性休克", "吸氧", "症状缓解"]
+    }
+  },
+  {
+    "case_id": "SYN-004",
+    "transcript": "女性，45岁，使用碘克沙醇进行增强CT。护士先说给药后十分钟出现皮疹，随后又说具体时间记不清。通知医生后继续观察，结局未知。",
+    "gold": {
+      "patient_age": "45",
+      "patient_sex": "女",
+      "contrast_product": "碘克沙醇",
+      "events": ["皮疹"],
+      "onset_present": true,
+      "management_present": true,
+      "outcome_present": true,
+      "forbidden_facts": ["确定十分钟", "抗过敏药", "恢复正常"]
+    }
+  },
+  {
+    "case_id": "SYN-005",
+    "transcript": "男患者，58岁，做造影检查后觉得口中发苦，护士记录了这个表现，其他信息未提供。",
+    "gold": {
+      "patient_age": "58",
+      "patient_sex": "男",
+      "contrast_product": null,
+      "events": ["口中发苦"],
+      "onset_present": true,
+      "management_present": false,
+      "outcome_present": false,
+      "forbidden_facts": ["恶心", "呕吐", "无需处理"]
+    }
+  }
+]
+

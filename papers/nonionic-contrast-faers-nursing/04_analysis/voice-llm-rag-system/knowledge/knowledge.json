@@ -1,0 +1,147 @@
+[
+  {
+    "id": "FIELD-001",
+    "title": "核心事件链字段",
+    "type": "field_definition",
+    "content": "结构化初稿应分别保存患者信息、造影剂和给药、检查背景、事件原始描述、发生时间或时间窗、生命体征、处置、结局及其关系。未口述的信息保持未提供。",
+    "keywords": ["患者", "造影剂", "给药", "检查", "事件", "时间", "生命体征", "处置", "结局"],
+    "applies_to": ["all"],
+    "source": "Project reporting requirements specification v1.0",
+    "use": "字段结构，不是患者事实",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "FIELD-002",
+    "title": "来源状态",
+    "type": "field_definition",
+    "content": "每个字段标记为明确、待确认或未提供。非空字段必须链接到口述中的逐字来源片段；知识库不能补充患者事实。",
+    "keywords": ["明确", "待确认", "未提供", "来源", "逐字", "不确定", "不知道"],
+    "applies_to": ["all"],
+    "source": "Project source-fidelity requirements v1.0",
+    "use": "来源追溯规则",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "LOCAL-001",
+    "title": "本院登记中的常见原始表达",
+    "type": "local_vocabulary",
+    "content": "本院44例手工登记常见表达包括恶心、呕吐、胃部不适、皮疹、丘疹、风团、瘙痒、外渗、肿胀、咳嗽、打喷嚏、头晕和舌麻。该词表仅支持识别原始表达，不能推断未提及症状。",
+    "keywords": ["恶心", "呕吐", "胃部不适", "皮疹", "丘疹", "风团", "瘙痒", "外渗", "肿胀", "咳嗽", "打喷嚏", "头晕", "舌麻"],
+    "applies_to": ["events"],
+    "source": "Local manual registry audit, n=44, 2026-07-29",
+    "use": "同义表达识别，不是病例事实",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "FAERS-001",
+    "title": "FAERS造影剂优先事件词汇",
+    "type": "external_event_prompt",
+    "content": "FAERS严格信号的优先事件词汇包含造影剂反应、造影剂过敏、造影剂脑病、类过敏性休克、外渗、打喷嚏和喉部不适等。该列表用于术语候选和采集提醒，不代表发生率、严重程度或因果关系，且不是封闭事件清单。",
+    "keywords": ["造影剂反应", "过敏", "脑病", "休克", "外渗", "打喷嚏", "喉部不适"],
+    "applies_to": ["events"],
+    "source": "FAERS pooled strict PT signals v10; database result audit 2026-07-15",
+    "use": "候选术语与采集提示",
+    "version": "v10",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "FAERS-002",
+    "title": "早期发生时间采集提示",
+    "type": "timing_prompt",
+    "content": "可评价FAERS记录中事件时间集中在早期，因此应明确采集给药时间、事件开始时间以及二者间隔。该结果不能替患者补写发生时间。",
+    "keywords": ["立即", "马上", "给药后", "注射后", "分钟", "小时", "随后", "不久", "发生时间"],
+    "applies_to": ["onset", "administration_time"],
+    "source": "FAERS TTO v10: 8,010/9,069 same day; 8,450/9,069 within 1 day",
+    "use": "中性时间追问",
+    "version": "v10",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "TERM-001",
+    "title": "胃肠道事件候选术语",
+    "type": "terminology",
+    "content": "恶心可候选映射为Nausea，呕吐可候选映射为Vomiting，胃部不适保留原始表达并由人工确认标准术语。",
+    "keywords": ["恶心", "呕吐", "胃部不适"],
+    "applies_to": ["events"],
+    "source": "Project terminology dictionary; MedDRA-compatible candidates",
+    "use": "仅供人工复核的标准术语候选",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "TERM-002",
+    "title": "皮肤与过敏样表现候选术语",
+    "type": "terminology",
+    "content": "皮疹可候选映射为Rash，瘙痒为Pruritus，风团可候选映射为Urticaria。候选术语不得覆盖护士原始表述。",
+    "keywords": ["皮疹", "瘙痒", "风团", "丘疹", "过敏"],
+    "applies_to": ["events"],
+    "source": "Project terminology dictionary; MedDRA-compatible candidates",
+    "use": "仅供人工复核的标准术语候选",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "TERM-003",
+    "title": "外渗与局部表现候选术语",
+    "type": "terminology",
+    "content": "外渗可候选映射为Extravasation；肿胀应保留部位和原始表达。不得根据外渗词汇自动生成处置措施或结局。",
+    "keywords": ["外渗", "肿胀", "注射部位", "局部"],
+    "applies_to": ["events", "administration_site"],
+    "source": "Local vocabulary and FAERS PT candidates",
+    "use": "术语候选与来源保留",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "FOLLOWUP-001",
+    "title": "中性补充问题",
+    "type": "follow_up",
+    "content": "对缺失核心字段使用中性问题：使用的造影剂名称是否知道；症状是在给药过程中、给药后立即还是稍后出现；当时采取了哪些处理；处理或观察后症状有什么变化。",
+    "keywords": ["不知道", "未记录", "不清楚", "缺失", "补充", "处理", "变化"],
+    "applies_to": ["missing_fields"],
+    "source": "Voice-assisted evaluation protocol v1.0",
+    "use": "缺失字段追问，不暗示特定事件",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "GUARD-001",
+    "title": "禁止自动临床判断",
+    "type": "guardrail",
+    "content": "系统不得判断因果关系、最终严重程度、诊断、治疗方案或法定可报告性，不得自动提交报告。最终稿必须由护士主动审核确认。",
+    "keywords": ["导致", "因果", "严重", "诊断", "治疗", "建议", "上报", "提交"],
+    "applies_to": ["all"],
+    "source": "Guardrail rules G013-G018",
+    "use": "硬性安全边界",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "GUARD-002",
+    "title": "保留不确定性与冲突",
+    "type": "guardrail",
+    "content": "不知道、可能、记不清或相互冲突的内容必须保持不确定或待确认，不得由模型选择一个值，也不得把缺失解释为阴性。",
+    "keywords": ["不知道", "可能", "大概", "记不清", "冲突", "不确定", "没有说"],
+    "applies_to": ["all"],
+    "source": "Guardrail rules G008-G010, G019-G020",
+    "use": "不确定性与冲突控制",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  },
+  {
+    "id": "GUARD-003",
+    "title": "不受FAERS事件清单限制",
+    "type": "guardrail",
+    "content": "即使口述事件不在FAERS优先词汇中，也必须允许原样记录为其他事件。FAERS排名不能提高病例严重程度或因果确定性。",
+    "keywords": ["其他事件", "未匹配", "新症状", "原样记录", "FAERS"],
+    "applies_to": ["events"],
+    "source": "Guardrail rule G012 and FAERS inference boundary",
+    "use": "防止锚定偏倚",
+    "version": "1.0",
+    "status": "approved_for_prototype"
+  }
+]
+

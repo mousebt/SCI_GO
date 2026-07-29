@@ -1,0 +1,40 @@
+:root {
+  font-family: Inter, "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  color: #18322d;
+  background: #edf3f0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1040px; margin: 0 auto; padding: 40px 20px 80px; }
+header { display: flex; justify-content: space-between; gap: 30px; align-items: flex-start; margin-bottom: 28px; }
+h1 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.05; margin: 6px 0 12px; letter-spacing: -.04em; }
+h2 { margin-top: 0; }
+h3 { margin: 26px 0 10px; }
+p { line-height: 1.65; }
+.eyebrow { color: #17725d; font-size: .78rem; font-weight: 800; letter-spacing: .12em; }
+.status, .badge { background: #daf1e8; color: #075d4b; border-radius: 999px; padding: 8px 13px; white-space: nowrap; font-size: .82rem; }
+.card { background: #fff; border: 1px solid #d5e3de; border-radius: 18px; padding: 26px; margin: 18px 0; box-shadow: 0 16px 50px rgba(35, 75, 64, .07); }
+.hint { color: #60756f; }
+.controls, .section-title { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.section-title { justify-content: space-between; }
+button { border: 0; border-radius: 10px; padding: 11px 16px; background: #126b57; color: #fff; font-weight: 700; cursor: pointer; }
+button:hover { background: #0b5947; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.secondary { background: #dce9e5; color: #17483d; }
+button.ghost { background: transparent; color: #126b57; border: 1px solid #9fc5ba; }
+textarea, input { width: 100%; border: 1px solid #bfd2cc; border-radius: 10px; padding: 12px; font: inherit; margin: 10px 0; background: #fbfdfc; }
+textarea:focus, input:focus { outline: 3px solid #ccebe2; border-color: #348a73; }
+.switch { display: flex; gap: 8px; align-items: center; margin: 8px 0 14px; }
+.switch input { width: auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(245px, 1fr)); gap: 12px; }
+.field { border: 1px solid #dbe7e3; border-radius: 12px; padding: 12px; }
+.field small { display: block; color: #71817c; margin-bottom: 4px; }
+.source { color: #526963; font-size: .84rem; }
+.missing { border-left: 4px solid #dc7f3b; background: #fff6ed; padding: 12px 14px; border-radius: 8px; }
+.flag { color: #9b382f; }
+.hidden { display: none; }
+#message, #reviewMessage { min-height: 1.5rem; color: #775311; }
+details { margin-top: 22px; border-top: 1px solid #e1eae7; padding-top: 14px; }
+summary { cursor: pointer; font-weight: 700; }
+@media (max-width: 650px) { header { display: block; } .status { display: inline-block; } .card { padding: 18px; } }
+
