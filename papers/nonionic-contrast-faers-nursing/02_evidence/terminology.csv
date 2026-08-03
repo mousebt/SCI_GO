@@ -1,8 +1,16 @@
 canonical_term,first_use_definition,variants_seen,decision,source,approved_by
-"iodinated contrast media (ICM)","iodinated contrast media (ICM)","iodine contrast agent; iodinated contrast agent","Use ICM; specify non-ionic ICM when relevant","ACR/ESUR terminology","pending"
-"adverse event (AE)","adverse event (AE)","ADE; ADR; adverse reaction","Use AE for FAERS reports; reserve ADR for a causal interpretation","FDA FAERS","pending"
-"FAERS","US Food and Drug Administration Adverse Event Reporting System (FAERS)","FDA Adverse Event Reporting System","Define once","FDA","pending"
-"preferred term (PT)","Medical Dictionary for Regulatory Activities preferred term (PT)","adverse reaction; indication","Do not label PTs as indications","MedDRA","pending"
-"disproportionality signal","signal of disproportionate reporting","risk signal; strong association","Avoid risk/incidence/causal wording","READUS-PV/FDA","pending"
-"time to onset (TTO)","time to onset (TTO)","occurrence time","Use TTO and define date calculation","pharmacovigilance convention","pending"
-"contrast-associated acute kidney injury (CA-AKI)","contrast-associated acute kidney injury (CA-AKI)","CI-AKI; contrast-induced nephropathy","Use CA-AKI unless causality is established; preserve MedDRA PT 'acute kidney injury' in results","ACR/ESUR","pending"
+iodinated contrast media (ICM),iodinated contrast media (ICM),iodine contrast agent; iodinated contrast agent,Use ICM; specify non-ionic ICM when relevant,ACR/ESUR terminology,pending
+adverse event (AE),adverse event (AE),ADE; ADR; adverse reaction,"Use AE for FAERS data; use suspected contrast-related AE for the local registry unless causality was formally assessed; reserve ADR/sADR for formal definitions, regulatory terminology or source literature",FDA FAERS,pending
+FAERS,US Food and Drug Administration Adverse Event Reporting System (FAERS),FDA Adverse Event Reporting System,Define once,FDA,pending
+preferred term (PT),Medical Dictionary for Regulatory Activities preferred term (PT),adverse reaction; indication,Do not label PTs as indications,MedDRA,pending
+disproportionality signal,signal of disproportionate reporting,risk signal; strong association,Avoid risk/incidence/causal wording,READUS-PV/FDA,pending
+time to onset (TTO),time to onset (TTO),occurrence time,Use TTO and define date calculation,pharmacovigilance convention,pending
+contrast-associated acute kidney injury (CA-AKI),contrast-associated acute kidney injury (CA-AKI),CI-AKI; contrast-induced nephropathy,Use CA-AKI unless causality is established; preserve MedDRA PT 'acute kidney injury' in results,ACR/ESUR,pending
+suspected contrast-related adverse event,suspected contrast-related adverse event,local ADE; contrast-related ADR; sADR,Use for local registered events when causal attribution has not been established,project inference boundary,pending
+reporting requirements specification,evidence-informed reporting requirements specification,LLM framework; digital health architecture; Phase 0,Use for the current unvalidated output; do not call it a validated framework or Phase 0,approved structural decision APR-20260728-133416-76bc30,user
+narrative-input assistant,narrative-input assistant,voice assistant; voice reporting system; LLM system,"Use for the current prototype until fixed-ASR real-audio and downstream error-propagation evaluation is completed",author-approved manuscript scope,user
+participatory reporting specification,evidence-informed participatory reporting specification,validated framework; expert consensus,"Use reporting specification; do not call it a validated framework or expert consensus unless the corresponding methods and evidence exist",formal manuscript writing specification,user
+real-world clinical dataset,100-case real-world clinical dataset,real dataset; real cases,"Use only after ethics, inclusion, de-identification and case-unit records exist; define whether the unit is an event or recording",author-approved manuscript scope,user
+expert reference standard,expert-adjudicated reference standard,gold standard; standard answer,"Use only for outputs produced by independent expert annotation and adjudication; do not call generated answers a gold standard",methodological boundary,user
+modelling set,80-case modelling set,development set; training set,"Use for the 80 real cases used to develop the local standard and LLM workflow; do not call it an independent validation set",author-approved dataset split,user
+independent test set,20-case locked independent test set,validation set; holdout set,"Use for the 20 real cases not accessed until dictionary manual model prompt schema and guardrails are frozen; interpret as exploratory because n=20",author-approved dataset split,user

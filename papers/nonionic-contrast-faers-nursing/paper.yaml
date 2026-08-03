@@ -1,5 +1,5 @@
-﻿id: "nonionic-contrast-faers-nursing"
-title: "基于真实世界数据的非离子型碘造影剂风险信号挖掘及护理对策探析"
+id: "nonionic-contrast-faers-nursing"
+title: "手机语音—LLM辅助造影剂ADE报告生成：基于100条真实临床数据的专家评价研究"
 status: drafting
 created: "2026-07-14"
 writing_logic_version: "1.0.0"
@@ -7,6 +7,17 @@ start_mode: "existing_zh_manuscript"
 paper_type: research
 source_language: zh
 manuscript_language: en
+current_drafting_master: "03_manuscript/main-zh-real100-v0.1-2026-08-03.md"
+historical_drafting_master: "03_manuscript/main-zh.md"
+submission_working_draft: null
+historical_submission_draft: "03_manuscript/main.md"
+prewriting_baseline: "00_admin/prewriting-baseline-2026-07-28.md"
+formal_writing_specification: null
+historical_formal_writing_specification: "01_planning/formal-manuscript-writing-specification-no-faers-2026-08-03.md"
+development_framework: null
+historical_development_framework: "01_planning/project-development-framework-v1.0-2026-08-03.md"
+historical_paper_framework: "01_planning/paper-framework-fixed-44-v1.0-2026-08-03.md"
+paper_framework: "01_planning/integrated-manuscript-framework-real100-v1.1-2026-08-03.md"
 target_journal: "Nursing Open; fallback Current Medical Science"
 primary_reader: "Nursing researchers, radiology nurses, and clinical teams responsible for iodinated contrast safety"
 owners: []
@@ -15,3 +26,6 @@ overrides:
   - "Approved route on 2026-07-14: submit one Nursing Open-facing version first; if rejected, retarget to Current Medical Science."
   - "Author-directed enhancement on 2026-07-14: add local clinical nursing record contextualization using total local ICM administrations, local adverse-event registry, and nursing intervention/documentation records; leave unavailable data blank and do not infer intervention effectiveness."
 
+  - "Author-approved scope decision on 2026-08-03: FAERS is not necessary to the current nursing reporting-specification manuscript and must not appear in its title, abstract, keywords, main text, figures, tables or supplements; retain FAERS outputs only as out-of-scope project assets."
+  - "Author-approved scope on 2026-08-03: the 44 historical records are rationale baseline information only; the manuscript evidence centres on a newly established 100-case real-world clinical voice dataset and expert reference standard; synthetic cases and separate ASR performance evaluation are excluded from the manuscript."
+  - "Author-approved dataset split on 2026-08-03: the 100 real-world cases are fixed as an 80-case modelling set and a 20-case locked independent test set; all standards and system components must be frozen before test access."
