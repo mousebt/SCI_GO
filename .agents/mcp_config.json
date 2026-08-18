@@ -1,0 +1,14 @@
+﻿{
+    "mcpServers":  {
+                       "academic_search":  {
+                                               "args":  [
+                                                            "academic_search_server.py"
+                                                        ],
+                                               "env":  {
+                                                           "PUBMED_EMAIL":  "cxujianhao@gmail.com"
+                                                       },
+                                               "command":  "E:\\pythonProjects\\SCI_GO\\.codex\\mcp\\academic-search\\.venv\\Scripts\\python.exe",
+                                               "cwd":  "C:\\Users\\XuJianhao\\.codex\\skills\\nature-academic-search\\mcp-server"
+                                           }
+                   }
+}

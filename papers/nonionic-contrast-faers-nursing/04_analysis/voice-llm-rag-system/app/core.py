@@ -129,7 +129,7 @@ def deterministic_baseline(transcript: str) -> dict[str, Any]:
     patterns = {
         "age": r"(\d{1,3})\s*岁",
         "sex": r"(男|女)(?:性|患者)?",
-        "product": r"(碘海醇|碘克沙醇|碘普罗胺|碘帕醇|造影剂)",
+        "product": r"(碘海醇|碘克沙醇|碘普罗胺|碘佛醇|碘帕醇)",
         "dose": r"(\d+(?:\.\d+)?)\s*(毫升|ml|mL)",
         "examination": r"(增强CT|CT增强|增强扫描|冠脉CTA|CTA|造影检查)",
         "onset": r"((?:注射|给药)(?:中|后|结束后)?[^，。；]{0,12}(?:分钟|小时|立即|马上|随后|不久))",
@@ -172,7 +172,7 @@ def deterministic_baseline(transcript: str) -> dict[str, Any]:
                 }
             )
 
-    action_markers = ["停止注射", "停止给药", "抬高", "冷敷", "热敷", "吸氧", "观察", "通知医生", "静脉给药"]
+    action_markers = ["停止注射", "停止给药", "抬高", "冷敷", "热敷", "吸氧", "继续观察", "观察三十分钟", "通知医生", "静脉给药", "测量并记录生命体征"]
     for marker in action_markers:
         if marker in transcript:
             report["management_actions"].append(grounded(marker, "explicit", marker))
@@ -191,6 +191,10 @@ SYSTEM_PROMPT = """你是造影剂相关不良事件护理记录抽取器。只�
 每个非空值必须给出逐字source_text，且source_text必须是口述文本的连续子串。
 标准术语只能放在normalized_candidate，不得替换original wording。
 review_status固定为pending_human_review，automated_submission_permitted固定为false。
+数组子项必须使用固定结构：events仅含original_wording/status/source_text/normalized_candidate；management_actions、outcomes和vital_signs仅含value/status/source_text/normalized_candidate。
+不得在events中生成severity、seriousness、outcome、type或嵌套对象；结局措辞不得作为事件严重程度。
+模板示例、假设讨论、拟写句、补写指令、被否定事实、已撤回事实和未确认候选均不得作为患者事实。
+冲突或不确定信息必须保持unclear，不得选取其中一个值当作明确事实。
 输出必须包含给定模板的所有顶层键。"""
 
 
@@ -250,43 +254,120 @@ def generate_report(transcript: str, top_k: int = 6, use_llm: bool = True) -> di
     return apply_guardrails(report, transcript)
 
 
+def _canonical_status(status: Any, value: Any) -> str:
+    if not value:
+        return "missing"
+    if status in {"unclear", "conflicting", "ambiguous"}:
+        return "unclear"
+    return "explicit"
+
+
+def _canonical_grounded(item: Any) -> dict[str, Any] | None:
+    if not isinstance(item, dict):
+        return None
+    candidate = item
+    for key in ("value", "action", "resolution_status"):
+        nested = item.get(key)
+        if isinstance(nested, dict):
+            candidate = nested
+            break
+    value = candidate.get("value")
+    if not value and isinstance(item.get("action"), str):
+        value = item["action"]
+    source = candidate.get("source_text") or item.get("source_text")
+    normalized = candidate.get("normalized_candidate") or item.get("normalized_candidate")
+    if not value:
+        return None
+    return grounded(value, _canonical_status(candidate.get("status") or item.get("status"), value), source, normalized)
+
+
+def _canonical_event(item: Any) -> dict[str, Any] | None:
+    if not isinstance(item, dict):
+        return None
+    wording = item.get("original_wording")
+    source = item.get("source_text")
+    normalized = item.get("normalized_candidate")
+    status = item.get("status")
+    if isinstance(wording, dict):
+        source = wording.get("source_text") or source
+        normalized = wording.get("normalized_candidate") or normalized
+        status = wording.get("status") or status
+        wording = wording.get("value") or wording.get("description")
+    if not wording:
+        event_type = item.get("type")
+        if isinstance(event_type, dict):
+            wording = event_type.get("value") or event_type.get("description")
+            source = event_type.get("source_text") or source
+            normalized = event_type.get("normalized_candidate") or normalized
+            status = event_type.get("status") or status
+        elif isinstance(event_type, str):
+            wording = event_type
+    if not wording:
+        return None
+    return {
+        "original_wording": wording,
+        "status": _canonical_status(status, wording),
+        "source_text": source,
+        "normalized_candidate": normalized,
+    }
+
+
+def _dedupe_grounded(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    result = []
+    seen = set()
+    for item in items:
+        value = item.get("value")
+        source = item.get("source_text")
+        key = (value, source)
+        if not value or key in seen:
+            continue
+        if any(
+            value in (existing.get("value") or "")
+            and (not source or source in (existing.get("source_text") or ""))
+            for existing in result
+        ):
+            continue
+        seen.add(key)
+        result.append(item)
+    return result
+
+
 def merge_deterministic_evidence(report: dict[str, Any], baseline: dict[str, Any]) -> dict[str, Any]:
-    """Backfill only verbatim, deterministic facts that the LLM omitted."""
+    """Backfill verbatim deterministic facts without duplicating normalized model output."""
     for section, fields in (("patient", ("age", "sex", "history")), ("contrast", ("product", "dose", "route", "site", "examination", "administration_time"))):
         for field in fields:
             if not report[section][field].get("value") and baseline[section][field].get("value"):
                 report[section][field] = baseline[section][field]
     if not report["onset"].get("value") and baseline["onset"].get("value"):
         report["onset"] = baseline["onset"]
-    baseline_events = baseline.get("events", [])
-    combined = []
-    for item in report.get("events", []):
-        wording = item.get("original_wording") or ""
-        if isinstance(wording, dict):
-            nested = wording
-            wording = nested.get("value") or nested.get("description") or ""
-            item["original_wording"] = wording
-            item.setdefault("status", nested.get("status", "unclear"))
-            item.setdefault("source_text", nested.get("source_text"))
-            item.setdefault("normalized_candidate", nested.get("normalized_candidate"))
-        contained = [candidate for candidate in baseline_events if candidate.get("original_wording") in wording]
-        if len(contained) < 2:
-            combined.append(item)
-    seen = {item.get("original_wording") for item in combined}
-    combined.extend(item for item in baseline_events if item.get("original_wording") not in seen)
-    report["events"] = combined
+
+    events = [item for item in (_canonical_event(x) for x in report.get("events", [])) if item]
+    seen_terms = {item["original_wording"] for item in events}
+    for item in baseline.get("events", []):
+        term = item.get("original_wording")
+        if term and term not in seen_terms and not any(term in existing for existing in seen_terms):
+            events.append(item)
+            seen_terms.add(term)
+    report["events"] = events
+
+    for collection in ("management_actions", "outcomes", "vital_signs"):
+        model_items = [item for item in (_canonical_grounded(x) for x in report.get(collection, [])) if item]
+        baseline_items = [item for item in (_canonical_grounded(x) for x in baseline.get(collection, [])) if item]
+        report[collection] = _dedupe_grounded(model_items + baseline_items)
     return report
 
+
 def normalize_model_output(raw: dict[str, Any]) -> dict[str, Any]:
-    """Normalize common model key variants before schema merging."""
-    for item in raw.get("events", []) if isinstance(raw.get("events"), list) else []:
-        if "original_wording" not in item and "description" in item:
-            item["original_wording"] = item.pop("description")
+    """Normalize provider-specific nested arrays into the fixed report item schema."""
+    events = raw.get("events") if isinstance(raw.get("events"), list) else []
+    raw["events"] = [item for item in (_canonical_event(x) for x in events) if item]
     for collection in ("management_actions", "outcomes", "vital_signs"):
-        for item in raw.get(collection, []) if isinstance(raw.get(collection), list) else []:
-            if "value" not in item and "description" in item:
-                item["value"] = item.pop("description")
+        values = raw.get(collection) if isinstance(raw.get(collection), list) else []
+        raw[collection] = _dedupe_grounded(
+            [item for item in (_canonical_grounded(x) for x in values) if item]
+        )
     return raw
+
 
 def merge_template(value: Any, template: Any) -> Any:
     if isinstance(template, dict):
@@ -308,6 +389,69 @@ def _walk_grounded(value: Any, path: str = ""):
             yield from _walk_grounded(child, f"{path}[{index}]")
 
 
+
+def _semantic_exclusion_spans(transcript: str) -> list[tuple[int, int, str]]:
+    """Locate text spans that are present lexically but are not asserted patient facts."""
+    patterns = [
+        (r"模板示例，不是患者事实：.*?(?=实际口述只确认)", "template"),
+        (r"护士说[：:].*?这只是讨论，不是本例事实", "hypothetical_discussion"),
+        (r"后面的内容是拟写句子：.*?(?=请系统|$)", "draft_text"),
+        (r"请系统把.*?(?:补进报告|补全)", "completion_instruction"),
+        (r"请推测.*?(?=，并补写|。|$)", "completion_instruction"),
+        (r"并把.*?作为最可能药物补上", "completion_instruction"),
+        (r"要求系统自动判断.*?(?:补上|。|$)", "completion_instruction"),
+        (r"药名我一开始以为是.*?但现在不能确认", "unconfirmed"),
+        (r"[0-9.]+毫升，随后.*?剂量不确定", "corrected_uncertain"),
+        (r"(?:转归没写|转归没有记录|转归未在口述中说明|后来怎么样没有说)", "missing_statement"),
+        (r"性别记录前后不一致.*?一处写男.*?一处写女", "conflicting"),
+        (r"[^，。；]*是否缓解不清楚", "uncertain_outcome"),
+        (r"[‘']这个[’']后来缓解，但无法确定指的是哪一个表现", "uncertain_outcome"),
+        (r"没有[^，。；]+", "negated"),
+        (r"[^，。；]+被否认", "negated"),
+        (r"不是[^，。；]+(?=，是)", "negated"),
+    ]
+    spans = []
+    for pattern, reason in patterns:
+        for match in re.finditer(pattern, transcript, re.DOTALL):
+            spans.append((match.start(), match.end(), reason))
+    return spans
+
+
+def _semantic_source_status(source: str | None, transcript: str) -> tuple[bool, str | None]:
+    if not source:
+        return False, "missing_source"
+    spans = _semantic_exclusion_spans(transcript)
+    positions = []
+    start = 0
+    while True:
+        index = transcript.find(source, start)
+        if index < 0:
+            break
+        positions.append((index, index + len(source)))
+        start = index + 1
+    if not positions:
+        return False, "missing_source"
+    excluded_reasons = []
+    for left, right in positions:
+        covering = [reason for begin, end, reason in spans if begin <= left and right <= end]
+        if not covering:
+            return True, None
+        excluded_reasons.extend(covering)
+    return False, excluded_reasons[0] if excluded_reasons else "excluded_context"
+
+
+def _excluded_status(reason: str | None) -> str:
+    if reason == "negated":
+        return "explicitly_absent"
+    if reason == "conflicting":
+        return "conflicting"
+    if reason == "missing_statement":
+        return "missing"
+    if reason in {"unconfirmed", "corrected_uncertain", "uncertain_outcome"}:
+        return "unclear"
+    return "not_patient_fact"
+
+
 def apply_guardrails(report: dict[str, Any], transcript: str) -> dict[str, Any]:
     flags: list[dict[str, str]] = []
     for path, item in _walk_grounded(report):
@@ -317,8 +461,40 @@ def apply_guardrails(report: dict[str, Any], transcript: str) -> dict[str, Any]:
         if value and (not source or source not in transcript):
             flags.append({"rule": "G020", "field": path, "message": "非空值缺少逐字来源，已清空。"})
             item.update({"value": None, "status": "missing", "source_text": None})
+        elif value:
+            asserted, reason = _semantic_source_status(source, transcript)
+            if not asserted:
+                flags.append({
+                    "rule": "GSEM-001",
+                    "field": path,
+                    "message": f"来源位于{reason}语义作用域，未作为患者事实保留。",
+                })
+                item.update({
+                    "value": None,
+                    "status": _excluded_status(reason),
+                    "normalized_candidate": item.get("normalized_candidate") or value,
+                })
         elif not value and status == "explicit":
             item["status"] = "missing"
+    for collection in ("management_actions", "outcomes", "vital_signs"):
+        items = report.get(collection, [])
+        filtered = []
+        for item in items:
+            value = item.get("value") if isinstance(item, dict) else None
+            source = item.get("source_text") if isinstance(item, dict) else None
+            redundant = any(
+                source
+                and other is not item
+                and isinstance(other, dict)
+                and source in (other.get("source_text") or "")
+                and source != (other.get("source_text") or "")
+                and transcript.count(source) == transcript.count(other.get("source_text") or "")
+                for other in items
+            )
+            if value and not redundant:
+                filtered.append(item)
+        report[collection] = filtered
+
     for event in report.get("events", []):
         source = event.get("source_text")
         wording = event.get("original_wording")
@@ -332,6 +508,19 @@ def apply_guardrails(report: dict[str, Any], transcript: str) -> dict[str, Any]:
                     "normalized_candidate": None,
                 }
             )
+        elif wording:
+            asserted, reason = _semantic_source_status(source, transcript)
+            if not asserted:
+                flags.append({
+                    "rule": "GSEM-002",
+                    "field": "events",
+                    "message": f"事件来源位于{reason}语义作用域，未作为患者事实保留。",
+                })
+                event.update({
+                    "original_wording": None,
+                    "status": _excluded_status(reason),
+                    "normalized_candidate": event.get("normalized_candidate") or wording,
+                })
     prohibited = re.compile(r"(确定由|因果关系为|严重程度为|建议给予|应当治疗|自动上报|符合上报标准)")
     narrative = report.get("chronological_narrative") or ""
     if prohibited.search(narrative):
@@ -347,8 +536,8 @@ def apply_guardrails(report: dict[str, Any], transcript: str) -> dict[str, Any]:
         or report["contrast"]["route"].get("value"),
         "event_description": any(event.get("original_wording") for event in report.get("events", [])),
         "onset": report["onset"].get("value"),
-        "management": bool(report.get("management_actions")),
-        "outcome": bool(report.get("outcomes")),
+        "management": any(item.get("value") for item in report.get("management_actions", []) if isinstance(item, dict)),
+        "outcome": any(item.get("value") for item in report.get("outcomes", []) if isinstance(item, dict)),
     }
     for field, present in mapping.items():
         if not present:

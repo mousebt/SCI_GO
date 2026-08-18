@@ -1,0 +1,3 @@
+﻿# Competing ideas
+
+

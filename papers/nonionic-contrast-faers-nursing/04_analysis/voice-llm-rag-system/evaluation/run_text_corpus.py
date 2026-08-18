@@ -17,6 +17,7 @@ SYSTEM = HERE.parent
 sys.path.insert(0, str(SYSTEM / "app"))
 
 from core import generate_report  # noqa: E402
+from providers import ProviderError  # noqa: E402
 
 
 DEFAULT_INPUT = HERE / "expert_constructed_text_candidates_100.json"
@@ -104,9 +105,15 @@ def summarize(records: list[dict[str, Any]], errors: list[dict[str, Any]], elaps
     }
 
 
-def parse_case(case: dict[str, Any], retries: int) -> tuple[dict[str, Any] | None, dict[str, Any] | None]:
+def parse_case(
+    case: dict[str, Any],
+    retries: int,
+    initial_backoff: float,
+    max_backoff: float,
+) -> tuple[dict[str, Any] | None, dict[str, Any] | None]:
     case_started = time.perf_counter()
     error: Exception | None = None
+    retry_events: list[dict[str, Any]] = []
     for attempt in range(1, retries + 2):
         try:
             report = generate_report(case["transcript"], use_llm=True)
@@ -116,11 +123,27 @@ def parse_case(case: dict[str, Any], retries: int) -> tuple[dict[str, Any] | Non
                     "report": report,
                     "elapsed_seconds": round(time.perf_counter() - case_started, 3),
                     "attempts": attempt,
+                    "retry_events": retry_events,
                 },
                 None,
             )
         except Exception as exc:
             error = exc
+            retryable = isinstance(exc, ProviderError) and exc.retryable
+            if not retryable or attempt > retries:
+                break
+            exponential = min(max_backoff, initial_backoff * (2 ** (attempt - 1)))
+            advised = exc.retry_after if exc.retry_after is not None else 0.0
+            delay = max(exponential, advised)
+            retry_events.append(
+                {
+                    "attempt": attempt,
+                    "error_type": type(exc).__name__,
+                    "retry_after_seconds": round(delay, 3),
+                    "server_retry_after_seconds": exc.retry_after,
+                }
+            )
+            time.sleep(delay)
     assert error is not None
     return (
         None,
@@ -129,7 +152,9 @@ def parse_case(case: dict[str, Any], retries: int) -> tuple[dict[str, Any] | Non
             "difficulty_level": case["difficulty_level"],
             "error_type": type(error).__name__,
             "error": str(error),
-            "attempts": retries + 1,
+            "retryable": isinstance(error, ProviderError) and error.retryable,
+            "attempts": len(retry_events) + 1,
+            "retry_events": retry_events,
             "elapsed_seconds": round(time.perf_counter() - case_started, 3),
         },
     )
@@ -141,7 +166,9 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=SYSTEM / "runs")
     parser.add_argument("--provider", default="local")
     parser.add_argument("--limit", type=int, default=0, help="0 means all cases.")
-    parser.add_argument("--retries", type=int, default=2)
+    parser.add_argument("--retries", type=int, default=4, help="Retries for 429, 5xx and transient network errors only.")
+    parser.add_argument("--initial-backoff", type=float, default=1.0)
+    parser.add_argument("--max-backoff", type=float, default=60.0)
     parser.add_argument("--workers", type=int, default=1)
     args = parser.parse_args()
 
@@ -162,7 +189,16 @@ def main() -> None:
     started = time.perf_counter()
     completed = 0
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        future_map = {pool.submit(parse_case, case, args.retries): case for case in cases}
+        future_map = {
+            pool.submit(
+                parse_case,
+                case,
+                args.retries,
+                args.initial_backoff,
+                args.max_backoff,
+            ): case
+            for case in cases
+        }
         for future in as_completed(future_map):
             case = future_map[future]
             record, failed = future.result()

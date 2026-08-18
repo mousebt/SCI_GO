@@ -1,0 +1,25 @@
+project_id: llm-virtual-standardized-patient
+project_type: grant_proposal
+status: active
+created_date: 2026-07-16
+language: zh
+topic: 利用大语言模型构建虚拟标准化病人
+working_title: "[VERIFY] 基于大语言模型的虚拟标准化病人构建与应用研究"
+funding_type: "[VERIFY] unknown"
+stage: intake
+one_sentence_argument: "[EVIDENCE NEEDED] For [目标学习者/临床场景], this project will use large language models to construct virtual standardized patients for [教学/培训/考核/沟通训练], producing [系统/评价体系/应用证据] with [医学教育/护理教育/临床培训] value."
+owner_notes: ""
+template_source: ""
+required_sections: []
+ethics_required: "[VERIFY]"
+data_sources:
+  - "[VERIFY] 教学案例/临床情景脚本"
+  - "[VERIFY] 标准化病人评分量表"
+  - "[VERIFY] 学生/护士/医学生交互记录"
+  - "[VERIFY] 专家评价数据"
+outputs:
+  - 课题申报书
+  - 技术路线
+  - 立项依据
+  - 研究内容与创新点
+  - 可行性与风险控制

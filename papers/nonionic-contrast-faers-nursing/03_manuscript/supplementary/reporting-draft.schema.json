@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/schemas/suspected-contrast-related-ae-report-draft.schema.json",
+  "title": "Suspected contrast-related adverse-event report draft",
+  "description": "Unvalidated, implementation-neutral draft schema. Human review is mandatory before authorised submission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_input_type",
+    "reporter_identifiable_within_authorised_system",
+    "patient_identifiable_within_authorised_system",
+    "suspected_products",
+    "events",
+    "product_event_relationships",
+    "missing_required_fields",
+    "source_conflicts",
+    "review_status",
+    "automated_submission_permitted"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1-draft"
+    },
+    "source_input_type": {
+      "type": "string",
+      "enum": ["brief_text", "voice_transcript"]
+    },
+    "reporter_identifiable_within_authorised_system": {
+      "$ref": "#/$defs/threeState"
+    },
+    "reporter_role": {
+      "$ref": "#/$defs/groundedString"
+    },
+    "patient_identifiable_within_authorised_system": {
+      "$ref": "#/$defs/threeState"
+    },
+    "suspected_products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["original_name", "normalized_candidate", "source_status"],
+        "properties": {
+          "original_name": {"type": ["string", "null"]},
+          "normalized_candidate": {"type": ["string", "null"]},
+          "source_status": {"$ref": "#/$defs/sourceStatus"}
+        }
+      }
+    },
+    "administration_context": {
+      "$ref": "#/$defs/groundedString"
+    },
+    "administration_datetime": {
+      "$ref": "#/$defs/groundedDateTime"
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "original_wording",
+          "candidate_meddra_pt",
+          "source_status",
+          "unexpected_or_other_event"
+        ],
+        "properties": {
+          "original_wording": {"type": ["string", "null"]},
+          "candidate_meddra_pt": {"type": ["string", "null"]},
+          "source_status": {"$ref": "#/$defs/sourceStatus"},
+          "unexpected_or_other_event": {"type": "boolean"}
+        }
+      }
+    },
+    "product_event_relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["product_index", "event_index", "support"],
+        "properties": {
+          "product_index": {"type": "integer", "minimum": 0},
+          "event_index": {"type": "integer", "minimum": 0},
+          "support": {"$ref": "#/$defs/threeState"}
+        }
+      }
+    },
+    "onset_datetime_or_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reported_value", "precision", "source_status"],
+      "properties": {
+        "reported_value": {"type": ["string", "null"]},
+        "precision": {
+          "type": "string",
+          "enum": ["exact_datetime", "date_only", "relative_window", "unclear", "missing"]
+        },
+        "source_status": {"$ref": "#/$defs/sourceStatus"}
+      }
+    },
+    "seriousness_or_escalation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reported_value", "source_status", "requires_human_determination"],
+      "properties": {
+        "reported_value": {"type": ["string", "null"]},
+        "source_status": {"$ref": "#/$defs/sourceStatus"},
+        "requires_human_determination": {"type": "boolean", "const": true}
+      }
+    },
+    "management_actions": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/groundedString"}
+    },
+    "outcomes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/groundedString"}
+    },
+    "missing_required_fields": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "source_conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["field", "description"],
+        "properties": {
+          "field": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "review_status": {
+      "type": "string",
+      "const": "pending_human_review"
+    },
+    "automated_submission_permitted": {
+      "type": "boolean",
+      "const": false
+    }
+  },
+  "$defs": {
+    "threeState": {
+      "type": "string",
+      "enum": ["yes", "no", "unclear"]
+    },
+    "sourceStatus": {
+      "type": "string",
+      "enum": ["explicit", "unclear", "missing"]
+    },
+    "groundedString": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "source_status"],
+      "properties": {
+        "value": {"type": ["string", "null"]},
+        "source_status": {"$ref": "#/$defs/sourceStatus"}
+      }
+    },
+    "groundedDateTime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["value", "precision", "source_status"],
+      "properties": {
+        "value": {"type": ["string", "null"]},
+        "precision": {
+          "type": "string",
+          "enum": ["exact_datetime", "date_only", "unclear", "missing"]
+        },
+        "source_status": {"$ref": "#/$defs/sourceStatus"}
+      }
+    }
+  }
+}

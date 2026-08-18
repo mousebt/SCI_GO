@@ -1,0 +1,17 @@
+id: "护理交叉学科选题孵化"
+title: "护理交叉学科选题孵化"
+status: exploring
+created: "2026-07-16"
+updated: "2026-07-16"
+owner: ""
+primary_domain: "nursing interdisciplinary research"
+likely_article_type: "observational study / scoping review / implementation study"
+target_reader: "nursing researchers, clinical nursing managers, patient-safety researchers"
+promotion_status: not_promoted
+linked_paper_id: ""
+one_sentence_direction: "在护理实践与跨学科方法交汇处，本方向探索可由现有临床、管理、药物安全或文献数据支持的护理交叉研究问题，以形成可投稿的聚焦论文，边界是不声称尚未验证的因果机制或临床有效性。"
+data_status: candidate-dependent
+ethics_status: candidate-dependent
+notes:
+  - "Created from research direction template."
+  - "2026-07-16: reset after deleting prior direction workspace; new exploration starts from nursing plus another discipline."

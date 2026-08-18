@@ -9,6 +9,8 @@
 5. 当前论文的 `paper.yaml`、`01_planning/research-brief.md`、术语表和主张—证据表
 
 默认使用已安装的 nature skills，并按任务选择最小必要 skill。不得虚构数据、引用、方法、统计量、机制或创新性。
+所有回答与科研建议必须基于真实已发表的权威学术论文（优先近2-3年核心期刊、指南与Meta分析），并明确标注文献来源（期刊、年份、作者或PMID/DOI），严禁无文献支持的主观臆测。
+跨 Agent 运行环境（Codex / Antigravity）与技能同步参考 `docs/handoff-skills-environment.md`，同步脚本见 `scripts/setup-antigravity-skills.ps1`。
 
 正文修改规则：
 

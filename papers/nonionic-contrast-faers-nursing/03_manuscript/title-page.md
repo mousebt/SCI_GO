@@ -4,67 +4,127 @@ Target journal: Nursing Open
 Article type: Empirical Research Quantitative  
 Manuscript title: Adverse-Event Reporting Patterns of Non-Ionic Iodinated Contrast Media and Local Nursing Surveillance Context: Empirical Research Quantitative
 
-> This file is separate from the anonymized main manuscript for double-blind review.
+> This file is separate from the anonymized main manuscript for double-blind review. Complete this file only with author-verified information.
 
-## Authors
+## Author Information
 
-`[AUTHOR INPUT REQUIRED: full names, academic degrees if required, institutional affiliations, and author order.]`
+| Order | Full name | Degree(s) | Affiliation number(s) | Department | Institution | City/region | Country | Email | ORCID |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | 1 | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` |
+| 2 | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` |
+| 3 | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` | `[AUTHOR INPUT REQUIRED]` |
 
-## Corresponding author
+Add or delete rows as needed after the final author order is confirmed.
 
-`[AUTHOR INPUT REQUIRED: name, full postal address, email, telephone if required.]`
+## Corresponding Author
 
-## ORCID
+| Field | Information |
+|---|---|
+| Name | `[AUTHOR INPUT REQUIRED]` |
+| Affiliation | `[AUTHOR INPUT REQUIRED]` |
+| Full postal address | `[AUTHOR INPUT REQUIRED]` |
+| Email | `[AUTHOR INPUT REQUIRED]` |
+| Telephone, if required by submission system | `[AUTHOR INPUT REQUIRED]` |
+| ORCID | `[AUTHOR INPUT REQUIRED]` |
 
-`[AUTHOR INPUT REQUIRED: ORCID for each author. Nursing Open requires ORCID.]`
-
-## Running title
-
-`[VERIFY: must be fewer than 40 characters.]`
+## Running Title
 
 Suggested working running title: `ICM safety surveillance`
 
+Nursing Open requires a short running title under 40 characters. Confirm or replace before submission.
+
 ## Funding
 
-`[AUTHOR INPUT REQUIRED: funder name, grant number, or "This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."]`
+| Question | Response |
+|---|---|
+| Was the study funded? | `[AUTHOR INPUT REQUIRED: yes/no]` |
+| Funder name(s) | `[AUTHOR INPUT REQUIRED or "Not applicable"]` |
+| Grant number(s) | `[AUTHOR INPUT REQUIRED or "Not applicable"]` |
+| Role of funder | `[AUTHOR INPUT REQUIRED: describe role or state "The funder had no role in study design, data analysis, manuscript preparation or publication decision."]` |
 
-## Conflict of interest
+Suggested no-funding wording if applicable:
 
-`[AUTHOR INPUT REQUIRED: declare any conflicts, or "The authors declare no conflicts of interest."]`
+This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors.
 
-## Author contributions
+## Conflict of Interest
 
-`[AUTHOR INPUT REQUIRED: use CRediT taxonomy or journal-required contribution format.]`
+| Author | Conflict-of-interest disclosure |
+|---|---|
+| All authors | `[AUTHOR INPUT REQUIRED: disclose relevant conflicts or state "The authors declare no conflicts of interest."]` |
 
-Suggested categories to fill:
+## Author Contributions
 
-- Conceptualization:
-- Data curation:
-- Formal analysis:
-- Investigation:
-- Methodology:
-- Project administration:
-- Software:
-- Supervision:
-- Validation:
-- Visualization:
-- Writing - original draft:
-- Writing - review and editing:
+Complete with author initials after author order is final.
+
+| CRediT role | Author initials |
+|---|---|
+| Conceptualization | `[AUTHOR INPUT REQUIRED]` |
+| Data curation | `[AUTHOR INPUT REQUIRED]` |
+| Formal analysis | `[AUTHOR INPUT REQUIRED]` |
+| Investigation | `[AUTHOR INPUT REQUIRED]` |
+| Methodology | `[AUTHOR INPUT REQUIRED]` |
+| Project administration | `[AUTHOR INPUT REQUIRED]` |
+| Software | `[AUTHOR INPUT REQUIRED]` |
+| Supervision | `[AUTHOR INPUT REQUIRED]` |
+| Validation | `[AUTHOR INPUT REQUIRED]` |
+| Visualization | `[AUTHOR INPUT REQUIRED]` |
+| Writing - original draft | `[AUTHOR INPUT REQUIRED]` |
+| Writing - review and editing | `[AUTHOR INPUT REQUIRED]` |
 
 ## Acknowledgements
 
-`[AUTHOR INPUT REQUIRED: add acknowledgements or state not applicable.]`
+`[AUTHOR INPUT REQUIRED: add acknowledgements or state "Not applicable."]`
 
-## Data availability statement
+## Data Availability Statement
 
-FAERS quarterly data are publicly available from the US Food and Drug Administration. `[VERIFY: add exact URL, retrieval date, query dictionary/archive, and whether processed data or code will be shared.]`
+| Item | Current wording or required input |
+|---|---|
+| Public FAERS/AEMS data | The FAERS/AEMS quarterly data files used in this study are publicly available from the US Food and Drug Administration through the FDA AEMS latest quarterly data files page and the FAERS quarterly data extract files portal. |
+| Aggregate table-source files | Aggregate table-source files generated for this manuscript are available in the manuscript source-data package or will be deposited in a public repository before submission. |
+| Repository or supplementary route | `[AUTHOR INPUT REQUIRED: supplementary files only, public repository, or both; add repository name and DOI/accession if deposited.]` |
+| FAERS quarter inventory | `[AUTHOR INPUT REQUIRED: download dates, quarter inventory, imported file names, and file-integrity checks if available.]` |
+| Local clinical/nursing records | Individual local clinical and nursing records, if included, cannot be shared publicly because they are derived from institutional clinical records and may contain sensitive patient-level information. |
+| Local-data access route | `[AUTHOR INPUT REQUIRED: confirm omitted, aggregate-only, controlled institutional request route, or other approved wording.]` |
 
-## Ethics statement
+## Code Availability Statement
 
-This study used publicly available de-identified spontaneous-reporting data. `[VERIFY: insert institutional review board determination/exemption wording required by the authors' institution.]`
+| Item | Current wording or required input |
+|---|---|
+| SQL and Weibull scripts | The SQL scripts used to generate the v10 result tables and the Python script used for Weibull fitting are archived with the manuscript materials and should be provided as supplementary files or deposited in a public repository before submission. |
+| Repository or supplementary route | `[AUTHOR INPUT REQUIRED: supplementary files only, public repository, or both; add repository name and DOI/accession if deposited.]` |
+| `drug_clean` dictionary | `[AUTHOR INPUT REQUIRED: confirm whether the drug dictionary or construction rules can be shared.]` |
+| MedDRA files | Imported MedDRA source files are not redistributed with the manuscript; the MedDRA version, imported file names and mapping procedure should be documented for reproducibility. |
 
-The local clinical nursing record review requires institutional confirmation regarding ethics approval, exemption, or quality-improvement review. `[AUTHOR INPUT REQUIRED: IRB/exemption/quality-improvement determination and approval number if applicable.]`
+## Ethics Statement
 
-## Patient or public contribution
+The FAERS component used publicly available, de-identified spontaneous-reporting data and did not involve direct contact with human participants.
 
-No patient or public contribution. `[VERIFY: author confirmation required.]`
+| Local-record decision | Required ethics wording |
+|---|---|
+| Local component omitted | `[AUTHOR INPUT REQUIRED: state that no local clinical/nursing record review was included.]` |
+| Local component included with approval | `[AUTHOR INPUT REQUIRED: institution name, committee name, approval number and approval date.]` |
+| Local component exempted | `[AUTHOR INPUT REQUIRED: institution name, exemption body, exemption number/date if any, and reason for exemption.]` |
+| Local component treated as quality improvement | `[AUTHOR INPUT REQUIRED: institutional quality-improvement determination and whether publication approval is required.]` |
+
+## Consent Statement
+
+| Component | Wording |
+|---|---|
+| FAERS component | Consent to participate was not applicable because the FAERS component used publicly available, de-identified secondary data. |
+| Local component, if included | `[AUTHOR INPUT REQUIRED: consent waived, not required, obtained, or not applicable because local records were omitted.]` |
+
+## Patient or Public Contribution
+
+No patient or public contribution is reported for this secondary-data pharmacovigilance study. `[AUTHOR CONFIRMATION REQUIRED: confirm before submission.]`
+
+## Title-Page Completion Gate
+
+- [ ] Final author order confirmed.
+- [ ] Affiliations and ORCID complete.
+- [ ] Corresponding author details complete.
+- [ ] Funding and conflict-of-interest statements complete.
+- [ ] CRediT author contributions complete.
+- [ ] Acknowledgements complete or marked not applicable.
+- [ ] Data/code availability route complete.
+- [ ] Local record decision, ethics statement and consent statement complete.
+- [ ] Patient/public contribution statement confirmed.

@@ -1,24 +1,45 @@
 field,value,status,notes
-institution_name,,AUTHOR INPUT REQUIRED,"Use anonymized/general wording in main manuscript if double-blind review requires it."
-study_period_start,,AUTHOR INPUT REQUIRED,"Start date for local contrast-enhanced imaging / ICM administration records."
-study_period_end,,AUTHOR INPUT REQUIRED,"End date for local records."
-setting,,AUTHOR INPUT REQUIRED,"Examples: CT suite; radiology department; interventional imaging unit."
-total_icm_administrations,,AUTHOR INPUT REQUIRED,"Total number of non-ionic ICM administrations during the local study period. This is the denominator for local descriptive proportions if available."
-total_patients,,AUTHOR INPUT REQUIRED,"Use only if available and clearly different from administrations."
+institution_name,,AUTHOR INPUT REQUIRED,Use anonymized/general wording in main manuscript if double-blind review requires it.
+study_period_start,,AUTHOR INPUT REQUIRED,Start date for the 5-year local contrast-related AE registry.
+study_period_end,,AUTHOR INPUT REQUIRED,End date for the 5-year local contrast-related AE registry.
+setting,,AUTHOR INPUT REQUIRED,Examples: CT suite; radiology department; interventional imaging unit.
+local_registry_source,,AUTHOR INPUT REQUIRED,"Nursing event registry, incident reporting system, paper register, electronic nursing record, or other source."
+total_registered_adverse_events,39,AUTHOR INPUT REQUIRED,User reported 5-year total of 39 contrast-related AEs; verify against the local source before manuscript use.
+total_icm_administrations,,AUTHOR INPUT REQUIRED,Optional denominator for single-centre descriptive context only; not required for the reporting-framework argument.
 icm_agents_used,,AUTHOR INPUT REQUIRED,"List local agents, e.g. ioversol, iohexol, iopamidol, iodixanol; include brand names only in extraction notes if needed."
-total_registered_adverse_events,,AUTHOR INPUT REQUIRED,"All contrast-related AE records in the local adverse-event/nursing registry."
-extravasation_events,,AUTHOR INPUT REQUIRED,"Number of local extravasation events."
-hypersensitivity_like_events,,AUTHOR INPUT REQUIRED,"Cutaneous/respiratory/allergic-like events, as locally defined."
+local_event_categories,,AUTHOR INPUT REQUIRED,Aggregate composition of 39 events; do not simulate from FAERS for final results.
+extravasation_events,,AUTHOR INPUT REQUIRED,Number of local extravasation/access-site events if available.
+hypersensitivity_like_events,,AUTHOR INPUT REQUIRED,Cutaneous/respiratory/allergic-like events as locally defined.
 cardiopulmonary_events,,AUTHOR INPUT REQUIRED,"Hypotension, shock, pulmonary oedema, cardiac arrest, or locally defined cardiopulmonary events."
-kidney_related_events,,AUTHOR INPUT REQUIRED,"Only include if captured in local records and definition is clear."
-events_with_onset_time_recorded,,AUTHOR INPUT REQUIRED,"Number of local AE records with usable onset time."
-events_within_30_min,,AUTHOR INPUT REQUIRED,"Use local categories if available; leave blank if not collected."
-events_within_1_h,,AUTHOR INPUT REQUIRED,"Use local categories if available; leave blank if not collected."
-events_within_24_h,,AUTHOR INPUT REQUIRED,"Use local categories if available; leave blank if not collected."
-nursing_interventions_documented,,AUTHOR INPUT REQUIRED,"Count or narrative summary: stopped injection, assessed access site, notified physician, emergency response, local treatment, observation, education."
-outcomes_documented,,AUTHOR INPUT REQUIRED,"Resolved, transferred, admitted, follow-up required, missing, etc."
-documentation_completeness_fields,,AUTHOR INPUT REQUIRED,"Which fields were consistently recorded: agent, dose, route, IV site, onset time, symptoms, intervention, outcome."
-ethics_or_quality_review_status,,AUTHOR INPUT REQUIRED,"IRB approval/exemption or quality-improvement approval for local record review."
-data_extraction_personnel,,AUTHOR INPUT REQUIRED,"Roles only if anonymized: e.g. two trained reviewers; radiology nurse and investigator."
-data_extraction_method,,AUTHOR INPUT REQUIRED,"Manual chart review, nursing event registry export, incident reporting system, etc."
-missing_data_handling,,AUTHOR INPUT REQUIRED,"How missing onset time, incomplete event classification, and duplicate events are handled."
+kidney_related_events,,AUTHOR INPUT REQUIRED,Only include if captured in local records and definition is clear.
+agent_field_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with suspected contrast agent recorded."
+administration_time_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with administration date/time or usable timing recorded."
+onset_time_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with onset time or observation window recorded."
+symptom_field_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with event manifestation/symptom details recorded."
+management_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with management or nursing action recorded."
+escalation_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with physician notification, emergency response, transfer or other escalation recorded."
+outcome_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with resolution, admission, transfer, follow-up or other outcome recorded."
+reporter_role_recorded_count,,AUTHOR INPUT REQUIRED,"Among 39 events, count with nurse/reporter role recorded."
+meddra_or_standard_term_available,,AUTHOR INPUT REQUIRED,"Whether local records use MedDRA, standard AE categories or free-text only."
+main_documentation_gaps,,AUTHOR INPUT REQUIRED,Narrative summary of missing/weak fields in the old reporting pathway.
+mobile_capture_fields_proposed,,DRAFT,Core input is brief text or voice; image input is outside the current study. Preserve unrestricted other-event entry and original wording.
+llm_support_boundary,,DRAFT,"Candidate implementation layer only: structured draft and missing-field prompts; human review mandatory; no automatic causality, seriousness, reportability, treatment or submission."
+ethics_or_quality_review_status,,AUTHOR INPUT REQUIRED,IRB approval/exemption or quality-improvement approval for local aggregate documentation-gap review.
+consent_or_waiver_status,,AUTHOR INPUT REQUIRED,Consent requirement or waiver wording for local registry use.
+data_extraction_personnel,,AUTHOR INPUT REQUIRED,Roles only if anonymized: e.g. two trained reviewers; radiology nurse and investigator.
+data_extraction_method,,AUTHOR INPUT REQUIRED,Aggregate extraction from registry/reporting system; handwritten image transcription is not part of active workflow.
+missing_data_handling,,AUTHOR INPUT REQUIRED,"How missing timing, event classification, duplicate events and incomplete fields are handled."
+suspected_product_explicit_count,,AUTHOR INPUT REQUIRED,"Among 39 records, count explicitly identifying the contrast agent as the suspected product, not merely mentioning it."
+product_event_link_documented_count,,AUTHOR INPUT REQUIRED,Count explicitly linking the suspected product to the event; do not infer causality from temporal proximity.
+administration_event_timeline_link_count,,AUTHOR INPUT REQUIRED,Count explicitly linking administration timing to event onset or observation window.
+event_management_link_count,,AUTHOR INPUT REQUIRED,Count explicitly linking the documented management action to the event.
+event_outcome_link_count,,AUTHOR INPUT REQUIRED,Count explicitly linking the documented outcome to the event.
+coding_dictionary_status,,AUTHOR INPUT REQUIRED,"Prespecified definitions for documented, partial/ambiguous, missing and not applicable."
+independent_reviewer_1_role,,AUTHOR INPUT REQUIRED,Role only; reviewer should code independently.
+independent_reviewer_2_role,,AUTHOR INPUT REQUIRED,Role only; reviewer should code independently.
+disagreement_resolution,,AUTHOR INPUT REQUIRED,Consensus or third-reviewer procedure.
+raw_agreement,,AUTHOR INPUT REQUIRED,Report raw agreement for dual-coded fields.
+kappa_with_ci,,AUTHOR INPUT REQUIRED,Optional for suitable categorical fields; report confidence interval and do not impose a target threshold.
+underreporting_inference_boundary,Not estimable from 39 registered events alone,LOCKED,"Requires verified denominator, expected event range and/or independent multisource case ascertainment."
+unrestricted_other_event_entry,Required in proposed specification,DRAFT,FAERS prompts must not limit eligibility or suppress unexpected events.
+stakeholder_confirmation_status,,AUTHOR INPUT REQUIRED,"Potential review by radiology nurses and relevant nursing-quality, pharmacy, pharmacovigilance or radiology stakeholders."

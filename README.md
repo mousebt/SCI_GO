@@ -34,7 +34,7 @@
 - 不在正文目录运行一次性脚本；临时产物只能进入该论文的 `tmp/`，并接受定期清理。
 - 不把未经验证的经验写入共享规则；必须有来源、适用范围、证据和批准人。
 
-详细说明见 [架构](docs/architecture.md)、[写作流程](docs/workflow.md) 与 [版本控制](docs/version-control.md)。
+详细说明见 [架构](docs/architecture.md)、[写作流程](docs/workflow.md)、[版本控制](docs/version-control.md) 与 [双 Agent 技能交接](docs/handoff-skills-environment.md)。
 
 ## 研究方向探讨
 

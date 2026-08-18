@@ -1,55 +1,94 @@
-# 作者补充与核对清单
+# Author input and verification checklist
 
-以下项目不会由 AI 猜测。未解决前，主稿中的相应位置保留 `[VERIFY]`。
+Updated: 2026-07-28
 
-## A. 影响结果可信度的必需材料
+This checklist reflects the current v10 SQL-based manuscript. Superseded items from the earlier Chinese-source draft, including the 24-vs-230 PT discrepancy, 9-SOC placeholder, 12,588 TTO denominator and 81.56% TTO value, have been resolved in favour of the rerun database outputs.
 
-- 原始分析脚本、查询语句或可复现的分析流程。
-- FAERS 各季度下载清单、下载日期，以及 2025 Q4 文件是否已正式发布并完整纳入。
-- 去重前后记录数、deleted case 排除数、纳入流程各节点数量。
-- 四种药物的完整检索词典：通用名、商品名、拼写变体、盐型及排除规则。
-- MedDRA 版本、PT 映射方法、旧术语处理方法、SOC 分配规则。
-- ROR、PRR、BCPNN、MGPS 的完整公式、阈值、比较背景和全部输出；尤其补齐当前表格缺失的 EBGM/EBGM05。
-- 四个造影剂分别分析的结果；如未做，需确认是否保持合并分析并说明理由。
-- 27 个 SOC 的完整结果及其中 9 个阳性 SOC 的数值。
-- 24 个阳性 PT 的完整结果表，并核对所有英文 MedDRA 标准名称。
-- TTO 清洗流程、使用的日期字段、部分日期处理、同日事件定义、分组数值、中位数/IQR、Weibull 精确参数及置信区间。
-- 图1—图3的原始数据和可编辑源文件，纠正原稿中重复图号。
+## A. Resolved analytical items
 
-## B. 投稿前必需确认
+- v10 POOLED analysis-base reports: 14,781.
+- v10 POOLED PT records after filters: 42,811.
+- POOLED PT rows meeting the minimum case threshold: 951.
+- Full POOLED strict four-algorithm PT signal count: 230.
+- Main-text PT display rule: top 30 POOLED strict signals with at least 10 reports, ranked by EBGM05.
+- POOLED SOC strict four-algorithm signals: 2, immune system disorders and skin and subcutaneous tissue disorders.
+- POOLED TTO rows: 9,069; same-day 8,010 (88.32%); within 1 day 8,450 (93.17%).
+- Weibull pooled parameters: beta 0.686271 and scale 0.958471 days.
+- SQL and Weibull scripts are archived in `02_evidence/methods-source/sql/`.
+- Main and supplementary table source files are exported in `02_evidence/source-data/`.
+- Core reference set has been rebuilt and partially verified in `reference-rebuild-audit-2026-07-15.md`.
 
-- 作者姓名、单位、通讯作者、邮箱、ORCID。
-- 机构伦理审查/豁免结论及编号（如适用）。
-- 资金来源、利益冲突、作者贡献、致谢。
-- 数据和代码是否公开；若公开，拟使用的仓库和链接。
-- 单位所说“4区”究竟指 JCR Q4、中科院4区，还是 Scopus 分区；此项留到下一轮期刊讨论。
+## B. Submission-critical author inputs
 
-## C. 参考文献和护理建议
+These items should not be guessed by an assistant.
 
-- 现有中英文双列参考文献不直接沿用，需逐条核对 DOI、作者、刊名、年份、卷期页码。
-- 原稿第8条中英文信息明显不对应，必须删除错误译文并重新核验原条目。
-- 50%硫酸镁、中药外敷、马铃薯片、固定饮水量、统一停药、固定留观30分钟等表述，只有在当前国际指南或高质量证据明确支持且适用情境清楚时才可恢复。
-- 造影剂加温、留置针规格、穿刺部位和注射速率必须按适用场景和现行指南写，不能写成普遍有效的干预。
+1. **FAERS import trace**
+   - Quarter-level file inventory for 2004 Q1-2025 Q4.
+   - Download dates, file names, file sizes or hashes if available.
+   - Confirmation that 2025 Q4 was downloaded, imported and included.
+   - Upstream construction of `demo_clean`.
+   - Exact CASEID/FDA_DT/PRIMARYID follow-up-version deduplication logic.
+   - Deletion-file ingestion and application procedure, including pre/post-dedup record counts.
+   - The analysis-layer DISTINCT logic is verified in `faers-cleaning-boundary-audit-2026-07-28.md`; it does not resolve these upstream items.
 
-## 建议交付顺序
+2. **Drug dictionary and MedDRA trace**
+   - `drug_clean` construction rules or exportable drug dictionary.
+   - Brand names, spelling variants, salts and exclusion terms for ioversol, iohexol, iopamidol and iodixanol.
+   - Exact MedDRA 28.0 imported file names/package, import date and mapping notes for `meddra_soc` and `meddra_smq`.
+   - Confirmation that MedDRA source files will not be redistributed if licence restrictions apply.
 
-1. 先提供分析脚本/结果表和图源文件。
-2. 再补作者与伦理信息。
-3. 确认“4区”的机构口径后锁定期刊。
-4. 最后完成文献核验、期刊格式适配和投稿文件。
-# Local clinical nursing record inputs
+3. **Local suspected contrast-related event registry and documentation-gap evidence**
+   - Verify the author-reported five-year local total of 39 registered contrast-related AEs.
+   - Complete `02_evidence/local-clinical-record-template.csv` using aggregate/text-entered summaries only.
+   - Provide exact local study dates, department/institution, registry or form name, authorised data route and the role of the person performing retrieval.
+   - Document how records were located: register review, search terms if applicable, and whether another authorised source was used for cross-checking.
+   - Finalise inclusion and exclusion criteria, duplicate-episode/version handling and the operational definition of a suspected contrast-related event.
+   - Do not exclude records merely because fields are incomplete; code those fields as missing or ambiguous.
+   - Provide aggregate event categories only after the source and coding route are verified.
+   - Provide field-completeness counts among the 39 events: suspected ICM agent, timing/onset, symptoms, management, escalation, outcome, reporter role and standard terminology availability.
+   - Provide relationship-completeness counts for product-event, administration-event timing, event-escalation, event-management and event-outcome links.
+   - Confirm two independent reviewers, reviewer roles, disagreement resolution, raw agreement and any suitable Cohen's kappa estimate with confidence interval; do not impose a target kappa threshold.
+   - Provide denominator availability if total non-ionic ICM administrations can be verified; denominator is optional for the reporting-framework argument.
+   - Handwritten ADR image transcription is no longer part of the active workflow per the 2026-07-28 user instruction; do not use image-derived transcription unless the user explicitly reopens image processing.
 
-The current Nursing Open-facing manuscript now includes a planned local clinical nursing record contextualization layer. Fill `02_evidence/local-clinical-record-template.csv` before finalizing Results, Discussion, Abstract, Ethics, and Data Availability.
+4. **Ethics and consent**
+   - Institutional ethics approval, exemption or quality-improvement determination for the local component.
+   - Approval/exemption identifier and date if applicable.
+   - Consent requirement or consent-waiver wording for local records.
+   - Confirm the permitted aggregate-data sharing route and the anonymised wording required by double-blind review.
 
-Minimum local data needed:
+5. **Data/code availability**
+   - Choose supplementary-file-only sharing, public repository deposition or both.
+   - Repository name and DOI/accession if deposited.
+   - Confirm whether the `drug_clean` dictionary or construction rules can be shared.
+   - Confirm local-data access wording if local records are included.
 
-1. Local study period.
-2. Total number of non-ionic ICM administrations.
-3. Local registered contrast-related adverse events.
-4. Event categories: extravasation/access-site, cutaneous/respiratory, cardiopulmonary, kidney-related, other.
-5. Event timing or observation window if recorded.
-6. Nursing interventions and escalation actions.
-7. Outcomes and documentation completeness.
-8. Local ethics/IRB/exemption or quality-improvement determination.
+6. **Stakeholder confirmation and future validation**
+   - Confirm whether radiology nurses and relevant nursing-quality, pharmacy, pharmacovigilance or radiology stakeholders can review field relevance, clarity, feasibility and approval responsibilities.
+   - Do not describe stakeholder confirmation as formal consensus unless a recognised consensus method is actually used.
+   - Keep usability, workload, source fidelity and reporting-rate effects as future outcomes until prospectively tested.
 
-If the total administration denominator is unavailable, do not calculate local proportions; use local records only as descriptive contextualization.
+7. **Author and submission metadata**
+   - Author names, degrees if required, affiliations and author order.
+   - Corresponding author postal address, email and telephone if required.
+   - ORCID for each author.
+   - Funding statement.
+   - Conflict-of-interest statement.
+   - CRediT author contributions.
+   - Acknowledgements or statement that none are applicable.
+   - Confirmation of no patient or public contribution, unless such contribution can be documented.
+
+## C. Final formatting and verification tasks
+
+- Confirm current ACR Manual on Contrast Media version/year and whether to cite the PDF or landing page.
+- Confirm ESUR guideline version and URL.
+- Format references to the final Nursing Open/APA style after the final reference set is locked.
+- Prepare or upload STROBE and RECORD checklist files if required by the submission system.
+- Final pass for anonymization because Nursing Open uses double-blind peer review.
+
+## D. Items not to restore without new evidence
+
+- Do not restore claims that 24 is the SQL-derived full strict PT signal count; v10 supports 230 as the full POOLED strict set.
+- Do not restore old TTO values of 12,588 or 81.56%.
+- Do not present 50% magnesium sulphate, traditional Chinese medicines, potato slices, fixed oral-fluid volumes, universal medication cessation or a fixed observation period as recommendations unless supported by current guidance and the applicable clinical context.
+- Do not claim incidence, individual-level causality, comparative safety between agents or effectiveness of nursing interventions from FAERS data.

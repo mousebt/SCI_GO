@@ -1,0 +1,9 @@
+[mcp_servers.academic_search]
+command = "E:\\pythonProjects\\SCI_GO\\.codex\\mcp\\academic-search\\.venv\\Scripts\\python.exe"
+args = ["academic_search_server.py"]
+cwd = "C:\\Users\\XuJianhao\\.codex\\skills\\nature-academic-search\\mcp-server"
+enabled = true
+startup_timeout_sec = 30
+
+[mcp_servers.academic_search.env]
+PUBMED_EMAIL = "cxujianhao@gmail.com"

@@ -16,3 +16,8 @@
 | APR-20260714-143914-2d163b | 2026-07-14 | JAN-first then CMS fallback target route | revised | logs/approvals/2026/07/APR-20260714-143914-2d163b-jan-first-then-cms-fallback-target-route.md |
 | APR-20260714-145059-11383c | 2026-07-14 | Nursing Open first then CMS fallback target route | approved | logs/approvals/2026/07/APR-20260714-145059-11383c-nursing-open-first-then-cms-fallback-target-route.md |
 | APR-20260714-153244-865f5c | 2026-07-14 | Nursing Open manuscript revision plan | approved | logs/approvals/2026/07/APR-20260714-153244-865f5c-nursing-open-manuscript-revision-plan.md |
+| APR-20260723-164737-bc2abe | 2026-07-23 | external multimodal processing for local ADR register images | approved; later route stopped by user | logs/approvals/2026/07/APR-20260723-164737-bc2abe-external-multimodal-processing-for-local-adr-register-images.md |
+| APR-20260728-112303-0de387 | 2026-07-28 | FAERS-local-audit-LLM manuscript architecture | revised | logs/approvals/2026/07/APR-20260728-112303-0de387-faers-local-audit-llm-manuscript-architecture.md |
+| APR-20260728-132232-75230b | 2026-07-28 | Single-chain nursing ADE reporting manuscript framework | approved | logs/approvals/2026/07/APR-20260728-132232-75230b-single-chain-nursing-ade-reporting-manuscript-framework.md |
+| APR-20260728-133416-76bc30 | 2026-07-28 | External-review refinements to nursing AE reporting structure | approved | logs/approvals/2026/07/APR-20260728-133416-76bc30-external-review-refinements-to-nursing-ae-reporting-structure.md |
+| APR-20260728-134825-fd1e8e | 2026-07-28 | Second external audit implementation and specification package | approved | logs/approvals/2026/07/APR-20260728-134825-fd1e8e-second-external-audit-implementation-and-specification-package.md |

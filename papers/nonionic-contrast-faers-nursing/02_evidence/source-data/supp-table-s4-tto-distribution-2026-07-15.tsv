@@ -1,0 +1,32 @@
+﻿analysis_group	tto_group	case_count	percentage
+POOLED	00: same day	8010	88.62
+POOLED	01: 1 day / within 24-48h depending on date granularity	440	4.87
+POOLED	03: 0-30 days	544	6.02
+POOLED	04: 31-60 days	17	0.19
+POOLED	05: 61-90 days	7	0.08
+POOLED	06: 91-180 days	6	0.07
+POOLED	07: More than 180 days	15	0.17
+Iohexol	00: same day	4164	91.56
+Iohexol	01: 1 day / within 24-48h depending on date granularity	164	3.61
+Iohexol	03: 0-30 days	204	4.49
+Iohexol	04: 31-60 days	6	0.13
+Iohexol	05: 61-90 days	5	0.11
+Iohexol	06: 91-180 days	1	0.02
+Iohexol	07: More than 180 days	4	0.09
+Ioversol	00: same day	1354	91.55
+Ioversol	01: 1 day / within 24-48h depending on date granularity	45	3.04
+Ioversol	03: 0-30 days	79	5.34
+Ioversol	07: More than 180 days	1	0.07
+Iopamidol	00: same day	1240	90.78
+Iopamidol	01: 1 day / within 24-48h depending on date granularity	54	3.95
+Iopamidol	03: 0-30 days	58	4.25
+Iopamidol	04: 31-60 days	6	0.44
+Iopamidol	06: 91-180 days	2	0.15
+Iopamidol	07: More than 180 days	6	0.44
+Iodixanol	00: same day	1252	76.06
+Iodixanol	01: 1 day / within 24-48h depending on date granularity	177	10.75
+Iodixanol	03: 0-30 days	203	12.33
+Iodixanol	04: 31-60 days	5	0.30
+Iodixanol	05: 61-90 days	2	0.12
+Iodixanol	06: 91-180 days	3	0.18
+Iodixanol	07: More than 180 days	4	0.24

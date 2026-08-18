@@ -1,0 +1,5 @@
+name: journal-library
+version: "1.0"
+display_name: Journal Library
+short_description: SCI journal facts and official-page archive.
+default_prompt: 启动期刊库：请为这些期刊建立或更新全局期刊档案，并保存官网原始页面。

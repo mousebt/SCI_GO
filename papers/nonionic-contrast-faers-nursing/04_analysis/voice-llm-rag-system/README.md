@@ -24,12 +24,13 @@ $py = 'C:\Users\XuJianhao\.cache\codex-runtimes\codex-primary-runtime\dependenci
 
 程序按顺序寻找以下兼容服务：
 
-1. `DEEPSEEK_API_KEY` + `DEEPSEEK_BASE_URL`
-2. `ZHIPU_API_KEY` + `ZHIPU_BASE_URL`
-3. `OPENROUTER_KEY` + `OPENROUTER_BASE_URL`
-4. `LOCAL_LLM_BASE_URL`
+1. `GEMINI_API_KEY` + `GEMINI_MODEL`（原生 Gemini `generateContent`）
+2. `DEEPSEEK_API_KEY` + `DEEPSEEK_BASE_URL`
+3. `ZHIPU_API_KEY` + `ZHIPU_BASE_URL`
+4. `OPENROUTER_KEY` + `OPENROUTER_BASE_URL`
+5. `LOCAL_LLM_BASE_URL`
 
-可使用 `CONTRAST_RAG_LLM_PROVIDER` 强制指定 `deepseek`、`zhipu`、`openrouter` 或 `local`。模型可分别通过 `DEEPSEEK_MODEL`、`ZHIPU_MODEL`、`OPENROUTER_MODEL`、`LOCAL_LLM_MODEL` 固定。
+可使用 `CONTRAST_RAG_LLM_PROVIDER` 强制指定 `gemini`、`deepseek`、`zhipu`、`openrouter` 或 `local`。模型可分别通过 `GEMINI_MODEL`、`DEEPSEEK_MODEL`、`ZHIPU_MODEL`、`OPENROUTER_MODEL`、`LOCAL_LLM_MODEL` 固定。
 
 ## 语音
 
@@ -46,6 +47,10 @@ $py = 'C:\Users\XuJianhao\.cache\codex-runtimes\codex-primary-runtime\dependenci
 
 离线评价默认使用确定性安全基线，不调用外部API。使用 `--live-llm` 才会调用已配置的真实LLM，并只发送合成病例。
 
+结构化事实除逐字来源校验外，还经过语义范围护栏；否定、冲突、未确认候选、模板示例、假设讨论、拟写/补全指令和明确缺失声明不得作为患者事实。命中护栏的内容保持为空或候选状态，并继续要求人工确认。
+
+`evaluation/run_text_corpus.py` 默认单并发。对直接REST调用，只对HTTP 429、HTTP 5xx和瞬时网络错误重试；优先遵循服务器`Retry-After`或Gemini`retryDelay`，否则按1、2、4、8秒指数退避并封顶60秒。JSON、Schema和其他非瞬时错误不自动重试。每次重试写入运行记录的`retry_events`。
+
 ## 目录
 
 - `app/`：Web服务、检索、LLM调用、安全校验和界面。
@@ -53,4 +58,3 @@ $py = 'C:\Users\XuJianhao\.cache\codex-runtimes\codex-primary-runtime\dependenci
 - `evaluation/`：合成病例、参考答案、指标与运行输出。
 - `tests/`：核心安全规则的自动测试。
 - `runs/`：运行日志；不应提交真实患者材料。
-

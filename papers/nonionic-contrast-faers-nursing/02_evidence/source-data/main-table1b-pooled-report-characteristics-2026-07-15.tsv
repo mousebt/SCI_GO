@@ -1,0 +1,23 @@
+﻿section	category	n	percentage
+Sex	Female	6932	46.90
+Sex	Male	5138	34.76
+Sex	Missing or unknown	2711	18.34
+Age group	Missing or unknown	3900	26.39
+Age group	<18 years	269	1.82
+Age group	18-59 years	5355	36.23
+Age group	>=60 years	5257	35.57
+Reporter country	US	5895	39.88
+Reporter country	CN	1386	9.38
+Reporter country	JP	1016	6.87
+Reporter country	Missing or unknown	940	6.36
+Reporter country	FR	905	6.12
+Reporter country	CA	505	3.42
+Reporter country	AU	415	2.81
+Reporter country	GB	357	2.42
+Reporter country	IT	344	2.33
+Reporter country	DE	311	2.10
+Reporter qualification	Physician	3158	21.37
+Reporter qualification	Pharmacist	1711	11.58
+Reporter qualification	Nurse	17	0.12
+Reporter qualification	Other health professional	3254	22.01
+Reporter qualification	Other	6641	44.93

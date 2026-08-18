@@ -1,0 +1,23 @@
+claim_id,manuscript_scope,disposition,reason
+C001,out,archive_only,FAERS result is not necessary to the nursing reporting-specification argument
+C002,out,archive_only,FAERS signal analysis is outside the current manuscript scope
+C003,out,archive_only,FAERS signal interpretation is outside the current manuscript scope
+C004,out,archive_only,FAERS TTO analysis is outside the current manuscript scope
+C005,out,archive_only,FAERS-derived surveillance interpretation is outside the current manuscript scope
+C006,out,forbidden,No evidence that a standardized pathway reduces adverse events
+C007,out,forbidden,Clinical intervention-effect claim is outside scope and lacks evidence
+C008,conditional,local_formative_input_only,May be used only after dataset provenance ethics and coding reliability are locked
+C009,out,forbidden,The manuscript will not estimate a local event proportion or incidence
+C010,out,superseded,Old evidence chain depended on FAERS
+C011,out,archive_only,FAERS descriptive results are outside current manuscript scope
+C012,in,retain_with_boundaries,LLM is a candidate drafting layer subject to source controls and human review
+C013,out,superseded,Old universal-plus-FAERS reporting skeleton is replaced by standards guidelines and participatory review
+C014,conditional,local_formative_input_only,Local count requires 39/44 reconciliation provenance and ethics
+C015,in,retain,Supports explicit product-event relation capture
+C016,in,retain,Supports relation-aware and class-aware evaluation
+C017,in,retain_boundary,Prevents unsupported under-reporting claims if local materials are mentioned
+C018,in,revise,Mapping output is valid only with prespecified traceable rules using standards guidelines and stakeholder review
+C019,out,superseded,FAERS-prompt anchoring claim is no longer needed
+C020,out,archive_only,FAERS reproducibility issue is outside current manuscript scope
+C021,in,retain_with_boundaries,Data dictionary schema and guardrails are a draft implementation of the reporting specification
+C022,out,archive_only,FAERS reporter qualification result is outside current manuscript scope

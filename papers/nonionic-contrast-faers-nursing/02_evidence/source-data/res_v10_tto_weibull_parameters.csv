@@ -1,0 +1,6 @@
+﻿analysis_group,n,weibull_shape,weibull_shape_lcl95,weibull_shape_ucl95,weibull_scale,weibull_scale_lcl95,weibull_scale_ucl95,median_tto_days_model,q25_tto_days_model,q75_tto_days_model,convergence,optimizer_message
+Iodixanol,1655,0.653357,0.631619,0.675844,1.255621,1.250749,1.260511,0.716528,0.186507,2.070028,1,Desired error not necessarily achieved due to precision loss.
+Iohexol,4564,0.699287,0.667584,0.732495,0.886055,0.872224,0.900106,0.52461,0.149173,1.413573,1,Desired error not necessarily achieved due to precision loss.
+Iopamidol,1367,0.625819,0.611489,0.640486,0.993069,0.908119,1.085966,0.552883,0.135635,1.673597,1,Desired error not necessarily achieved due to precision loss.
+Ioversol,1483,0.869976,0.847298,0.893261,0.827298,0.776928,0.880934,0.542872,0.197563,1.204256,1,Desired error not necessarily achieved due to precision loss.
+POOLED,9069,0.686271,0.678882,0.693741,0.958471,0.928298,0.989625,0.561872,0.156003,1.542707,0,Optimization terminated successfully.

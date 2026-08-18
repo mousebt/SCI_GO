@@ -27,6 +27,13 @@ def load_dotenv(path: Path | None = None) -> None:
 
 
 PROVIDERS = {
+    "gemini": {
+        "key": "GEMINI_API_KEY",
+        "base": "GEMINI_BASE_URL",
+        "model": "GEMINI_MODEL",
+        "default_base": "https://generativelanguage.googleapis.com/v1beta",
+        "default_model": "gemini-2.5-flash",
+    },
     "deepseek": {
         "key": "DEEPSEEK_API_KEY",
         "base": "DEEPSEEK_BASE_URL",
@@ -59,13 +66,31 @@ PROVIDERS = {
 
 
 class ProviderError(RuntimeError):
-    pass
+    def __init__(self, message: str, *, retryable: bool = False, retry_after: float | None = None):
+        super().__init__(message)
+        self.retryable = retryable
+        self.retry_after = retry_after
+
+
+def retry_delay_seconds(headers: Any, detail: str) -> float | None:
+    """Read Google/OpenAI-compatible retry guidance without exposing credentials."""
+    value = headers.get("Retry-After") if headers else None
+    if value:
+        try:
+            return max(0.0, float(value))
+        except (TypeError, ValueError):
+            pass
+    for pattern in (r'"retryDelay"\s*:\s*"([0-9.]+)s"', r"retry in ([0-9.]+)s"):
+        match = re.search(pattern, detail, re.IGNORECASE)
+        if match:
+            return max(0.0, float(match.group(1)))
+    return None
 
 
 def select_provider() -> tuple[str, dict[str, str]]:
     load_dotenv()
     forced = os.getenv("CONTRAST_RAG_LLM_PROVIDER", "").lower().strip()
-    order = [forced] if forced else ["deepseek", "zhipu", "openrouter", "local"]
+    order = [forced] if forced else ["gemini", "deepseek", "zhipu", "openrouter", "local"]
     for name in order:
         if name not in PROVIDERS:
             continue
@@ -87,13 +112,54 @@ def select_provider() -> tuple[str, dict[str, str]]:
                 "model": os.getenv(cfg["model"], cfg["default_model"]),
             }
     raise ProviderError(
-        "No configured LLM provider. Set one of DEEPSEEK_API_KEY, "
+        "No configured LLM provider. Set one of GEMINI_API_KEY, DEEPSEEK_API_KEY, "
         "ZHIPU_API_KEY, OPENROUTER_KEY or LOCAL_LLM_BASE_URL."
     )
 
 
 def chat_json(system_prompt: str, user_prompt: str, timeout: int = 90) -> tuple[dict[str, Any], dict[str, str]]:
     provider, cfg = select_provider()
+    if provider == "gemini":
+        url = f"{cfg['base']}/models/{cfg['model']}:generateContent"
+        payload = {
+            "systemInstruction": {"parts": [{"text": system_prompt}]},
+            "contents": [{"role": "user", "parts": [{"text": user_prompt}]}],
+            "generationConfig": {
+                "temperature": 0,
+                "maxOutputTokens": 2500,
+                "responseMimeType": "application/json",
+                "thinkingConfig": {"thinkingBudget": 0},
+            },
+        }
+        request = urllib.request.Request(
+            url,
+            data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+            headers={"Content-Type": "application/json", "x-goog-api-key": cfg["key"]},
+            method="POST",
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response:
+                body = json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            detail = exc.read().decode("utf-8", errors="replace")[:800]
+            retryable = exc.code == 429 or 500 <= exc.code < 600
+            raise ProviderError(
+                f"gemini HTTP {exc.code}: {detail}",
+                retryable=retryable,
+                retry_after=retry_delay_seconds(exc.headers, detail),
+            ) from exc
+        except urllib.error.URLError as exc:
+            raise ProviderError(
+                f"gemini connection failed: {exc.reason}", retryable=True
+            ) from exc
+        try:
+            parts = body["candidates"][0]["content"]["parts"]
+            content = "".join(part.get("text", "") for part in parts)
+            parsed = json.loads(content)
+        except (KeyError, IndexError, TypeError, json.JSONDecodeError) as exc:
+            raise ProviderError("Gemini response was not a valid JSON object") from exc
+        return parsed, {"provider": provider, "model": cfg["model"]}
+
     url = cfg["base"]
     if not url.endswith("/chat/completions"):
         url += "/chat/completions"
@@ -127,9 +193,16 @@ def chat_json(system_prompt: str, user_prompt: str, timeout: int = 90) -> tuple[
             body = json.loads(response.read().decode("utf-8"))
     except urllib.error.HTTPError as exc:
         detail = exc.read().decode("utf-8", errors="replace")[:800]
-        raise ProviderError(f"{provider} HTTP {exc.code}: {detail}") from exc
+        retryable = exc.code == 429 or 500 <= exc.code < 600
+        raise ProviderError(
+            f"{provider} HTTP {exc.code}: {detail}",
+            retryable=retryable,
+            retry_after=retry_delay_seconds(exc.headers, detail),
+        ) from exc
     except urllib.error.URLError as exc:
-        raise ProviderError(f"{provider} connection failed: {exc.reason}") from exc
+        raise ProviderError(
+            f"{provider} connection failed: {exc.reason}", retryable=True
+        ) from exc
     try:
         content = body["choices"][0]["message"]["content"]
         try:

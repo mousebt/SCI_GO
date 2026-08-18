@@ -1,0 +1,490 @@
+﻿analysis_group	section	category	n	percentage
+POOLED	Sex	Female	6932	46.90
+POOLED	Sex	Male	5138	34.76
+POOLED	Sex	Missing or unknown	2711	18.34
+POOLED	Age group	18-59 years	5355	36.23
+POOLED	Age group	>=60 years	5257	35.57
+POOLED	Age group	Missing or unknown	3900	26.39
+POOLED	Age group	<18 years	269	1.82
+POOLED	Reporter country	US	5895	39.88
+POOLED	Reporter country	CN	1386	9.38
+POOLED	Reporter country	JP	1016	6.87
+POOLED	Reporter country	Missing or unknown	940	6.36
+POOLED	Reporter country	FR	905	6.12
+POOLED	Reporter country	CA	505	3.42
+POOLED	Reporter country	AU	415	2.81
+POOLED	Reporter country	GB	357	2.42
+POOLED	Reporter country	IT	344	2.33
+POOLED	Reporter country	DE	311	2.10
+POOLED	Reporter country	BR	287	1.94
+POOLED	Reporter country	IN	279	1.89
+POOLED	Reporter country	ES	225	1.52
+POOLED	Reporter country	PL	132	0.89
+POOLED	Reporter country	SE	112	0.76
+POOLED	Reporter country	GR	96	0.65
+POOLED	Reporter country	EU	66	0.45
+POOLED	Reporter country	IE	65	0.44
+POOLED	Reporter country	NO	65	0.44
+POOLED	Reporter country	CO	63	0.43
+POOLED	Reporter country	DK	62	0.42
+POOLED	Reporter country	VN	59	0.40
+POOLED	Reporter country	CH	57	0.39
+POOLED	Reporter country	RU	54	0.37
+POOLED	Reporter country	KR	52	0.35
+POOLED	Reporter country	FI	48	0.32
+POOLED	Reporter country	MX	45	0.30
+POOLED	Reporter country	PT	45	0.30
+POOLED	Reporter country	AT	41	0.28
+POOLED	Reporter country	PR	38	0.26
+POOLED	Reporter country	INDIA	35	0.24
+POOLED	Reporter country	NZ	35	0.24
+POOLED	Reporter country	TH	35	0.24
+POOLED	Reporter country	EG	32	0.22
+POOLED	Reporter country	TR	32	0.22
+POOLED	Reporter country	NL	30	0.20
+POOLED	Reporter country	AR	29	0.20
+POOLED	Reporter country	RO	27	0.18
+POOLED	Reporter country	HR	26	0.18
+POOLED	Reporter country	NORWAY	22	0.15
+POOLED	Reporter country	BY	20	0.14
+POOLED	Reporter country	TURKEY	20	0.14
+POOLED	Reporter country	LB	19	0.13
+POOLED	Reporter country	POLAND	19	0.13
+POOLED	Reporter country	TW	19	0.13
+POOLED	Reporter country	IL	17	0.12
+POOLED	Reporter country	ZA	17	0.12
+POOLED	Reporter country	ID	16	0.11
+POOLED	Reporter country	IR	16	0.11
+POOLED	Reporter country	RUSSIAN FEDERATION	16	0.11
+POOLED	Reporter country	MD	15	0.10
+POOLED	Reporter country	CL	12	0.08
+POOLED	Reporter country	MY	12	0.08
+POOLED	Reporter country	SOUTH AFRICA	11	0.07
+POOLED	Reporter country	CI	10	0.07
+POOLED	Reporter country	RS	10	0.07
+POOLED	Reporter country	SI	10	0.07
+POOLED	Reporter country	SK	10	0.07
+POOLED	Reporter country	THAILAND	10	0.07
+POOLED	Reporter country	PH	9	0.06
+POOLED	Reporter country	CZ	8	0.05
+POOLED	Reporter country	DZ	8	0.05
+POOLED	Reporter country	KE	8	0.05
+POOLED	Reporter country	LV	8	0.05
+POOLED	Reporter country	COLOMBIA	7	0.05
+POOLED	Reporter country	CZECH REPUBLIC	7	0.05
+POOLED	Reporter country	TN	7	0.05
+POOLED	Reporter country	MM	6	0.04
+POOLED	Reporter country	SWEDEN	6	0.04
+POOLED	Reporter country	BE	5	0.03
+POOLED	Reporter country	HU	5	0.03
+POOLED	Reporter country	LEBANON	5	0.03
+POOLED	Reporter country	LK	5	0.03
+POOLED	Reporter country	MEXICO	5	0.03
+POOLED	Reporter country	PHILIPPINES	5	0.03
+POOLED	Reporter country	SG	5	0.03
+POOLED	Reporter country	ALGERIA	4	0.03
+POOLED	Reporter country	GREECE	4	0.03
+POOLED	Reporter country	IRAN (ISLAMIC REPUBLIC OF)	4	0.03
+POOLED	Reporter country	KP	4	0.03
+POOLED	Reporter country	NG	4	0.03
+POOLED	Reporter country	NI	4	0.03
+POOLED	Reporter country	SINGAPORE	4	0.03
+POOLED	Reporter country	EC	3	0.02
+POOLED	Reporter country	ET	3	0.02
+POOLED	Reporter country	GE	3	0.02
+POOLED	Reporter country	HK	3	0.02
+POOLED	Reporter country	ME	3	0.02
+POOLED	Reporter country	PUERTO RICO	3	0.02
+POOLED	Reporter country	QA	3	0.02
+POOLED	Reporter country	UNITED STATES	3	0.02
+POOLED	Reporter country	AM	2	0.01
+POOLED	Reporter country	AUSTRIA	2	0.01
+POOLED	Reporter country	DO	2	0.01
+POOLED	Reporter country	EE	2	0.01
+POOLED	Reporter country	EGYPT	2	0.01
+POOLED	Reporter country	FINLAND	2	0.01
+POOLED	Reporter country	GT	2	0.01
+POOLED	Reporter country	HUNGARY	2	0.01
+POOLED	Reporter country	INDONESIA	2	0.01
+POOLED	Reporter country	IS	2	0.01
+POOLED	Reporter country	KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF	2	0.01
+POOLED	Reporter country	KW	2	0.01
+POOLED	Reporter country	KZ	2	0.01
+POOLED	Reporter country	MA	2	0.01
+POOLED	Reporter country	MK	2	0.01
+POOLED	Reporter country	MN	2	0.01
+POOLED	Reporter country	PE	2	0.01
+POOLED	Reporter country	SD	2	0.01
+POOLED	Reporter country	SN	2	0.01
+POOLED	Reporter country	UA	2	0.01
+POOLED	Reporter country	UM	2	0.01
+POOLED	Reporter country	UY	2	0.01
+POOLED	Reporter country	YEMEN	2	0.01
+POOLED	Reporter country	AE	1	0.01
+POOLED	Reporter country	AL	1	0.01
+POOLED	Reporter country	ARGENTINA	1	0.01
+POOLED	Reporter country	BANGLADESH	1	0.01
+POOLED	Reporter country	CHILE	1	0.01
+POOLED	Reporter country	GH	1	0.01
+POOLED	Reporter country	GUATEMALA	1	0.01
+POOLED	Reporter country	IQ	1	0.01
+POOLED	Reporter country	JM	1	0.01
+POOLED	Reporter country	LT	1	0.01
+POOLED	Reporter country	MALAYSIA	1	0.01
+POOLED	Reporter country	MU	1	0.01
+POOLED	Reporter country	NEPAL	1	0.01
+POOLED	Reporter country	NEW ZEALAND	1	0.01
+POOLED	Reporter country	NP	1	0.01
+POOLED	Reporter country	OM	1	0.01
+POOLED	Reporter country	PA	1	0.01
+POOLED	Reporter country	PK	1	0.01
+POOLED	Reporter country	PORTUGAL	1	0.01
+POOLED	Reporter country	PS	1	0.01
+POOLED	Reporter country	ROMANIA	1	0.01
+POOLED	Reporter country	SLOVAKIA (SLOVAK REPUBLIC)	1	0.01
+POOLED	Reporter country	SV	1	0.01
+POOLED	Reporter country	SY	1	0.01
+POOLED	Reporter country	UKRAINE	1	0.01
+POOLED	Reporter country	YE	1	0.01
+POOLED	Reporter country	ZM	1	0.01
+POOLED	Reporter qualification	Other	6641	44.93
+POOLED	Reporter qualification	Other health professional	3254	22.01
+POOLED	Reporter qualification	Physician	3158	21.37
+POOLED	Reporter qualification	Pharmacist	1711	11.58
+POOLED	Reporter qualification	Nurse	17	0.12
+Iohexol	Sex	Female	2945	45.71
+Iohexol	Sex	Male	2059	31.96
+Iohexol	Sex	Missing or unknown	1439	22.33
+Iohexol	Age group	18-59 years	2440	37.87
+Iohexol	Age group	>=60 years	2033	31.55
+Iohexol	Age group	Missing or unknown	1850	28.71
+Iohexol	Age group	<18 years	120	1.86
+Iohexol	Reporter country	US	2374	36.85
+Iohexol	Reporter country	CN	633	9.82
+Iohexol	Reporter country	Missing or unknown	382	5.93
+Iohexol	Reporter country	JP	355	5.51
+Iohexol	Reporter country	FR	340	5.28
+Iohexol	Reporter country	AU	332	5.15
+Iohexol	Reporter country	CA	332	5.15
+Iohexol	Reporter country	IN	240	3.72
+Iohexol	Reporter country	GB	174	2.70
+Iohexol	Reporter country	BR	130	2.02
+Iohexol	Reporter country	IT	106	1.65
+Iohexol	Reporter country	DE	85	1.32
+Iohexol	Reporter country	ES	74	1.15
+Iohexol	Reporter country	PL	74	1.15
+Iohexol	Reporter country	SE	67	1.04
+Iohexol	Reporter country	NO	60	0.93
+Iohexol	Reporter country	VN	58	0.90
+Iohexol	Reporter country	RU	43	0.67
+Iohexol	Reporter country	FI	39	0.61
+Iohexol	Reporter country	CO	34	0.53
+Iohexol	Reporter country	EG	31	0.48
+Iohexol	Reporter country	DK	29	0.45
+Iohexol	Reporter country	EU	28	0.43
+Iohexol	Reporter country	NZ	28	0.43
+Iohexol	Reporter country	INDIA	23	0.36
+Iohexol	Reporter country	TR	22	0.34
+Iohexol	Reporter country	LB	19	0.29
+Iohexol	Reporter country	CH	17	0.26
+Iohexol	Reporter country	HR	16	0.25
+Iohexol	Reporter country	IE	16	0.25
+Iohexol	Reporter country	RO	16	0.25
+Iohexol	Reporter country	AT	14	0.22
+Iohexol	Reporter country	MD	14	0.22
+Iohexol	Reporter country	KR	13	0.20
+Iohexol	Reporter country	IL	12	0.19
+Iohexol	Reporter country	ID	11	0.17
+Iohexol	Reporter country	TW	11	0.17
+Iohexol	Reporter country	CI	10	0.16
+Iohexol	Reporter country	MY	9	0.14
+Iohexol	Reporter country	ZA	9	0.14
+Iohexol	Reporter country	DZ	8	0.12
+Iohexol	Reporter country	NL	7	0.11
+Iohexol	Reporter country	NORWAY	7	0.11
+Iohexol	Reporter country	PR	7	0.11
+Iohexol	Reporter country	LV	6	0.09
+Iohexol	Reporter country	MM	6	0.09
+Iohexol	Reporter country	MX	6	0.09
+Iohexol	Reporter country	TN	6	0.09
+Iohexol	Reporter country	BY	5	0.08
+Iohexol	Reporter country	LK	5	0.08
+Iohexol	Reporter country	SG	5	0.08
+Iohexol	Reporter country	ALGERIA	4	0.06
+Iohexol	Reporter country	HU	4	0.06
+Iohexol	Reporter country	IR	4	0.06
+Iohexol	Reporter country	KE	4	0.06
+Iohexol	Reporter country	NG	4	0.06
+Iohexol	Reporter country	RUSSIAN FEDERATION	4	0.06
+Iohexol	Reporter country	THAILAND	4	0.06
+Iohexol	Reporter country	BE	3	0.05
+Iohexol	Reporter country	CL	3	0.05
+Iohexol	Reporter country	ET	3	0.05
+Iohexol	Reporter country	GE	3	0.05
+Iohexol	Reporter country	PH	3	0.05
+Iohexol	Reporter country	PT	3	0.05
+Iohexol	Reporter country	RS	3	0.05
+Iohexol	Reporter country	AM	2	0.03
+Iohexol	Reporter country	EE	2	0.03
+Iohexol	Reporter country	IS	2	0.03
+Iohexol	Reporter country	KP	2	0.03
+Iohexol	Reporter country	MA	2	0.03
+Iohexol	Reporter country	PE	2	0.03
+Iohexol	Reporter country	SD	2	0.03
+Iohexol	Reporter country	SN	2	0.03
+Iohexol	Reporter country	SOUTH AFRICA	2	0.03
+Iohexol	Reporter country	YEMEN	2	0.03
+Iohexol	Reporter country	AE	1	0.02
+Iohexol	Reporter country	CZ	1	0.02
+Iohexol	Reporter country	GH	1	0.02
+Iohexol	Reporter country	GR	1	0.02
+Iohexol	Reporter country	INDONESIA	1	0.02
+Iohexol	Reporter country	IQ	1	0.02
+Iohexol	Reporter country	IRAN (ISLAMIC REPUBLIC OF)	1	0.02
+Iohexol	Reporter country	KZ	1	0.02
+Iohexol	Reporter country	LEBANON	1	0.02
+Iohexol	Reporter country	LT	1	0.02
+Iohexol	Reporter country	MU	1	0.02
+Iohexol	Reporter country	NEW ZEALAND	1	0.02
+Iohexol	Reporter country	NP	1	0.02
+Iohexol	Reporter country	OM	1	0.02
+Iohexol	Reporter country	PHILIPPINES	1	0.02
+Iohexol	Reporter country	PK	1	0.02
+Iohexol	Reporter country	PS	1	0.02
+Iohexol	Reporter country	QA	1	0.02
+Iohexol	Reporter country	SK	1	0.02
+Iohexol	Reporter country	SV	1	0.02
+Iohexol	Reporter country	SWEDEN	1	0.02
+Iohexol	Reporter country	SY	1	0.02
+Iohexol	Reporter country	TH	1	0.02
+Iohexol	Reporter country	UY	1	0.02
+Iohexol	Reporter country	YE	1	0.02
+Iohexol	Reporter country	ZM	1	0.02
+Iohexol	Reporter qualification	Other	2692	41.78
+Iohexol	Reporter qualification	Other health professional	1913	29.69
+Iohexol	Reporter qualification	Physician	1271	19.73
+Iohexol	Reporter qualification	Pharmacist	567	8.80
+Ioversol	Sex	Female	1646	50.31
+Ioversol	Sex	Male	1036	31.66
+Ioversol	Sex	Missing or unknown	590	18.03
+Ioversol	Age group	18-59 years	1199	36.64
+Ioversol	Age group	>=60 years	1075	32.85
+Ioversol	Age group	Missing or unknown	912	27.87
+Ioversol	Age group	<18 years	86	2.63
+Ioversol	Reporter country	US	1436	43.89
+Ioversol	Reporter country	JP	326	9.96
+Ioversol	Reporter country	FR	277	8.47
+Ioversol	Reporter country	GB	111	3.39
+Ioversol	Reporter country	BR	109	3.33
+Ioversol	Reporter country	Missing or unknown	107	3.27
+Ioversol	Reporter country	CN	82	2.51
+Ioversol	Reporter country	GR	78	2.38
+Ioversol	Reporter country	IT	59	1.80
+Ioversol	Reporter country	AU	58	1.77
+Ioversol	Reporter country	ES	48	1.47
+Ioversol	Reporter country	IE	36	1.10
+Ioversol	Reporter country	DE	35	1.07
+Ioversol	Reporter country	MX	31	0.95
+Ioversol	Reporter country	PL	31	0.95
+Ioversol	Reporter country	PR	29	0.89
+Ioversol	Reporter country	AR	27	0.83
+Ioversol	Reporter country	PT	27	0.83
+Ioversol	Reporter country	TH	26	0.79
+Ioversol	Reporter country	CA	24	0.73
+Ioversol	Reporter country	CO	23	0.70
+Ioversol	Reporter country	DK	20	0.61
+Ioversol	Reporter country	POLAND	19	0.58
+Ioversol	Reporter country	CH	18	0.55
+Ioversol	Reporter country	KR	18	0.55
+Ioversol	Reporter country	TURKEY	18	0.55
+Ioversol	Reporter country	EU	16	0.49
+Ioversol	Reporter country	NL	13	0.40
+Ioversol	Reporter country	RU	10	0.31
+Ioversol	Reporter country	COLOMBIA	7	0.21
+Ioversol	Reporter country	INDIA	7	0.21
+Ioversol	Reporter country	RUSSIAN FEDERATION	7	0.21
+Ioversol	Reporter country	SE	7	0.21
+Ioversol	Reporter country	CZECH REPUBLIC	6	0.18
+Ioversol	Reporter country	IN	6	0.18
+Ioversol	Reporter country	TR	6	0.18
+Ioversol	Reporter country	TW	6	0.18
+Ioversol	Reporter country	AT	5	0.15
+Ioversol	Reporter country	CL	5	0.15
+Ioversol	Reporter country	FI	5	0.15
+Ioversol	Reporter country	SOUTH AFRICA	5	0.15
+Ioversol	Reporter country	SWEDEN	5	0.15
+Ioversol	Reporter country	THAILAND	5	0.15
+Ioversol	Reporter country	GREECE	4	0.12
+Ioversol	Reporter country	LEBANON	4	0.12
+Ioversol	Reporter country	MEXICO	4	0.12
+Ioversol	Reporter country	NI	4	0.12
+Ioversol	Reporter country	PHILIPPINES	4	0.12
+Ioversol	Reporter country	SINGAPORE	4	0.12
+Ioversol	Reporter country	ZA	4	0.12
+Ioversol	Reporter country	CZ	3	0.09
+Ioversol	Reporter country	EC	3	0.09
+Ioversol	Reporter country	HR	3	0.09
+Ioversol	Reporter country	ME	3	0.09
+Ioversol	Reporter country	PUERTO RICO	3	0.09
+Ioversol	Reporter country	RO	3	0.09
+Ioversol	Reporter country	RS	3	0.09
+Ioversol	Reporter country	AUSTRIA	2	0.06
+Ioversol	Reporter country	EGYPT	2	0.06
+Ioversol	Reporter country	GT	2	0.06
+Ioversol	Reporter country	HK	2	0.06
+Ioversol	Reporter country	HUNGARY	2	0.06
+Ioversol	Reporter country	KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF	2	0.06
+Ioversol	Reporter country	PH	2	0.06
+Ioversol	Reporter country	QA	2	0.06
+Ioversol	Reporter country	SK	2	0.06
+Ioversol	Reporter country	UM	2	0.06
+Ioversol	Reporter country	ARGENTINA	1	0.03
+Ioversol	Reporter country	BE	1	0.03
+Ioversol	Reporter country	CHILE	1	0.03
+Ioversol	Reporter country	EG	1	0.03
+Ioversol	Reporter country	FINLAND	1	0.03
+Ioversol	Reporter country	GUATEMALA	1	0.03
+Ioversol	Reporter country	HU	1	0.03
+Ioversol	Reporter country	JM	1	0.03
+Ioversol	Reporter country	NEPAL	1	0.03
+Ioversol	Reporter qualification	Other	1856	56.72
+Ioversol	Reporter qualification	Physician	685	20.94
+Ioversol	Reporter qualification	Other health professional	464	14.18
+Ioversol	Reporter qualification	Pharmacist	265	8.10
+Ioversol	Reporter qualification	Nurse	2	0.06
+Iopamidol	Sex	Female	1487	53.16
+Iopamidol	Sex	Male	1093	39.08
+Iopamidol	Sex	Missing or unknown	217	7.76
+Iopamidol	Age group	>=60 years	1159	41.44
+Iopamidol	Age group	18-59 years	1008	36.04
+Iopamidol	Age group	Missing or unknown	584	20.88
+Iopamidol	Age group	<18 years	46	1.64
+Iopamidol	Reporter country	US	1483	53.02
+Iopamidol	Reporter country	JP	321	11.48
+Iopamidol	Reporter country	Missing or unknown	282	10.08
+Iopamidol	Reporter country	CN	196	7.01
+Iopamidol	Reporter country	DE	110	3.93
+Iopamidol	Reporter country	IT	73	2.61
+Iopamidol	Reporter country	CA	71	2.54
+Iopamidol	Reporter country	ES	44	1.57
+Iopamidol	Reporter country	GB	43	1.54
+Iopamidol	Reporter country	FR	35	1.25
+Iopamidol	Reporter country	BR	24	0.86
+Iopamidol	Reporter country	CH	12	0.43
+Iopamidol	Reporter country	IE	12	0.43
+Iopamidol	Reporter country	AU	10	0.36
+Iopamidol	Reporter country	EU	10	0.36
+Iopamidol	Reporter country	AT	9	0.32
+Iopamidol	Reporter country	SI	8	0.29
+Iopamidol	Reporter country	MX	7	0.25
+Iopamidol	Reporter country	TH	6	0.21
+Iopamidol	Reporter country	CO	4	0.14
+Iopamidol	Reporter country	MY	3	0.11
+Iopamidol	Reporter country	RO	3	0.11
+Iopamidol	Reporter country	UNITED STATES	3	0.11
+Iopamidol	Reporter country	AR	2	0.07
+Iopamidol	Reporter country	GR	2	0.07
+Iopamidol	Reporter country	IN	2	0.07
+Iopamidol	Reporter country	TR	2	0.07
+Iopamidol	Reporter country	TURKEY	2	0.07
+Iopamidol	Reporter country	TW	2	0.07
+Iopamidol	Reporter country	ZA	2	0.07
+Iopamidol	Reporter country	AL	1	0.04
+Iopamidol	Reporter country	BANGLADESH	1	0.04
+Iopamidol	Reporter country	CZECH REPUBLIC	1	0.04
+Iopamidol	Reporter country	FINLAND	1	0.04
+Iopamidol	Reporter country	HK	1	0.04
+Iopamidol	Reporter country	ID	1	0.04
+Iopamidol	Reporter country	IL	1	0.04
+Iopamidol	Reporter country	INDONESIA	1	0.04
+Iopamidol	Reporter country	KR	1	0.04
+Iopamidol	Reporter country	LV	1	0.04
+Iopamidol	Reporter country	MALAYSIA	1	0.04
+Iopamidol	Reporter country	MEXICO	1	0.04
+Iopamidol	Reporter country	ROMANIA	1	0.04
+Iopamidol	Reporter country	UY	1	0.04
+Iopamidol	Reporter qualification	Other	1209	43.22
+Iopamidol	Reporter qualification	Physician	611	21.84
+Iopamidol	Reporter qualification	Pharmacist	607	21.70
+Iopamidol	Reporter qualification	Other health professional	370	13.23
+Iodixanol	Sex	Male	950	41.87
+Iodixanol	Sex	Female	854	37.64
+Iodixanol	Sex	Missing or unknown	465	20.49
+Iodixanol	Age group	>=60 years	990	43.63
+Iodixanol	Age group	18-59 years	708	31.20
+Iodixanol	Age group	Missing or unknown	554	24.42
+Iodixanol	Age group	<18 years	17	0.75
+Iodixanol	Reporter country	US	602	26.53
+Iodixanol	Reporter country	CN	475	20.93
+Iodixanol	Reporter country	FR	253	11.15
+Iodixanol	Reporter country	Missing or unknown	169	7.45
+Iodixanol	Reporter country	IT	106	4.67
+Iodixanol	Reporter country	DE	81	3.57
+Iodixanol	Reporter country	CA	78	3.44
+Iodixanol	Reporter country	ES	59	2.60
+Iodixanol	Reporter country	SE	38	1.67
+Iodixanol	Reporter country	IN	31	1.37
+Iodixanol	Reporter country	GB	29	1.28
+Iodixanol	Reporter country	PL	27	1.19
+Iodixanol	Reporter country	BR	24	1.06
+Iodixanol	Reporter country	KR	20	0.88
+Iodixanol	Reporter country	AU	15	0.66
+Iodixanol	Reporter country	BY	15	0.66
+Iodixanol	Reporter country	GR	15	0.66
+Iodixanol	Reporter country	NORWAY	15	0.66
+Iodixanol	Reporter country	PT	15	0.66
+Iodixanol	Reporter country	JP	14	0.62
+Iodixanol	Reporter country	AT	13	0.57
+Iodixanol	Reporter country	DK	13	0.57
+Iodixanol	Reporter country	EU	12	0.53
+Iodixanol	Reporter country	IR	12	0.53
+Iodixanol	Reporter country	CH	10	0.44
+Iodixanol	Reporter country	NL	10	0.44
+Iodixanol	Reporter country	HR	7	0.31
+Iodixanol	Reporter country	NZ	7	0.31
+Iodixanol	Reporter country	SK	7	0.31
+Iodixanol	Reporter country	INDIA	5	0.22
+Iodixanol	Reporter country	NO	5	0.22
+Iodixanol	Reporter country	RO	5	0.22
+Iodixanol	Reporter country	RUSSIAN FEDERATION	5	0.22
+Iodixanol	Reporter country	CL	4	0.18
+Iodixanol	Reporter country	CZ	4	0.18
+Iodixanol	Reporter country	FI	4	0.18
+Iodixanol	Reporter country	ID	4	0.18
+Iodixanol	Reporter country	IL	4	0.18
+Iodixanol	Reporter country	KE	4	0.18
+Iodixanol	Reporter country	PH	4	0.18
+Iodixanol	Reporter country	RS	4	0.18
+Iodixanol	Reporter country	SOUTH AFRICA	4	0.18
+Iodixanol	Reporter country	IRAN (ISLAMIC REPUBLIC OF)	3	0.13
+Iodixanol	Reporter country	CO	2	0.09
+Iodixanol	Reporter country	DO	2	0.09
+Iodixanol	Reporter country	KP	2	0.09
+Iodixanol	Reporter country	KW	2	0.09
+Iodixanol	Reporter country	MK	2	0.09
+Iodixanol	Reporter country	MN	2	0.09
+Iodixanol	Reporter country	PR	2	0.09
+Iodixanol	Reporter country	SI	2	0.09
+Iodixanol	Reporter country	TH	2	0.09
+Iodixanol	Reporter country	TR	2	0.09
+Iodixanol	Reporter country	UA	2	0.09
+Iodixanol	Reporter country	ZA	2	0.09
+Iodixanol	Reporter country	BE	1	0.04
+Iodixanol	Reporter country	IE	1	0.04
+Iodixanol	Reporter country	KZ	1	0.04
+Iodixanol	Reporter country	LV	1	0.04
+Iodixanol	Reporter country	MD	1	0.04
+Iodixanol	Reporter country	MX	1	0.04
+Iodixanol	Reporter country	PA	1	0.04
+Iodixanol	Reporter country	PORTUGAL	1	0.04
+Iodixanol	Reporter country	RU	1	0.04
+Iodixanol	Reporter country	SLOVAKIA (SLOVAK REPUBLIC)	1	0.04
+Iodixanol	Reporter country	THAILAND	1	0.04
+Iodixanol	Reporter country	TN	1	0.04
+Iodixanol	Reporter country	UKRAINE	1	0.04
+Iodixanol	Reporter country	VN	1	0.04
+Iodixanol	Reporter qualification	Other	884	38.96
+Iodixanol	Reporter qualification	Physician	591	26.05
+Iodixanol	Reporter qualification	Other health professional	507	22.34
+Iodixanol	Reporter qualification	Pharmacist	272	11.99
+Iodixanol	Reporter qualification	Nurse	15	0.66

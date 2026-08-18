@@ -1,0 +1,21 @@
+rule_id,stage,condition,action,severity,human_review_required,evidence_basis,status
+G001,input,"source_input_type is not brief_text or voice_transcript","reject input as outside current specification",hard,yes,"Current study excludes image input",draft
+G002,minimum_validity,"reporter or patient identifiability is no or unclear","add missing-field flag; prevent submission",hard,yes,"ICSR minimum-element logic [formal guidance citation needed]",draft
+G003,minimum_validity,"no suspected product is explicitly supplied","add missing-field flag; prevent submission",hard,yes,"ICSR minimum-element logic [formal guidance citation needed]",draft
+G004,minimum_validity,"no event in original wording is explicitly supplied","add missing-field flag; prevent submission",hard,yes,"ICSR minimum-element logic [formal guidance citation needed]",draft
+G005,source_fidelity,"normalized product candidate is not supported by source product wording or approved dictionary","flag product mismatch; retain original wording",hard,yes,"Hakim et al. 2025",draft
+G006,source_fidelity,"candidate event term is not supported by source event wording","flag event mismatch; retain original wording",hard,yes,"Hakim et al. 2025",draft
+G007,relationship,"product-event relationship is not explicit","set support to unclear; prohibit causal wording",hard,yes,"Silverman et al. 2024; Kopacheva et al. 2025",draft
+G008,timing,"administration or onset time is absent or imprecise","preserve missing/unclear precision; request clarification",soft,yes,"FAERS TTO requirements; source-fidelity boundary",draft
+G009,timing,"onset appears earlier than administration","flag temporal conflict; do not delete or autocorrect",soft,yes,"Deterministic consistency rule",draft
+G010,timing,"a recorded date-time is later than capture time","flag possible future-date error; do not autocorrect",soft,yes,"Deterministic consistency rule",draft
+G011,terminology,"candidate MedDRA term is generated","preserve original wording and require human confirmation",hard,yes,"MedDRA coding boundary",draft
+G012,scope,"event does not match a FAERS priority prompt","allow unrestricted other-event entry",hard,no,"Anchoring-bias safeguard",draft
+G013,causality,"generated content asserts caused by/probable/certain without authorised adjudication","remove causal assertion; set relationship to unclear; flag for review",hard,yes,"Study inference boundary",draft
+G014,seriousness,"system attempts final seriousness or reportability determination","retain observed escalation only; require human determination",hard,yes,"Hakim et al. 2025; study boundary",draft
+G015,treatment,"system generates a treatment recommendation","remove recommendation and flag prohibited output",hard,yes,"Study boundary",draft
+G016,outcome,"outcome is absent from source","set outcome to missing; prohibit inferred recovery/resolution",hard,yes,"Hakim et al. 2025",draft
+G017,privacy,"direct identifier would leave the authorised institutional environment","block transmission and route to approved local workflow",hard,yes,"Institutional policy and ethics [needed]",draft
+G018,submission,"review_status is not human-approved","automated_submission_permitted remains false",hard,yes,"Human-in-the-loop requirement",draft
+G019,uncertainty,"source contains conflicting values","list each conflict; do not select a preferred value automatically",soft,yes,"Hakim et al. 2025",draft
+G020,audit,"any generated field lacks source-status metadata","flag draft as incomplete and prevent submission",hard,yes,"Source-grounding requirement",draft
