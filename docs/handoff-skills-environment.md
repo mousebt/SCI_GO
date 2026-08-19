@@ -92,3 +92,35 @@ powershell -ExecutionPolicy Bypass -File scripts/setup-antigravity-skills.ps1
    - 项目级技能：建在 `skills/<new-skill>/SKILL.md`；
    - 全局 Nature 技能：建在 `~/.codex/skills/<new-skill>/SKILL.md`；
    - 随后运行一次 `powershell -ExecutionPolicy Bypass -File scripts/setup-antigravity-skills.ps1`，即可让 Antigravity 也立即识别到新技能。
+
+---
+
+## 6. Git 与 GitHub 远程同步运维规范与避坑指南
+
+### 6.1 环境基准与痛点排查
+1. **Git 解释器路径**：
+   - 宿主机系统全局 `PATH` 中未注册 `git`，真实可执行程序位于：`C:\Users\XuJianhao\.mingit\cmd\git.exe`。
+2. **凭据阻塞（GUI 假死坑点）**：
+   - MinGit 默认带有的 `credential.helper=manager` 会唤起桌面弹窗。在 AI / 后台无头（Headless）运行环境中无法交互，会导致无限等待假死。
+   - **解决方案**：使用 `credential.helper=wincred` 直接从 Windows 凭据管理器静默读取。
+3. **代理协议与端口**：
+   - 本地 v2rayN 监听代理端口为 `127.0.0.1:10808`。
+   - Git 远程操作必须显式带上代理参数：`-c http.proxy="http://127.0.0.1:10808"`。
+   - **禁止配置** 超大 `http.postBuffer`（如 500MB），否则会导致分块上传退化为单包长连接，在代理链路上触发 `HTTP 408 Request Timeout`。
+
+### 6.2 标准极速同步指令
+```powershell
+# 1. 查看状态
+& "C:\Users\XuJianhao\.mingit\cmd\git.exe" status
+
+# 2. 提交本地变更
+& "C:\Users\XuJianhao\.mingit\cmd\git.exe" add .
+& "C:\Users\XuJianhao\.mingit\cmd\git.exe" commit -m "<commit message>"
+
+# 3. 远端拉取变基
+& "C:\Users\XuJianhao\.mingit\cmd\git.exe" -c http.proxy="http://127.0.0.1:10808" pull --rebase origin main
+
+# 4. 推送至 GitHub
+& "C:\Users\XuJianhao\.mingit\cmd\git.exe" -c http.proxy="http://127.0.0.1:10808" push origin main
+```
+
