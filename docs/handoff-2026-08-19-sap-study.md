@@ -28,6 +28,10 @@
 4. **学术检索环境健全**：
    - 完成了 `pubmed-database` 技能包的底层环境（`uv` 包管理器及 Windows 证书适配）配置与真实检索测试，确保所有文献证据 100% 真实可溯源。
 
+4. **系统环境与双 Agent 架构运维基准建立**：
+   - 建立了跨 Agent（Codex ↔ Antigravity）技能软链接自动挂载脚本（[`scripts/setup-antigravity-skills.ps1`](file:///e:/pythonProjects/SCI_GO/scripts/setup-antigravity-skills.ps1)）；
+   - 彻底跑通 Windows 平台下 MinGit + `wincred` 静默凭据读取 + `http://127.0.0.1:10808` 代理通道，解决了后台 GUI 弹窗挂起与超大缓冲导致超时（408）的痛点，固化至 [`GEMINI.md`](file:///e:/pythonProjects/SCI_GO/GEMINI.md) 与 [`docs/handoff-skills-environment.md`](file:///e:/pythonProjects/SCI_GO/docs/handoff-skills-environment.md)。
+
 ---
 
 ## 2. 核心文献资产库索引
@@ -41,15 +45,40 @@
 
 ---
 
-## 3. 下一步工作入口（Next Steps）
+## 3. 明天继续的工作执行蓝图（Tomorrow's Action Plan）
 
-1. **产物 1：输出《20 例 SAP 规范化数据提取宽表（Excel / CSV 模板）》**：
-   - 包含人口学基线、入院 $\le 24$h 必查化验（中性粒、淋巴、血小板、白蛋白、CRP、eGFR）、护理文书（进食方式、鼻饲置管、KWDT、GCS）与 $A_2DS_2$ 自动折算规则。
-2. **产物 2：编写 R / Python 自动化全流程分析管线**：
-   - 包含：
-     - `01_matching.py`：1:3 倾向/风险集严格匹配及 Table 1 均衡表生成；
-     - `02_regression.py`：条件 Logistic 回归与 Forest Plot 森林图绘制；
-     - `03_cin_score.py`：Bootstrap 降缩拟合 NPAR + 进食方式的复合评分；
-     - `04_incremental.py`：$\Delta\text{AUC}$、Continuous NRI、IDI、Brier 评分计算与 ROC/Calibration/DCA 三联图生成；
-     - `05_nomogram.py`：交互式临床风险列线图绘制。
-3. **产物 3：撰写 Methods 与 Results 规范英文初稿**。
+### 阶段 1：数据准备与 1:3 匹配（Data Intake & Risk-Set Matching）
+1. **数据表校验与变量核对**：
+   - 提取 20 例 SAP 病例与待选对照池（~180-280 例）的 36 项标准化变量（人口学、入院 24h 血常规与生化、护理进食/吞咽/意识量表及时间点）；
+   - 计算衍生特征：$\text{NPAR} = \frac{\text{Neutrophil (\%)}}{\text{Albumin (g/dL)}}$、$\text{NLR} = \frac{\text{Neutrophil}}{\text{Lymphocyte}}$、$\text{SII} = \frac{\text{Platelet} \times \text{Neutrophil}}{\text{Lymphocyte}}$、$\text{PNI} = 10 \times \text{Albumin} + 0.005 \times \text{TLC}$。
+2. **执行 1:3 风险集精准匹配**：
+   - 年龄（$\pm 3$ 岁）、性别（精确同性）、卒中亚型（脑梗 vs 脑出血 100% 相同）、初始瘫痪严重度 NIHSS（$\pm 2$ 分）；
+   - 生成 80 例（20 SAP vs 60 Control）核心分析宽表。
+
+### 阶段 2：统计建模与增量价值验证（Statistical Modeling & Incremental Value）
+1. **基线均衡性对比（Table 1）**：
+   - 匹配前后各变量均值/中位数、Standardized Mean Difference (SMD < 0.10 表示完全均衡)。
+2. **多因素条件 Logistic 回归（Table 2）**：
+   - 筛选进入最终模型的独立预测因子（进食/鼻饲状态、NPAR 或 NLR），输出调整后 OR 及 95% CI。
+3. **复合炎症-营养评分（CIN-Score）与增量价值分析（Table 3 & Figure 2-4）**：
+   - 计算 Baseline Model（经典 $A_2DS_2$ 评分）vs Enhanced Model（$A_2DS_2$ + CIN-Score）；
+   - 计算 $\Delta\text{AUC}$（Delong 检验）、Continuous NRI（净重分类改善度）、IDI（综合判别改善度）、Brier Score；
+   - 绘制对比 ROC 曲线、校准曲线（Calibration Curve）与临床决策曲线（DCA）。
+4. **可视化成果构建**：
+   - 绘制动态交互式/静态临床风险列线图（Nomogram）。
+
+### 阶段 3：论文正文初稿起草（Manuscript Drafting）
+- 按 STROBE 规范起草 Methods（Study Design, Cohort & Matching, Variable Definition, Statistical Analysis）与 Results 部分。
+
+---
+
+## 4. 仓库与运行环境状态备忘
+
+- **Git 远程仓库**：`https://github.com/mousebt/SCI_GO.git`
+- **本地分支状态**：`main` 与 `origin/main` 保持完全一致，工作区干净（`working tree clean`）。
+- **极速同步命令备忘**：
+  ```powershell
+  & "C:\Users\XuJianhao\.mingit\cmd\git.exe" -c http.proxy="http://127.0.0.1:10808" pull --rebase origin main
+  & "C:\Users\XuJianhao\.mingit\cmd\git.exe" -c http.proxy="http://127.0.0.1:10808" push origin main
+  ```
+
